@@ -1,15 +1,33 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Document IDs are "{uid}_{season}". A coach can only read/write
-    // documents whose ID starts with their own uid, and only if the
-    // uid field inside the document matches their own uid too.
-    match /coachSeasons/{docId} {
+
+    // Evaluator / admin accounts.
+    function isAdmin() {
+      return request.auth != null
+             && request.auth.token.email.lower() in ['canellakish@gmail.com'];
+    }
+
+    // Allowlist of approved coach emails. Doc ID = lowercased email.
+    // Not writable from the client — add/remove coaches in the Firebase console.
+    match /approvedCoaches/{email} {
+      allow read: if request.auth != null && request.auth.token.email.lower() == email;
+      allow write: if false;
+    }
+
+    // Coach profiles. A coach reads/writes their own; admins may list all
+    // so the evaluator view can populate its coach selector.
+    match /coaches/{uid} {
+      allow read: if request.auth != null && (request.auth.uid == uid || isAdmin());
+      allow write: if request.auth != null && request.auth.uid == uid;
+    }
+
+    // Evaluation docs, keyed "{season}_{coachUid}".
+    // A coach reads/writes only their own; admins read/write any so they can
+    // grade rubric items and assign archetypes.
+    match /coachEvaluations/{docId} {
       allow read, write: if request.auth != null
-        && docId.matches(request.auth.uid + '_.*')
-        && request.resource.data.uid == request.auth.uid;
-      allow read: if request.auth != null
-        && docId.matches(request.auth.uid + '_.*');
+                          && (docId.matches('.*_' + request.auth.uid) || isAdmin());
     }
   }
 }
