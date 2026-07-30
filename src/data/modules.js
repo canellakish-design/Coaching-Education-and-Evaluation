@@ -83,7 +83,7 @@ export const REFLECTION_PROMPTS = [
 ];
 
 /* ---------------------------------------------------------------
-   MODULE 2 — What Fills Your Bucket?
+   MODULE 2 — What Fills Your Bucket??
 ----------------------------------------------------------------*/
 export const BUCKET_SECTIONS = [
   {
@@ -188,7 +188,7 @@ export const MODULES = [
     num: "02",
     window: "AUGUST",
     kind: "bucket",
-    title: "What Fills Your Bucket?",
+    title: "What Fills Your Bucket??",
     focus: "What drives you, what drains you, and what makes this job worth doing.",
   },
   {

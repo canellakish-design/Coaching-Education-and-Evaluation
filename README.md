@@ -13,7 +13,7 @@ evaluator rates in Modules 3–10. Eight of those items also ask a
 meta-perception question ("how do you think your players would rate you?").
 Two reflection prompts close it out.
 
-**Module 2 — What Fills Your Bucket?**
+**Module 2 — What Fills Your Bucket??**
 Ten open-response prompts on motivation, energy, and what makes the job worth
 doing. The evaluator reads these and assigns a coaching archetype.
 
