@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { doc, getDoc, setDoc, collection, getDocs, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase/config";
 import { useAuth } from "../contexts/AuthContext";
@@ -80,13 +80,6 @@ export default function CoachingEvaluation() {
       }
     })();
   }, [targetUid, profile, viewUid]);
-
-  const autoOpenedRef = useRef(false);
-  useEffect(() => {
-    if (!data || autoOpenedRef.current) return;
-    autoOpenedRef.current = true;
-    if (!data.intro?.read) setOpenId("intro");
-  }, [data]);
 
   const persist = useCallback(
     async (next) => {
