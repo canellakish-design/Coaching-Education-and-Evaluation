@@ -245,7 +245,7 @@ export default function CoachingEvaluation() {
       </section>
 
       <main className="mu-main">
-        {MODULES.map((m, idx) => {
+        {(openId ? MODULES.filter((m) => m.id === openId) : MODULES).map((m, idx) => {
           const open = openId === m.id;
           const grade = gradeFor(m);
           return (
