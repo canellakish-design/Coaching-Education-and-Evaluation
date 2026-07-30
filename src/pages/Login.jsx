@@ -32,6 +32,11 @@ export default function Login() {
           textAlign: "center",
         }}
       >
+        <img
+          src="/crest.png"
+          alt="Maryland United FC"
+          style={{ display: "block", height: 88, width: "auto", margin: "0 auto" }}
+        />
         <h1 style={{ color: "#F0F0F0", fontFamily: "sans-serif", fontSize: 20, margin: 0 }}>
           Maryland United — Coach Sign In
         </h1>
