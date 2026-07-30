@@ -19,7 +19,7 @@ meta-perception question ("how do you think your players would rate you?").
 Two reflection prompts close it out.
 
 **Module 3 — What Fills Your Bucket?**
-Ten open-response prompts on motivation, energy, and what makes the job worth
+Sixteen open-response prompts on motivation, goals, energy, and what makes the job worth
 doing. The evaluator reads these and assigns a coaching archetype.
 
 **Modules 4–11 — The Rubric**

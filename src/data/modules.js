@@ -112,6 +112,22 @@ export const BUCKET_SECTIONS = [
       { id: "b10", text: "Name a coach you admire and what specifically about them." },
     ],
   },
+  {
+    heading: "GOALS",
+    questions: [
+      { id: "b11", text: "Where do you want to be as a coach in five years?" },
+      { id: "b12", text: "What's one goal you have for yourself this season that has nothing to do with wins or losses?" },
+      { id: "b13", text: "What's something you haven't accomplished yet as a coach that you still want to?" },
+    ],
+  },
+  {
+    heading: "WHAT MAKES YOU TICK",
+    questions: [
+      { id: "b14", text: "What's a belief about coaching you hold strongly that not everyone agrees with?" },
+      { id: "b15", text: "What did coaching give you that you didn't expect when you started?" },
+      { id: "b16", text: "What's something about you your players would be surprised to learn?" },
+    ],
+  },
 ];
 
 export const BUCKET_QUESTIONS = BUCKET_SECTIONS.flatMap((s) => s.questions);
