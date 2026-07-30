@@ -376,6 +376,7 @@ export const emptyBonding = () => [0, 1, 2, 3].map(() => ({ what: "", effective:
 
 export const defaultData = (coachName = "") => ({
   coachName,
+  lastOpenId: null,
   intro: { read: false },
   selfEval: { ratings: {}, meta: {}, reflections: {}, submitted: false },
   bucket: { answers: {}, submitted: false },

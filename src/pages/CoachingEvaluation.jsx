@@ -26,6 +26,7 @@ const hydrate = (remote, fallbackName) => {
   if (!remote) return base;
   return {
     coachName: remote.coachName || base.coachName,
+    lastOpenId: remote.lastOpenId || base.lastOpenId,
     intro: { ...base.intro, ...(remote.intro || {}) },
     selfEval: { ...base.selfEval, ...(remote.selfEval || {}) },
     bucket: { ...base.bucket, ...(remote.bucket || {}) },
@@ -113,6 +114,12 @@ export default function CoachingEvaluation() {
     persist({ ...data, bonding: next });
   };
   const setArchetype = (a) => persist({ ...data, archetype: a });
+
+  const openModule = (id) => {
+    setOpenId(id);
+    if (data.lastOpenId !== id) persist({ ...data, lastOpenId: id });
+  };
+  const toggleOpen = (m) => (openId === m.id ? setOpenId(null) : openModule(m.id));
 
   const isSubmitted = (m) => {
     if (m.kind === "intro") return data.intro?.read;
@@ -247,7 +254,7 @@ export default function CoachingEvaluation() {
               <article className={`mu-card ${open ? "mu-card-open" : ""}`}>
                 <button
                   className="mu-card-head"
-                  onClick={() => setOpenId(open ? null : m.id)}
+                  onClick={() => toggleOpen(m)}
                   aria-expanded={open}
                 >
                   <span className="mu-card-num">{m.num}</span>
@@ -256,6 +263,9 @@ export default function CoachingEvaluation() {
                     <span className="mu-card-title">{m.title.toUpperCase()}</span>
                   </span>
                   <span className="mu-card-pills">
+                    {!open && data.lastOpenId === m.id && (
+                      <span className="mu-pill mu-pill-continue">CONTINUE</span>
+                    )}
                     {isSubmitted(m) && <span className="mu-pill mu-pill-gold">✓</span>}
                     {grade && <span className="mu-pill mu-pill-red">{grade.label.toUpperCase()}</span>}
                     <span className="mu-toggle-icon">{open ? "–" : "+"}</span>
@@ -266,7 +276,7 @@ export default function CoachingEvaluation() {
                   <IntroModule
                     state={data.intro}
                     update={updateIntro}
-                    onContinue={() => setOpenId("m1")}
+                    onContinue={() => openModule("m1")}
                   />
                 )}
                 {open && m.kind === "selfEval" && (

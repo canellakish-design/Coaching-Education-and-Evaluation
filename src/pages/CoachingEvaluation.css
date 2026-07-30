@@ -253,6 +253,11 @@
   background: #d22730;
   color: #fff;
 }
+.mu-pill-continue {
+  background: transparent;
+  border: 1px solid #f5b917;
+  color: #f5b917;
+}
 .mu-toggle-icon {
   color: #6B6B6B;
   font-size: 18px;
