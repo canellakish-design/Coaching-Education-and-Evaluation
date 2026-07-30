@@ -1,32 +1,37 @@
 # Maryland United — Coaching Excellence Pathway
 
 A standalone Vite + React app with Firebase Authentication (Google Sign-In,
-gated by an approved-coach allowlist) and Firestore. Ten modules across the
-season: a self-evaluation, a motivational profile, and eight coaching
-qualities assessed through recorded submissions.
+gated by an approved-coach allowlist) and Firestore. Eleven modules across the
+season: an introduction, a self-evaluation, a motivational profile, and eight
+coaching qualities assessed through recorded submissions.
 
 ## Structure
 
-**Module 1 — Self-Evaluation of the Key Qualities of a Maryland United Coach**
+**Module 1 — Introduction to the Maryland United Coaching Excellence Platform**
+A short onboarding read, stepped one section at a time: why the program
+exists, how the year works, how the 1–4 scale works, and what's asked of
+coaches. Marking it read unlocks the rest of the season.
+
+**Module 2 — Self-Evaluation of the Key Qualities of a Maryland United Coach**
 Coaches rate themselves 1–4 on all 33 rubric items — the *same* items their
-evaluator rates in Modules 3–10. Eight of those items also ask a
+evaluator rates in Modules 4–11. Eight of those items also ask a
 meta-perception question ("how do you think your players would rate you?").
 Two reflection prompts close it out.
 
-**Module 2 — What Fills Your Bucket??**
+**Module 3 — What Fills Your Bucket?**
 Ten open-response prompts on motivation, energy, and what makes the job worth
 doing. The evaluator reads these and assigns a coaching archetype.
 
-**Modules 3–10 — The Rubric**
-Team Management, Game Model, Maryland United Training Session, Match
-Preparation & Execution, Analysis, Individual Development, Transformational
-Experience (includes the Team Bonding exercise), Club Pathway. Each has a
-recorded submission and per-item evaluator grading.
+**Modules 4–11 — The Rubric**
+Team Management, Game Model, Analysis, Maryland United Training Session, Match
+Preparation & Execution, Transformational Experience (includes the Team
+Bonding exercise), Individual Development, Club Pathway. Each has a recorded
+submission and per-item evaluator grading.
 
 ## The paired-item design
 
 Every rubric item is stored with two wordings — `coachText` (first person, for
-Module 1) and `evalText` (third person, for the evaluator). Same construct,
+Module 2) and `evalText` (third person, for the evaluator). Same construct,
 same 1–4 anchors. This pairing is what makes the self-vs-evaluator gap
 meaningful; it's the standard approach in the coaching-leadership literature
 (cf. the Leadership Scale for Sports, which exists in parallel coach and
@@ -40,7 +45,7 @@ Accounts listed in `ADMIN_EMAILS` (`src/data/modules.js`) see an extra panel:
   gap means the coach rates themselves higher than you do.
 - **Meta-Perception** — self-rating vs. predicted player rating vs. your
   rating, for the 8 flagged items.
-- **Bucket Responses** — all Module 2 answers on one screen.
+- **Bucket Responses** — all Module 3 answers on one screen.
 - **Archetype** — assign one of six archetypes with your reasoning. Each
   carries a strength and its characteristic blind spots.
 
@@ -76,9 +81,9 @@ npm run dev
 - `approvedCoaches/{email}` — allowlist.
 - `coaches/{uid}` — `{ name, email, createdAt }`, created on first sign-in.
 - `coachEvaluations/{season}_{uid}` — one doc per coach per season:
-  `selfEval` (ratings, meta, reflections), `bucket` (answers), `bonding`
-  (4 entries), `modules` (per-module grade, itemGrades, notes, submission),
-  and `archetype`.
+  `intro` (read), `selfEval` (ratings, meta, reflections), `bucket` (answers),
+  `bonding` (4 entries), `modules` (per-module grade, itemGrades, notes,
+  submission), and `archetype`.
 
 ## Deploying to Netlify
 
