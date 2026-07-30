@@ -216,9 +216,21 @@ export const MODULES = [
     },
   },
   {
-    id: "m5",
+    id: "m7",
     num: "05",
     window: "OCTOBER",
+    kind: "rubric",
+    title: "Analysis",
+    focus: "Scouting the opponent and turning that work into a prepared, clear-eyed team.",
+    recording: {
+      format: "Opponent scouting & prep session",
+      desc: "Record a session where you prepare the team for a scouted opponent. Submit clips analyzing what worked (success) versus what didn't (failure). Follow up by bringing in video analysts with the team afterwards.",
+    },
+  },
+  {
+    id: "m5",
+    num: "06",
+    window: "NOVEMBER",
     kind: "rubric",
     title: "Maryland United Training Session",
     focus: "Sessions that are safe, demanding, and full of touches, decisions, and joy.",
@@ -229,8 +241,8 @@ export const MODULES = [
   },
   {
     id: "m6",
-    num: "06",
-    window: "NOVEMBER",
+    num: "07",
+    window: "DECEMBER",
     kind: "rubric",
     title: "Match Preparation & Execution",
     focus: "Game plans, team talks, and in-match decisions that give players clarity.",
@@ -240,33 +252,9 @@ export const MODULES = [
     },
   },
   {
-    id: "m7",
-    num: "07",
-    window: "DECEMBER – JANUARY",
-    kind: "rubric",
-    title: "Analysis",
-    focus: "Scouting the opponent and turning that work into a prepared, clear-eyed team.",
-    recording: {
-      format: "Opponent scouting & prep session",
-      desc: "Record a session where you prepare the team for a scouted opponent. Submit clips analyzing what worked (success) versus what didn't (failure). Follow up by bringing in video analysts with the team afterwards.",
-    },
-  },
-  {
-    id: "m8",
-    num: "08",
-    window: "FEBRUARY",
-    kind: "rubric",
-    title: "Individual Development",
-    focus: "Every player has a plan, every plan stays current, and every plan gets real attention.",
-    recording: {
-      format: "Individual / small-group session",
-      desc: "A 1-on-1 or small-group session built around specific player development targets.",
-    },
-  },
-  {
     id: "m9",
-    num: "09",
-    window: "MARCH – APRIL",
+    num: "08",
+    window: "JANUARY – FEBRUARY",
     kind: "rubric",
     title: "Transformational Experience",
     focus: "Coaching that shapes people, not just players — culture, character, connection.",
@@ -274,6 +262,18 @@ export const MODULES = [
     recording: {
       format: "Player check-in / culture moment",
       desc: "A recorded player check-in conversation or a team culture activity you lead.",
+    },
+  },
+  {
+    id: "m8",
+    num: "09",
+    window: "MARCH – APRIL",
+    kind: "rubric",
+    title: "Individual Development",
+    focus: "Every player has a plan, every plan stays current, and every plan gets real attention.",
+    recording: {
+      format: "Individual / small-group session",
+      desc: "A 1-on-1 or small-group session built around specific player development targets.",
     },
   },
   {

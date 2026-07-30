@@ -2,8 +2,8 @@
 
 .mu-page {
   min-height: 100vh;
-  background: #16130f;
-  color: #f4f1e8;
+  background: #000000;
+  color: #F0F0F0;
   font-family: "Archivo", system-ui, sans-serif;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #16130f;
+  background: #000000;
   color: #f5b917;
   font-family: "Barlow Condensed", sans-serif;
   font-size: 22px;
@@ -23,8 +23,8 @@
 
 .mu-checker {
   height: 14px;
-  background: repeating-linear-gradient(45deg, #f5b917 0 10px, #16130f 10px 20px),
-    repeating-linear-gradient(-45deg, #f5b917 0 10px, #16130f 10px 20px);
+  background: repeating-linear-gradient(45deg, #f5b917 0 10px, #000000 10px 20px),
+    repeating-linear-gradient(-45deg, #f5b917 0 10px, #000000 10px 20px);
   background-blend-mode: multiply;
 }
 .mu-redline {
@@ -60,7 +60,7 @@
 }
 .mu-sub {
   margin: 0;
-  color: #b9b2a4;
+  color: #A3A3A3;
   font-size: 15px;
   line-height: 1.55;
   max-width: 520px;
@@ -69,7 +69,7 @@
   margin-top: 16px;
   background: transparent;
   border: none;
-  border-bottom: 2px solid #3a3428;
+  border-bottom: 2px solid #2E2E2E;
   color: #f5b917;
   font-family: "Barlow Condensed", sans-serif;
   font-size: 24px;
@@ -92,9 +92,9 @@
   box-sizing: border-box;
 }
 .mu-progress-card {
-  border: 1px solid #2a251c;
+  border: 1px solid #242424;
   padding: 14px 16px;
-  background: #1c1812;
+  background: #0D0D0D;
 }
 .mu-progress-num {
   margin: 0;
@@ -104,7 +104,7 @@
   line-height: 1;
 }
 .mu-progress-den {
-  color: #6e6656;
+  color: #6B6B6B;
   font-size: 24px;
 }
 .mu-progress-label {
@@ -112,11 +112,11 @@
   font-family: "Barlow Condensed", sans-serif;
   font-size: 13px;
   letter-spacing: 2px;
-  color: #b9b2a4;
+  color: #A3A3A3;
 }
 .mu-track {
   height: 6px;
-  background: #2a251c;
+  background: #242424;
 }
 .mu-fill {
   height: 100%;
@@ -147,8 +147,8 @@
   padding: 4px 0 10px;
 }
 .mu-scale-box {
-  border: 1px solid #2a251c;
-  background: #1c1812;
+  border: 1px solid #242424;
+  background: #0D0D0D;
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -173,7 +173,7 @@
   min-width: 18px;
 }
 .mu-muted {
-  color: #b9b2a4;
+  color: #A3A3A3;
 }
 
 .mu-main {
@@ -188,8 +188,8 @@
   gap: 10px;
 }
 .mu-card {
-  border: 1px solid #2a251c;
-  background: #1c1812;
+  border: 1px solid #242424;
+  background: #0D0D0D;
   transition: border-color 0.2s;
 }
 .mu-card-open {
@@ -202,7 +202,7 @@
   width: 100%;
   background: transparent;
   border: none;
-  color: #f4f1e8;
+  color: #F0F0F0;
   padding: 14px 16px;
   cursor: pointer;
   font-family: "Archivo", sans-serif;
@@ -223,7 +223,7 @@
   font-family: "Barlow Condensed", sans-serif;
   font-size: 12px;
   letter-spacing: 2.5px;
-  color: #6e6656;
+  color: #6B6B6B;
 }
 .mu-card-title {
   display: block;
@@ -247,24 +247,30 @@
 }
 .mu-pill-gold {
   background: #f5b917;
-  color: #16130f;
+  color: #000000;
 }
 .mu-pill-red {
   background: #d22730;
   color: #fff;
 }
 .mu-toggle-icon {
-  color: #6e6656;
+  color: #6B6B6B;
   font-size: 18px;
 }
 
 .mu-card-body {
   padding: 0 16px 18px;
-  border-top: 1px solid #2a251c;
+  border-top: 1px solid #242424;
+}
+.mu-crest {
+  display: block;
+  height: 88px;
+  width: auto;
+  margin: 4px auto 18px;
 }
 .mu-focus {
   margin: 14px 0;
-  color: #b9b2a4;
+  color: #A3A3A3;
   font-size: 14.5px;
   line-height: 1.55;
 }
@@ -285,18 +291,18 @@
 .mu-ul li {
   font-size: 14px;
   line-height: 1.5;
-  color: #d8d2c4;
+  color: #D6D6D6;
 }
 .mu-subbox {
-  border: 1px solid #2a251c;
+  border: 1px solid #242424;
   padding: 14px;
   margin-bottom: 12px;
-  background: #16130f;
+  background: #000000;
 }
 .mu-recording-desc {
   margin: 0 0 12px;
   font-size: 13.5px;
-  color: #b9b2a4;
+  color: #A3A3A3;
   line-height: 1.5;
 }
 .mu-form-col {
@@ -305,9 +311,9 @@
   gap: 8px;
 }
 .mu-input {
-  background: #1c1812;
-  border: 1px solid #3a3428;
-  color: #f4f1e8;
+  background: #0D0D0D;
+  border: 1px solid #2E2E2E;
+  color: #F0F0F0;
   padding: 10px 12px;
   font-size: 14px;
   font-family: "Archivo", sans-serif;
@@ -330,7 +336,7 @@
 }
 .mu-btn-solid {
   background: #f5b917;
-  color: #16130f;
+  color: #000000;
 }
 .mu-btn-outline {
   background: transparent;
@@ -343,14 +349,14 @@
   margin-bottom: 10px;
 }
 .mu-grade-chip {
-  border: 1px solid #3a3428;
+  border: 1px solid #2E2E2E;
   padding: 8px 12px;
   font-family: "Archivo", sans-serif;
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   background: transparent;
-  color: #b9b2a4;
+  color: #A3A3A3;
 }
 .mu-grade-chip-active {
   background: #d22730;
@@ -361,7 +367,7 @@
 .mu-footer {
   text-align: center;
   padding: 14px 20px;
-  color: #6e6656;
+  color: #6B6B6B;
   font-size: 12.5px;
 }
 
@@ -374,8 +380,8 @@
 }
 .mu-signout {
   background: transparent;
-  border: 1px solid #3a3428;
-  color: #b9b2a4;
+  border: 1px solid #2E2E2E;
+  color: #A3A3A3;
   padding: 8px 14px;
   cursor: pointer;
   font-size: 13px;
@@ -411,7 +417,7 @@
 .mu-field-label {
   display: block;
   font-size: 13.5px;
-  color: #d8d2c4;
+  color: #D6D6D6;
   line-height: 1.5;
   margin-bottom: 6px;
 }
@@ -419,7 +425,7 @@
   font-family: "Barlow Condensed", sans-serif;
   letter-spacing: 2px;
   font-size: 13px;
-  color: #6e6656;
+  color: #6B6B6B;
   margin: 0 0 12px;
 }
 .mu-scale-inline {
@@ -427,9 +433,9 @@
   flex-wrap: wrap;
   gap: 14px;
   font-size: 12.5px;
-  color: #b9b2a4;
+  color: #A3A3A3;
   padding: 10px 0 14px;
-  border-bottom: 1px solid #2a251c;
+  border-bottom: 1px solid #242424;
   margin-bottom: 14px;
 }
 
@@ -440,7 +446,7 @@
   justify-content: space-between;
   gap: 14px;
   padding: 10px 0;
-  border-bottom: 1px solid #221e17;
+  border-bottom: 1px solid #1A1A1A;
 }
 .mu-rating-row:last-child {
   border-bottom: none;
@@ -449,14 +455,14 @@
   margin: 0;
   font-size: 13.5px;
   line-height: 1.5;
-  color: #d8d2c4;
+  color: #D6D6D6;
   flex: 1;
 }
 .mu-rating-sublabel {
   display: block;
   font-size: 11px;
   letter-spacing: 1.5px;
-  color: #6e6656;
+  color: #6B6B6B;
   text-transform: uppercase;
 }
 .mu-rating-chips {
@@ -467,9 +473,9 @@
 .mu-rating-chip {
   width: 32px;
   height: 32px;
-  border: 1px solid #3a3428;
+  border: 1px solid #2E2E2E;
   background: transparent;
-  color: #b9b2a4;
+  color: #A3A3A3;
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 700;
   font-size: 15px;
@@ -483,7 +489,7 @@
 
 /* ---------- team bonding ---------- */
 .mu-bonding-entry {
-  border-left: 2px solid #3a3428;
+  border-left: 2px solid #2E2E2E;
   padding-left: 12px;
   margin-bottom: 16px;
   display: flex;
@@ -494,7 +500,7 @@
   font-family: "Barlow Condensed", sans-serif;
   font-size: 12px;
   letter-spacing: 2.5px;
-  color: #6e6656;
+  color: #6B6B6B;
   margin: 0;
 }
 .mu-effective-row {
@@ -513,7 +519,7 @@
   box-sizing: border-box;
   padding: 18px 20px;
   border: 1px solid #d22730;
-  background: #1c1812;
+  background: #0D0D0D;
 }
 .mu-tabs {
   display: flex;
@@ -523,8 +529,8 @@
 }
 .mu-tab {
   background: transparent;
-  border: 1px solid #3a3428;
-  color: #b9b2a4;
+  border: 1px solid #2E2E2E;
+  color: #A3A3A3;
   padding: 7px 12px;
   font-size: 13px;
   cursor: pointer;
@@ -532,7 +538,7 @@
 .mu-tab.is-active {
   background: #f5b917;
   border-color: #f5b917;
-  color: #16130f;
+  color: #000000;
   font-weight: 600;
 }
 .mu-empty {
@@ -542,7 +548,7 @@
 }
 .mu-gap-summary {
   font-size: 13.5px;
-  color: #d8d2c4;
+  color: #D6D6D6;
   margin: 0 0 12px;
 }
 .mu-gap-table {
@@ -555,14 +561,14 @@
   font-family: "Barlow Condensed", sans-serif;
   letter-spacing: 1.5px;
   font-size: 12px;
-  color: #6e6656;
-  border-bottom: 1px solid #3a3428;
+  color: #6B6B6B;
+  border-bottom: 1px solid #2E2E2E;
   padding: 6px 8px;
 }
 .mu-gap-table td {
   padding: 9px 8px;
-  border-bottom: 1px solid #221e17;
-  color: #d8d2c4;
+  border-bottom: 1px solid #1A1A1A;
+  color: #D6D6D6;
   line-height: 1.45;
   vertical-align: top;
 }
@@ -571,7 +577,7 @@
   font-family: "Barlow Condensed", sans-serif;
   font-size: 11px;
   letter-spacing: 1.5px;
-  color: #6e6656;
+  color: #6B6B6B;
   text-transform: uppercase;
 }
 .mu-verifiable {
@@ -580,7 +586,7 @@
   font-size: 10px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #16130f;
+  color: #000000;
   background: #f5b917;
   padding: 1px 5px;
 }
@@ -602,13 +608,13 @@
 }
 .mu-qa-q {
   font-size: 12.5px;
-  color: #6e6656;
+  color: #6B6B6B;
   margin: 0 0 4px;
   line-height: 1.45;
 }
 .mu-qa-a {
   font-size: 14px;
-  color: #f4f1e8;
+  color: #F0F0F0;
   margin: 0;
   line-height: 1.55;
   white-space: pre-wrap;
@@ -623,9 +629,9 @@
   margin-bottom: 14px;
 }
 .mu-archetype-card {
-  border: 1px solid #3a3428;
+  border: 1px solid #2E2E2E;
   background: transparent;
-  color: #b9b2a4;
+  color: #A3A3A3;
   padding: 12px 10px;
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 700;

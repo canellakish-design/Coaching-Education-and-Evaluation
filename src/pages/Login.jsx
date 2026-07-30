@@ -19,11 +19,11 @@ export default function Login() {
   };
 
   return (
-    <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#16130f" }}>
+    <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#000000" }}>
       <div
         style={{
-          background: "#1c1812",
-          border: "1px solid #2a251c",
+          background: "#0D0D0D",
+          border: "1px solid #242424",
           padding: 32,
           width: 320,
           display: "flex",
@@ -32,10 +32,10 @@ export default function Login() {
           textAlign: "center",
         }}
       >
-        <h1 style={{ color: "#f4f1e8", fontFamily: "sans-serif", fontSize: 20, margin: 0 }}>
+        <h1 style={{ color: "#F0F0F0", fontFamily: "sans-serif", fontSize: 20, margin: 0 }}>
           Maryland United — Coach Sign In
         </h1>
-        <p style={{ color: "#b9b2a4", fontSize: 13, margin: 0 }}>
+        <p style={{ color: "#A3A3A3", fontSize: 13, margin: 0 }}>
           Sign in with your Maryland United coach Google account.
         </p>
 
@@ -54,8 +54,8 @@ export default function Login() {
             alignItems: "center",
             justifyContent: "center",
             gap: 10,
-            background: "#f4f1e8",
-            color: "#16130f",
+            background: "#F0F0F0",
+            color: "#000000",
             border: "none",
             padding: "12px 14px",
             fontWeight: 700,

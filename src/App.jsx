@@ -7,7 +7,7 @@ function Gate() {
 
   if (loading) {
     return (
-      <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#16130f", color: "#f5b917" }}>
+      <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#000000", color: "#f5b917" }}>
         Loading…
       </div>
     );
