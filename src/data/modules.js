@@ -222,6 +222,7 @@ export const INTRO_SECTIONS = [
     heading: "WHAT WE ASK OF YOU",
     body: [
       "Submit real footage, not curated highlights. Rate yourself honestly — the gap between how you see yourself and how you're seen is the most useful thing this process produces, and it only works if you're candid. When feedback comes back, sit with it before responding to it.",
+      "Over time, this becomes part of the fuller picture the club has of you as a coach — the same picture that naturally factors into staffing decisions down the line. It's not a scorecard, and it's not about any single form. Coaches who lean into this tend to be the coaches who lean into everything else here, and that shows.",
       "That's the ask. It's the same one we make of our players every week.",
     ],
   },
