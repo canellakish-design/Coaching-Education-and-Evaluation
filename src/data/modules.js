@@ -27,7 +27,7 @@ export const RUBRIC_ITEMS = [
   { id: "i3", module: "m3", coachText: "My scheduling, rosters, and season logistics are consistently well-organized.", evalText: "Scheduling, rosters, and season logistics are consistently well-organized." },
   { id: "i4", module: "m3", meta: true, coachText: "I stay composed and professional when parent or player conflicts arise.", evalText: "Stays composed and professional when parent or player conflicts arise." },
 
-  // Module 4 — Game Model
+  // Module 4 — Maryland United Game Model
   { id: "i5", module: "m4", coachText: "I can articulate our style of play in simple, memorable terms.", evalText: "Articulates the team's style of play in simple, memorable terms." },
   { id: "i6", module: "m4", coachText: "I regularly connect training activities back to our game model.", evalText: "Connects training activities back to the game model." },
   { id: "i7", module: "m4", meta: true, coachText: "My players can explain our game model in their own words.", evalText: "Players can explain the game model in their own words." },
@@ -193,7 +193,7 @@ export const INTRO_SECTIONS = [
     heading: "THE EIGHT QUALITIES",
     list: [
       "Team Management",
-      "Game Model",
+      "Maryland United Game Model",
       "Analysis",
       "Maryland United Training Session",
       "Match Preparation & Execution",
@@ -278,7 +278,7 @@ export const MODULES = [
     num: "05",
     window: "SEPTEMBER",
     kind: "rubric",
-    title: "Game Model",
+    title: "Maryland United Game Model",
     focus: "A clear, coachable identity for how your team plays — understood well enough to teach it off the field.",
     recording: {
       format: "Office meeting with tactical board",

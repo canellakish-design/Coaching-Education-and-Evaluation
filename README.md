@@ -23,7 +23,7 @@ Ten open-response prompts on motivation, energy, and what makes the job worth
 doing. The evaluator reads these and assigns a coaching archetype.
 
 **Modules 4–11 — The Rubric**
-Team Management, Game Model, Analysis, Maryland United Training Session, Match
+Team Management, Maryland United Game Model, Analysis, Maryland United Training Session, Match
 Preparation & Execution, Transformational Experience (includes the Team
 Bonding exercise), Individual Development, Club Pathway. Each has a recorded
 submission and per-item evaluator grading.
