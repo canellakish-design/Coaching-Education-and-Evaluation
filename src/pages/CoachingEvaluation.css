@@ -1,0 +1,366 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Archivo:wght@400;500;600;700&display=swap");
+
+.mu-page {
+  min-height: 100vh;
+  background: #16130f;
+  color: #f4f1e8;
+  font-family: "Archivo", system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.mu-loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #16130f;
+  color: #f5b917;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+.mu-checker {
+  height: 14px;
+  background: repeating-linear-gradient(45deg, #f5b917 0 10px, #16130f 10px 20px),
+    repeating-linear-gradient(-45deg, #f5b917 0 10px, #16130f 10px 20px);
+  background-blend-mode: multiply;
+}
+.mu-redline {
+  height: 3px;
+  background: #d22730;
+}
+
+.mu-header {
+  padding: 36px 20px 20px;
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+.mu-eyebrow {
+  margin: 0;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: #d22730;
+}
+.mu-h1 {
+  margin: 6px 0 10px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: clamp(44px, 9vw, 72px);
+  line-height: 0.95;
+  letter-spacing: 1px;
+}
+.mu-accent {
+  color: #f5b917;
+}
+.mu-sub {
+  margin: 0;
+  color: #b9b2a4;
+  font-size: 15px;
+  line-height: 1.55;
+  max-width: 520px;
+}
+.mu-name-input {
+  margin-top: 16px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #3a3428;
+  color: #f5b917;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 4px 2px;
+  width: 100%;
+  max-width: 320px;
+  outline: none;
+}
+
+.mu-progress-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  padding: 8px 20px 16px;
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+.mu-progress-card {
+  border: 1px solid #2a251c;
+  padding: 14px 16px;
+  background: #1c1812;
+}
+.mu-progress-num {
+  margin: 0;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 1;
+}
+.mu-progress-den {
+  color: #6e6656;
+  font-size: 24px;
+}
+.mu-progress-label {
+  margin: 4px 0 10px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #b9b2a4;
+}
+.mu-track {
+  height: 6px;
+  background: #2a251c;
+}
+.mu-fill {
+  height: 100%;
+  transition: width 0.4s ease;
+}
+.mu-fill-gold {
+  background: #f5b917;
+}
+.mu-fill-red {
+  background: #d22730;
+}
+
+.mu-scale-section {
+  padding: 0 20px;
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+.mu-scale-toggle {
+  background: transparent;
+  border: none;
+  color: #f5b917;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 4px 0 10px;
+}
+.mu-scale-box {
+  border: 1px solid #2a251c;
+  background: #1c1812;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.mu-scale-row {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+}
+.mu-scale-row p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.mu-scale-num {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  color: #d22730;
+  min-width: 18px;
+}
+.mu-muted {
+  color: #b9b2a4;
+}
+
+.mu-main {
+  flex: 1;
+  padding: 8px 20px 28px;
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mu-card {
+  border: 1px solid #2a251c;
+  background: #1c1812;
+  transition: border-color 0.2s;
+}
+.mu-card-open {
+  border-color: #f5b917;
+}
+.mu-card-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #f4f1e8;
+  padding: 14px 16px;
+  cursor: pointer;
+  font-family: "Archivo", sans-serif;
+}
+.mu-card-num {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 30px;
+  color: #f5b917;
+  line-height: 1;
+}
+.mu-card-title-block {
+  flex: 1;
+  text-align: left;
+}
+.mu-card-window {
+  display: block;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  color: #6e6656;
+}
+.mu-card-title {
+  display: block;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 1px;
+  line-height: 1.1;
+}
+.mu-card-pills {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.mu-pill {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  padding: 3px 8px;
+}
+.mu-pill-gold {
+  background: #f5b917;
+  color: #16130f;
+}
+.mu-pill-red {
+  background: #d22730;
+  color: #fff;
+}
+.mu-toggle-icon {
+  color: #6e6656;
+  font-size: 18px;
+}
+
+.mu-card-body {
+  padding: 0 16px 18px;
+  border-top: 1px solid #2a251c;
+}
+.mu-focus {
+  margin: 14px 0;
+  color: #b9b2a4;
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+.mu-section-label {
+  margin: 0 0 8px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 2.5px;
+}
+.mu-ul {
+  margin: 0 0 16px;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.mu-ul li {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #d8d2c4;
+}
+.mu-subbox {
+  border: 1px solid #2a251c;
+  padding: 14px;
+  margin-bottom: 12px;
+  background: #16130f;
+}
+.mu-recording-desc {
+  margin: 0 0 12px;
+  font-size: 13.5px;
+  color: #b9b2a4;
+  line-height: 1.5;
+}
+.mu-form-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.mu-input {
+  background: #1c1812;
+  border: 1px solid #3a3428;
+  color: #f4f1e8;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: "Archivo", sans-serif;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+.mu-textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+.mu-btn {
+  padding: 12px 14px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border: 1px solid #f5b917;
+}
+.mu-btn-solid {
+  background: #f5b917;
+  color: #16130f;
+}
+.mu-btn-outline {
+  background: transparent;
+  color: #f5b917;
+}
+.mu-grade-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.mu-grade-chip {
+  border: 1px solid #3a3428;
+  padding: 8px 12px;
+  font-family: "Archivo", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  background: transparent;
+  color: #b9b2a4;
+}
+.mu-grade-chip-active {
+  background: #d22730;
+  color: #fff;
+  border-color: #d22730;
+}
+
+.mu-footer {
+  text-align: center;
+  padding: 14px 20px;
+  color: #6e6656;
+  font-size: 12.5px;
+}
