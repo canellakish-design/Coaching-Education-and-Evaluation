@@ -18,7 +18,6 @@ export default function SelfEvalModule({ state, update }) {
 
   return (
     <div className="mu-card-body">
-      <img src="/crest.png" alt="Maryland United FC" className="mu-crest" />
       <p className="mu-focus">
         Rate yourself on each quality using the same 1–4 scale your evaluator will use. Answer
         honestly — the value here comes from comparing your view against theirs, not from a high score.

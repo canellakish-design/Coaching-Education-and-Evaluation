@@ -83,7 +83,7 @@ export const REFLECTION_PROMPTS = [
 ];
 
 /* ---------------------------------------------------------------
-   MODULE 2 — What Fills Your Bucket??
+   MODULE 2 — What Fills Your Bucket?
 ----------------------------------------------------------------*/
 export const BUCKET_SECTIONS = [
   {
@@ -172,12 +172,82 @@ export const ARCHETYPES = [
 ];
 
 /* ---------------------------------------------------------------
+   INTRO MODULE — onboarding content, stepped one section per screen.
+----------------------------------------------------------------*/
+export const INTRO_SECTIONS = [
+  {
+    heading: "WHY THIS EXISTS",
+    body: [
+      "We ask our players to be developing all season — to work at the things they're not yet good at, to take feedback without flinching, to keep a plan and revisit it. This platform asks the same of us.",
+      "Most coaching feedback happens by accident: a comment after a match, a conversation in a parking lot, a season that ends without anyone saying much at all. This replaces that with something deliberate. Over the year you'll work through eight qualities that define coaching at Maryland United, submit real footage of your actual coaching, and get specific feedback on each one.",
+      "This is a development program, not a performance review. Nothing here decides who coaches what team. The point is to give you the same thing we try to give every player — a clear picture of where you are, and a specific idea of what to work on next.",
+    ],
+  },
+  {
+    heading: "A CLUB THAT DEVELOPS EVERYONE",
+    body: [
+      "A club can't credibly claim to develop players while its coaches stand still. If we want players who are better in June than they were in August, the people teaching them have to be too. That's the whole idea here — coach development and player development as the same project, not separate ones.",
+    ],
+  },
+  {
+    heading: "THE EIGHT QUALITIES",
+    list: [
+      "Team Management",
+      "Game Model",
+      "Analysis",
+      "Maryland United Training Session",
+      "Match Preparation & Execution",
+      "Transformational Experience",
+      "Individual Development",
+      "Club Pathway",
+    ],
+    body: [
+      "Every quality has specific sub-standards you'll be measured against. Nothing is hidden — you'll see the exact criteria before you're ever evaluated on them.",
+    ],
+  },
+  {
+    heading: "HOW THE YEAR WORKS",
+    body: [
+      "Modules run sequentially from August through June, roughly one a month. Each of the eight quality modules asks for a recorded submission — a parent meeting, a training session, a match day, a film session. You record it, link it, and add context on what you'd like the reviewer to notice.",
+    ],
+  },
+  {
+    heading: "HOW THE SCALE WORKS",
+    scale: true,
+    body: [
+      "Three is the standard. Four isn't the expectation — it's what happens when a coach is ready to teach others. A 2 isn't a bad mark; it's a starting point with a direction attached. We'd rather see honest 2s that move than defensive 3s that don't.",
+    ],
+  },
+  {
+    heading: "WHAT WE ASK OF YOU",
+    body: [
+      "Submit real footage, not curated highlights. Rate yourself honestly — the gap between how you see yourself and how you're seen is the most useful thing this process produces, and it only works if you're candid. When feedback comes back, sit with it before responding to it.",
+      "That's the ask. It's the same one we make of our players every week.",
+    ],
+  },
+];
+
+export const INTRO_NEXT = {
+  heading: "WHAT COMES NEXT",
+  body: "Module 2 asks you to rate yourself on the same criteria your evaluator will use, before any evaluation happens. Module 3 asks what actually drives you as a coach. Both take real time — do them when you can think, not between two other things.",
+  cta: "Mark this as read to continue to Module 2.",
+};
+
+/* ---------------------------------------------------------------
    MODULES — sequential across the season, no fixed due dates.
 ----------------------------------------------------------------*/
 export const MODULES = [
   {
-    id: "m1",
+    id: "intro",
     num: "01",
+    window: "START HERE",
+    kind: "intro",
+    title: "Introduction to the Maryland United Coaching Excellence Platform",
+    focus: "What this program is, how the year works, and what we're asking of you.",
+  },
+  {
+    id: "m1",
+    num: "02",
     window: "AUGUST",
     kind: "selfEval",
     title: "Self-Evaluation of the Key Qualities of a Maryland United Coach",
@@ -185,15 +255,15 @@ export const MODULES = [
   },
   {
     id: "m2",
-    num: "02",
+    num: "03",
     window: "AUGUST",
     kind: "bucket",
-    title: "What Fills Your Bucket??",
+    title: "What Fills Your Bucket?",
     focus: "What drives you, what drains you, and what makes this job worth doing.",
   },
   {
     id: "m3",
-    num: "03",
+    num: "04",
     window: "SEPTEMBER",
     kind: "rubric",
     title: "Team Management",
@@ -205,7 +275,7 @@ export const MODULES = [
   },
   {
     id: "m4",
-    num: "04",
+    num: "05",
     window: "SEPTEMBER",
     kind: "rubric",
     title: "Game Model",
@@ -217,7 +287,7 @@ export const MODULES = [
   },
   {
     id: "m7",
-    num: "05",
+    num: "06",
     window: "OCTOBER",
     kind: "rubric",
     title: "Analysis",
@@ -229,7 +299,7 @@ export const MODULES = [
   },
   {
     id: "m5",
-    num: "06",
+    num: "07",
     window: "NOVEMBER",
     kind: "rubric",
     title: "Maryland United Training Session",
@@ -241,7 +311,7 @@ export const MODULES = [
   },
   {
     id: "m6",
-    num: "07",
+    num: "08",
     window: "DECEMBER",
     kind: "rubric",
     title: "Match Preparation & Execution",
@@ -253,7 +323,7 @@ export const MODULES = [
   },
   {
     id: "m9",
-    num: "08",
+    num: "09",
     window: "JANUARY – FEBRUARY",
     kind: "rubric",
     title: "Transformational Experience",
@@ -266,7 +336,7 @@ export const MODULES = [
   },
   {
     id: "m8",
-    num: "09",
+    num: "10",
     window: "MARCH – APRIL",
     kind: "rubric",
     title: "Individual Development",
@@ -278,7 +348,7 @@ export const MODULES = [
   },
   {
     id: "m10",
-    num: "10",
+    num: "11",
     window: "MAY – JUNE",
     kind: "rubric",
     title: "Club Pathway",
@@ -306,6 +376,7 @@ export const emptyBonding = () => [0, 1, 2, 3].map(() => ({ what: "", effective:
 
 export const defaultData = (coachName = "") => ({
   coachName,
+  intro: { read: false },
   selfEval: { ratings: {}, meta: {}, reflections: {}, submitted: false },
   bucket: { answers: {}, submitted: false },
   bonding: emptyBonding(),

@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { doc, getDoc, setDoc, collection, getDocs, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase/config";
 import { useAuth } from "../contexts/AuthContext";
@@ -12,6 +12,7 @@ import {
   emptyModuleState,
   emptyBonding,
 } from "../data/modules";
+import IntroModule from "../components/IntroModule";
 import SelfEvalModule from "../components/SelfEvalModule";
 import BucketModule from "../components/BucketModule";
 import RubricModule from "../components/RubricModule";
@@ -25,6 +26,7 @@ const hydrate = (remote, fallbackName) => {
   if (!remote) return base;
   return {
     coachName: remote.coachName || base.coachName,
+    intro: { ...base.intro, ...(remote.intro || {}) },
     selfEval: { ...base.selfEval, ...(remote.selfEval || {}) },
     bucket: { ...base.bucket, ...(remote.bucket || {}) },
     bonding:
@@ -79,6 +81,13 @@ export default function CoachingEvaluation() {
     })();
   }, [targetUid, profile, viewUid]);
 
+  const autoOpenedRef = useRef(false);
+  useEffect(() => {
+    if (!data || autoOpenedRef.current) return;
+    autoOpenedRef.current = true;
+    if (!data.intro?.read) setOpenId("intro");
+  }, [data]);
+
   const persist = useCallback(
     async (next) => {
       setData(next);
@@ -103,6 +112,7 @@ export default function CoachingEvaluation() {
 
   const updateModule = (id, patch) =>
     persist({ ...data, modules: { ...data.modules, [id]: { ...data.modules[id], ...patch } } });
+  const updateIntro = (patch) => persist({ ...data, intro: { ...data.intro, ...patch } });
   const updateSelfEval = (patch) => persist({ ...data, selfEval: { ...data.selfEval, ...patch } });
   const updateBucket = (patch) => persist({ ...data, bucket: { ...data.bucket, ...patch } });
   const setBonding = (idx, patch) => {
@@ -112,6 +122,7 @@ export default function CoachingEvaluation() {
   const setArchetype = (a) => persist({ ...data, archetype: a });
 
   const isSubmitted = (m) => {
+    if (m.kind === "intro") return data.intro?.read;
     if (m.kind === "selfEval") return data.selfEval.submitted;
     if (m.kind === "bucket") return data.bucket.submitted;
     return data.modules[m.id]?.submitted;
@@ -125,7 +136,7 @@ export default function CoachingEvaluation() {
 
   return (
     <div className="mu-page">
-      {openId !== "m1" && (
+      {openId !== "intro" && (
         <div aria-hidden="true">
           <div className="mu-checker" />
           <div className="mu-redline" />
@@ -239,7 +250,7 @@ export default function CoachingEvaluation() {
           const grade = gradeFor(m);
           return (
             <div key={m.id}>
-              {idx === 2 && <p className="mu-divider">THE RUBRIC</p>}
+              {idx === 3 && <p className="mu-divider">THE RUBRIC</p>}
               <article className={`mu-card ${open ? "mu-card-open" : ""}`}>
                 <button
                   className="mu-card-head"
@@ -258,6 +269,13 @@ export default function CoachingEvaluation() {
                   </span>
                 </button>
 
+                {open && m.kind === "intro" && (
+                  <IntroModule
+                    state={data.intro}
+                    update={updateIntro}
+                    onContinue={() => setOpenId("m1")}
+                  />
+                )}
                 {open && m.kind === "selfEval" && (
                   <SelfEvalModule state={data.selfEval} update={updateSelfEval} />
                 )}
