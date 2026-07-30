@@ -1,25 +1,15 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-
-    // Allowlist of approved coach emails. Doc ID = lowercased email.
-    // Readable only by a signed-in user checking their own email's entry.
-    // Not writable from the client — add/remove coaches from the Firebase console.
-    match /approvedCoaches/{email} {
-      allow read: if request.auth != null && request.auth.token.email.lower() == email;
-      allow write: if false;
-    }
-
-    // Each coach can read/write their own profile doc.
-    match /coaches/{uid} {
-      allow read, write: if request.auth != null && request.auth.uid == uid;
-    }
-
-    // Evaluation docs are keyed "{season}_{coachUid}".
-    // Only the owning coach can read/write their own evaluation doc.
-    match /coachEvaluations/{docId} {
+    // Document IDs are "{uid}_{season}". A coach can only read/write
+    // documents whose ID starts with their own uid, and only if the
+    // uid field inside the document matches their own uid too.
+    match /coachSeasons/{docId} {
       allow read, write: if request.auth != null
-                          && docId.matches('.*_' + request.auth.uid);
+        && docId.matches(request.auth.uid + '_.*')
+        && request.resource.data.uid == request.auth.uid;
+      allow read: if request.auth != null
+        && docId.matches(request.auth.uid + '_.*');
     }
   }
 }
