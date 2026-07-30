@@ -146,6 +146,7 @@ export default function CoachingEvaluation() {
       <header className="mu-header">
         <div className="mu-header-top">
           <div>
+            <img src="/crest.png" alt="Maryland United FC" className="mu-header-crest" />
             <p className="mu-eyebrow">MARYLAND UNITED · COACHING EXCELLENCE PATHWAY</p>
             <h1 className="mu-h1">
               SEASON <span className="mu-accent">{SEASON}</span>
@@ -159,6 +160,7 @@ export default function CoachingEvaluation() {
           {total} modules across the season — a self-evaluation, a look at what drives you, and eight
           qualities assessed through recorded submissions.
         </p>
+        <p className="mu-values">OUR VALUES · COMMITMENT. COURAGE. PASSION.</p>
 
         {isAdmin ? (
           <div className="mu-admin-bar">

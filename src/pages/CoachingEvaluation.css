@@ -39,6 +39,12 @@
   width: 100%;
   box-sizing: border-box;
 }
+.mu-header-crest {
+  display: block;
+  height: 56px;
+  width: auto;
+  margin: 0 0 12px;
+}
 .mu-eyebrow {
   margin: 0;
   font-family: "Barlow Condensed", sans-serif;
@@ -64,6 +70,14 @@
   font-size: 15px;
   line-height: 1.55;
   max-width: 520px;
+}
+.mu-values {
+  margin: 10px 0 0;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #f5b917;
 }
 .mu-name-input {
   margin-top: 16px;
