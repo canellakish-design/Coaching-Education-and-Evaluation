@@ -13,7 +13,7 @@ exists, how the year works, how the 1–4 scale works, and what's asked of
 coaches. Marking it read unlocks the rest of the season.
 
 **Module 2 — Self-Evaluation of the Key Qualities of a Maryland United Coach**
-Coaches rate themselves 1–4 on all 33 rubric items — the *same* items their
+Coaches rate themselves 1–4 on all 34 rubric items — the *same* items their
 evaluator rates in Modules 4–11. Eight of those items also ask a
 meta-perception question ("how do you think your players would rate you?").
 Two reflection prompts close it out.

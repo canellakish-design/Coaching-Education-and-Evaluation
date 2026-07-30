@@ -26,6 +26,7 @@ export const RUBRIC_ITEMS = [
   { id: "i2", module: "m3", coachText: "I proactively communicate with parents rather than only reacting to their questions or concerns.", evalText: "Communicates with parents proactively rather than only reactively." },
   { id: "i3", module: "m3", coachText: "My scheduling, rosters, and season logistics are consistently well-organized.", evalText: "Scheduling, rosters, and season logistics are consistently well-organized." },
   { id: "i4", module: "m3", meta: true, coachText: "I stay composed and professional when parent or player conflicts arise.", evalText: "Stays composed and professional when parent or player conflicts arise." },
+  { id: "i34", module: "m3", verifiable: true, coachText: "I manage PlayMetrics and double-check it for accuracy.", evalText: "Manages PlayMetrics and double-checks it for accuracy." },
 
   // Module 4 — Maryland United Game Model
   { id: "i5", module: "m4", coachText: "I can articulate our style of play in simple, memorable terms.", evalText: "Articulates the team's style of play in simple, memorable terms." },
