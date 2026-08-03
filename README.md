@@ -9,26 +9,26 @@ module list showing when each module is due — see "Schedule" below.
 
 ## Structure
 
-**Module 1 — Introduction to the Maryland United Coaching Excellence Platform**
+**Module 1 — 1-on-1 Meeting**
+A private, spoken kickoff meeting between coach and evaluator at the very
+start of the season — what to expect, what's ahead, a chance to ask
+questions. No written notes are collected in the app for this one — the
+coach just marks it completed once it's happened.
+
+**Module 2 — Introduction to the Maryland United Coaching Excellence Platform**
 A short onboarding read, stepped one section at a time: why the program
 exists, how the year works, how the 1–4 scale works, and what's asked of
 coaches. Marking it read unlocks the rest of the season.
 
-**Module 2 — Self-Evaluation**
+**Module 3 — Self-Evaluation**
 Coaches rate themselves 1–4 on all 40 rubric items — the *same* items their
 evaluator rates in Modules 5–9 and 11–13. Eight of those items also ask a
 meta-perception question ("how do you think your players would rate you?").
 Two reflection prompts close it out.
 
-**Module 3 — What Drives You?**
+**Module 4 — What Drives You?**
 Sixteen open-response prompts on motivation, goals, energy, and what makes the job worth
 doing. The evaluator reads these and assigns a coaching archetype.
-
-**Module 4 — 1-on-1 Meeting**
-A private, spoken check-in between coach and evaluator covering the
-self-evaluation and bucket answers, early in the season. No written notes
-are collected in the app for this one — the coach just marks it completed
-once it's happened.
 
 **Modules 5–9, 11–13 — The Rubric**
 Set the Standard, Maryland United Game Model, Analysis, Maryland United Training Session, Match
@@ -56,7 +56,7 @@ calendar is set.
 ## The paired-item design
 
 Every rubric item is stored with two wordings — `coachText` (first person, for
-Module 2) and `evalText` (third person, for the evaluator). Same construct,
+Module 3) and `evalText` (third person, for the evaluator). Same construct,
 same 1–4 anchors. This pairing is what makes the self-vs-evaluator gap
 meaningful; it's the standard approach in the coaching-leadership literature
 (cf. the Leadership Scale for Sports, which exists in parallel coach and
@@ -70,7 +70,7 @@ Accounts listed in `ADMIN_EMAILS` (`src/data/modules.js`) see an extra panel:
   gap means the coach rates themselves higher than you do.
 - **Meta-Perception** — self-rating vs. predicted player rating vs. your
   rating, for the 8 flagged items.
-- **Bucket Responses** — all Module 3 answers on one screen.
+- **What Drives You** — all Module 4 answers on one screen.
 - **Archetype** — assign one of six archetypes with your reasoning. Each
   carries a strength and its characteristic blind spots.
 

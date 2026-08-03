@@ -89,7 +89,7 @@ export default function IntroModule({ state, update, onContinue }) {
           </button>
         ) : (
           <button className="mu-btn mu-btn-solid" onClick={finish}>
-            MARK AS READ &amp; CONTINUE TO MODULE 2
+            MARK AS READ &amp; CONTINUE TO MODULE 3
           </button>
         )}
       </div>

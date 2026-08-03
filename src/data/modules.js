@@ -278,11 +278,11 @@ export const INTRO_SECTIONS = [
 export const INTRO_NEXT = {
   heading: "WHAT COMES NEXT",
   body: [
-    { strong: "Module 2", text: " asks you to rate yourself on the exact criteria your evaluator will use — before any evaluation happens." },
-    { strong: "Module 3", text: " asks what actually drives you as a coach." },
+    { strong: "Module 3", text: " asks you to rate yourself on the exact criteria your evaluator will use — before any evaluation happens." },
+    { strong: "Module 4", text: " asks what actually drives you as a coach." },
     "Both take real thought. Do them when you can think, not between two other things.",
   ],
-  cta: "Mark this as read to continue to Module 2.",
+  cta: "Mark this as read to continue to Module 3.",
 };
 
 /* ---------------------------------------------------------------
@@ -290,8 +290,16 @@ export const INTRO_NEXT = {
 ----------------------------------------------------------------*/
 export const MODULES = [
   {
-    id: "intro",
+    id: "meeting1",
     num: "01",
+    window: "AUGUST",
+    kind: "meeting",
+    title: "1-on-1 Meeting",
+    focus: "A private kickoff meeting with your evaluator to start the season — what to expect, what's ahead, and a chance to ask questions before you dive in.",
+  },
+  {
+    id: "intro",
+    num: "02",
     window: "START HERE",
     kind: "intro",
     title: "Introduction to the Maryland United Coaching Excellence Platform",
@@ -299,7 +307,7 @@ export const MODULES = [
   },
   {
     id: "m1",
-    num: "02",
+    num: "03",
     window: "AUGUST",
     kind: "selfEval",
     title: "Self-Evaluation",
@@ -307,19 +315,11 @@ export const MODULES = [
   },
   {
     id: "m2",
-    num: "03",
+    num: "04",
     window: "AUGUST",
     kind: "bucket",
     title: "What Drives You?",
     focus: "What drives you, what drains you, and what makes this job worth doing.",
-  },
-  {
-    id: "meeting1",
-    num: "04",
-    window: "AUGUST",
-    kind: "meeting",
-    title: "1-on-1 Meeting",
-    focus: "A private check-in with your evaluator to talk through your self-evaluation and bucket answers before the season gets going.",
   },
   {
     id: "m3",
