@@ -460,16 +460,17 @@ export const RUBRIC_MODULES = MODULES.filter((m) => m.kind === "rubric");
 
 // Schedule shown above the module list — same modules, two tracks by team
 // age (see src/data/teams.js). Dates confirmed so far only cover the
-// U9-U14 track for Modules 1-4, 6-7 (Module 5, Game Model, is still
-// read-only/draft and has no date yet); U15-U19 dates aren't set yet
-// either, so they're TBD across the board (default fallback in
+// U9-U14 track for Modules 1-8 (Module 5, Game Model, is still
+// draft/locked for coaches despite having a date); U15-U19 dates aren't
+// set yet, so they're TBD across the board (default fallback in
 // CoachingEvaluation.jsx).
 export const SCHEDULE_DATES = {
   meeting1: { young: "AUG 14" },
   intro: { young: "AUG 14" },
   m1: { young: "AUG 14" },
   m2: { young: "AUG 14" },
-  m3: { young: "AUG 20" },
+  m4: { young: "AUG 20" },
+  m3: { young: "AUG 17" },
   m8: { young: "AUG 31" },
 };
 
