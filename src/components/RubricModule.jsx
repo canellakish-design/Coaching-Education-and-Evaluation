@@ -1,4 +1,4 @@
-import { itemsForModule, GRADE_SCALE, SUBMISSION_STEPS } from "../data/modules";
+import { itemsForModule, GRADE_SCALE, STATUS_OPTIONS, SUBMISSION_STEPS } from "../data/modules";
 import RatingRow from "./RatingRow";
 
 export default function RubricModule({ module: m, state, update, bonding, setBonding, isAdmin }) {
@@ -86,6 +86,17 @@ export default function RubricModule({ module: m, state, update, bonding, setBon
             RECORDING · <span className="mu-accent">{m.recording2.format.toUpperCase()}</span>
           </p>
           <p className="mu-recording-desc">{m.recording2.desc}</p>
+          {m.recording2.tip && <p className="mu-recording-tip">{m.recording2.tip}</p>}
+          {m.recording2.nonNegotiables && (
+            <>
+              <p className="mu-section-label">NON-NEGOTIABLES</p>
+              <ul className="mu-ul">
+                {m.recording2.nonNegotiables.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </>
+          )}
 
           <p className="mu-section-label">HOW TO SUBMIT</p>
           <ol className="mu-steps">
@@ -167,6 +178,21 @@ export default function RubricModule({ module: m, state, update, bonding, setBon
         <div className="mu-subbox mu-admin-box">
           <p className="mu-section-label">EVALUATION · EVALUATOR ONLY</p>
 
+          <p className="mu-section-label" style={{ marginTop: 0 }}>
+            STATUS
+          </p>
+          <div className="mu-grade-row">
+            {STATUS_OPTIONS.map((s) => (
+              <button
+                key={s.value}
+                className={`mu-grade-chip ${state.status === s.value ? "mu-grade-chip-active" : ""}`}
+                onClick={() => update({ status: state.status === s.value ? null : s.value })}
+              >
+                {s.label}
+              </button>
+            ))}
+          </div>
+
           {items.map((item) => (
             <RatingRow
               key={item.id}
@@ -191,12 +217,6 @@ export default function RubricModule({ module: m, state, update, bonding, setBon
               </button>
             ))}
           </div>
-          <textarea
-            className="mu-input mu-textarea"
-            placeholder="Evaluator feedback — strengths, growth areas, next steps"
-            value={state.evalNotes}
-            onChange={(e) => update({ evalNotes: e.target.value })}
-          />
         </div>
       )}
     </div>

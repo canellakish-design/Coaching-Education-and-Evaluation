@@ -9,11 +9,14 @@ import {
   GRADE_SCALE,
   ADMIN_EMAILS,
   CREATOR_EMAILS,
+  STATUS_OPTIONS,
+  SCHEDULE_DATES,
   defaultData,
   emptyModuleState,
   emptyBonding,
 } from "../data/modules";
 import IntroModule from "../components/IntroModule";
+import OneOnOneModule from "../components/OneOnOneModule";
 import SelfEvalModule from "../components/SelfEvalModule";
 import BucketModule from "../components/BucketModule";
 import RubricModule from "../components/RubricModule";
@@ -29,6 +32,7 @@ const hydrate = (remote, fallbackName) => {
     coachName: remote.coachName || base.coachName,
     lastOpenId: remote.lastOpenId || base.lastOpenId,
     intro: { ...base.intro, ...(remote.intro || {}) },
+    meeting: { ...base.meeting, ...(remote.meeting || {}) },
     selfEval: { ...base.selfEval, ...(remote.selfEval || {}) },
     bucket: { ...base.bucket, ...(remote.bucket || {}) },
     bonding:
@@ -109,6 +113,7 @@ export default function CoachingEvaluation() {
   const updateModule = (id, patch) =>
     persist({ ...data, modules: { ...data.modules, [id]: { ...data.modules[id], ...patch } } });
   const updateIntro = (patch) => persist({ ...data, intro: { ...data.intro, ...patch } });
+  const updateMeeting = (patch) => persist({ ...data, meeting: { ...data.meeting, ...patch } });
   const updateSelfEval = (patch) => persist({ ...data, selfEval: { ...data.selfEval, ...patch } });
   const updateBucket = (patch) => persist({ ...data, bucket: { ...data.bucket, ...patch } });
   const setBonding = (idx, patch) => {
@@ -128,6 +133,7 @@ export default function CoachingEvaluation() {
 
   const isSubmitted = (m) => {
     if (m.kind === "intro") return data.intro?.read;
+    if (m.kind === "meeting") return data.meeting?.completed;
     if (m.kind === "selfEval") return data.selfEval.submitted;
     if (m.kind === "bucket") return data.bucket.submitted;
     const ms = data.modules[m.id];
@@ -136,6 +142,8 @@ export default function CoachingEvaluation() {
   };
   const gradeFor = (m) =>
     m.kind === "rubric" ? GRADE_SCALE.find((g) => g.value === data.modules[m.id]?.grade) : null;
+  const statusFor = (m) =>
+    m.kind === "rubric" ? STATUS_OPTIONS.find((s) => s.value === data.modules[m.id]?.status) : null;
 
   const total = MODULES.length;
   const submittedCount = MODULES.filter(isSubmitted).length;
@@ -254,14 +262,44 @@ export default function CoachingEvaluation() {
         )}
       </section>
 
+      <section className="mu-schedule-section">
+        <p className="mu-section-label">SCHEDULE</p>
+        <p className="mu-recording-desc">
+          Same modules for every coach — the date just depends on which age group you coach.
+        </p>
+        <div className="mu-schedule-table-wrap">
+          <table className="mu-schedule-table">
+            <thead>
+              <tr>
+                <th>MODULE</th>
+                <th>U9–U14</th>
+                <th>U15–U19</th>
+              </tr>
+            </thead>
+            <tbody>
+              {MODULES.map((m) => (
+                <tr key={m.id}>
+                  <td>
+                    {m.num} · {m.title}
+                  </td>
+                  <td>{SCHEDULE_DATES[m.id]?.young || "TBD"}</td>
+                  <td>{SCHEDULE_DATES[m.id]?.old || "TBD"}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       <main className="mu-main">
         {(openId ? MODULES.filter((m) => m.id === openId) : MODULES).map((m, idx) => {
           const open = openId === m.id;
           const grade = gradeFor(m);
+          const status = statusFor(m);
           const locked = m.draft && !isCreator;
           return (
             <div key={m.id}>
-              {idx === 3 && <p className="mu-divider">THE RUBRIC</p>}
+              {idx === 4 && <p className="mu-divider">THE RUBRIC</p>}
               <article className={`mu-card ${open ? "mu-card-open" : ""} ${locked ? "mu-card-disabled" : ""}`}>
                 <button
                   className="mu-card-head"
@@ -271,10 +309,7 @@ export default function CoachingEvaluation() {
                 >
                   <span className="mu-card-num">{m.num}</span>
                   <span className="mu-card-title-block">
-                    <span className="mu-card-window">
-                      {m.window}
-                      {m.dueDate && ` · DUE ${m.dueDate}`}
-                    </span>
+                    <span className="mu-card-window">{m.window}</span>
                     <span className="mu-card-title">{m.title.toUpperCase()}</span>
                   </span>
                   <span className="mu-card-pills">
@@ -285,6 +320,13 @@ export default function CoachingEvaluation() {
                     )}
                     {isSubmitted(m) && <span className="mu-pill mu-pill-gold">✓</span>}
                     {grade && <span className="mu-pill mu-pill-red">{grade.label.toUpperCase()}</span>}
+                    {status && (
+                      <span
+                        className={`mu-pill ${status.value === "complete" ? "mu-pill-gold" : "mu-pill-red"}`}
+                      >
+                        {status.label}
+                      </span>
+                    )}
                     {!locked && <span className="mu-toggle-icon">{open ? "–" : "+"}</span>}
                   </span>
                 </button>
@@ -295,6 +337,14 @@ export default function CoachingEvaluation() {
                     update={updateIntro}
                     onContinue={() => openModule("m1")}
                   />
+                )}
+                {open && m.kind === "meeting" && (
+                  <OneOnOneModule state={data.meeting} update={updateMeeting} />
+                )}
+                {open && m.kind === "placeholder" && (
+                  <div className="mu-card-body">
+                    <p className="mu-focus">{m.focus}</p>
+                  </div>
                 )}
                 {open && m.kind === "selfEval" && (
                   <SelfEvalModule state={data.selfEval} update={updateSelfEval} />

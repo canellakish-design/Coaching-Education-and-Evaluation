@@ -1,9 +1,11 @@
 # Maryland United — Coaching Excellence Pathway
 
 A standalone Vite + React app with Firebase Authentication (Google Sign-In,
-gated by an approved-coach allowlist) and Firestore. Eleven modules across the
-season: an introduction, a self-evaluation, a motivational profile, and eight
-coaching qualities assessed through recorded submissions.
+gated by an approved-coach allowlist) and Firestore. Thirteen modules across
+the season: an introduction, a self-evaluation, a motivational profile, a
+1-on-1 meeting, a midseason feedback placeholder, and eight coaching
+qualities assessed through recorded submissions. A schedule sits above the
+module list showing when each module is due — see "Schedule" below.
 
 ## Structure
 
@@ -14,7 +16,7 @@ coaches. Marking it read unlocks the rest of the season.
 
 **Module 2 — Self-Evaluation**
 Coaches rate themselves 1–4 on all 34 rubric items — the *same* items their
-evaluator rates in Modules 4–11. Eight of those items also ask a
+evaluator rates in Modules 5–9 and 11–13. Eight of those items also ask a
 meta-perception question ("how do you think your players would rate you?").
 Two reflection prompts close it out.
 
@@ -22,11 +24,34 @@ Two reflection prompts close it out.
 Sixteen open-response prompts on motivation, goals, energy, and what makes the job worth
 doing. The evaluator reads these and assigns a coaching archetype.
 
-**Modules 4–11 — The Rubric**
+**Module 4 — 1-on-1 Meeting**
+A private, spoken check-in between coach and evaluator covering the
+self-evaluation and bucket answers, early in the season. No written notes
+are collected in the app for this one — the coach just marks it completed
+once it's happened.
+
+**Modules 5–9, 11–13 — The Rubric**
 Set the Standard, Maryland United Game Model, Analysis, Maryland United Training Session, Match
 Preparation & Execution, Transformational Experience (includes the Team
 Bonding exercise), Individual Development, Club Pathway. Each has a recorded
-submission and per-item evaluator grading.
+submission and per-item evaluator grading. There's no per-module written
+feedback field — the evaluator gives spoken feedback instead, via the
+1-on-1 meeting.
+
+**Module 10 — Midseason Feedback**
+Placeholder module (content TBD) sitting between Match Preparation &
+Execution and Transformational Experience, around January.
+
+## Schedule
+
+A schedule table sits above the module list, visible to every coach. It
+lists all thirteen modules against two date columns — U9–U14 and U15–U19 —
+since the two age bands don't run the same season calendar (see
+`src/data/teams.js` for the team-to-track mapping). Modules don't carry
+their own due date anymore; `SCHEDULE_DATES` in `src/data/modules.js` is
+the single source of truth, keyed by module id. Only Modules 1–5 have
+confirmed dates so far — everything else shows "TBD" until the rest of the
+calendar is set.
 
 ## The paired-item design
 
@@ -49,11 +74,15 @@ Accounts listed in `ADMIN_EMAILS` (`src/data/modules.js`) see an extra panel:
 - **Archetype** — assign one of six archetypes with your reasoning. Each
   carries a strength and its characteristic blind spots.
 
-Admins also get a coach selector to view and grade any coach's record.
+Admins also get a coach selector to view and grade any coach's record. Inside
+each rubric module's evaluator box, the admin sets a COMPLETE / INCOMPLETE
+(LATE) status per module — separate from the coach's own "submitted" toggle
+and shown as a pill on the module card.
 
 Archetypes are a coaching-style vocabulary for framing feedback, **not** a
-clinical or psychometric assessment. Coaches never see their archetype,
-the gap analysis, or evaluator notes in the app.
+clinical or psychometric assessment. Coaches never see their archetype or
+the gap analysis in the app — evaluator feedback is spoken, delivered
+through the 1-on-1 meeting rather than written per module.
 
 ## Local setup
 
@@ -81,9 +110,16 @@ npm run dev
 - `approvedCoaches/{email}` — allowlist.
 - `coaches/{uid}` — `{ name, email, createdAt }`, created on first sign-in.
 - `coachEvaluations/{season}_{uid}` — one doc per coach per season:
-  `intro` (read), `selfEval` (ratings, meta, reflections), `bucket` (answers),
-  `bonding` (4 entries), `modules` (per-module grade, itemGrades, notes,
-  submission), and `archetype`.
+  `intro` (read), `meeting` (completed), `selfEval` (ratings, meta,
+  reflections), `bucket` (answers), `bonding` (4 entries), `modules`
+  (per-module grade, status, itemGrades, submission links/context notes),
+  and `archetype`.
+
+`src/data/teams.js` holds the season's team roster (name, birth-year window,
+coaches, email, schedule track) — the actual coaches who log into the app.
+It's reference data for the schedule; it doesn't yet drive `approvedCoaches`
+automatically, so add each coach's email there separately per the Firebase
+setup steps above.
 
 ## Deploying to Netlify
 

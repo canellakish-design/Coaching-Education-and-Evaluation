@@ -271,7 +271,6 @@ export const MODULES = [
     id: "intro",
     num: "01",
     window: "START HERE",
-    dueDate: "AUG 10",
     kind: "intro",
     title: "Introduction to the Maryland United Coaching Excellence Platform",
     focus: "What this program is, how the year works, and what we're asking of you.",
@@ -280,7 +279,6 @@ export const MODULES = [
     id: "m1",
     num: "02",
     window: "AUGUST",
-    dueDate: "AUG 10",
     kind: "selfEval",
     title: "Self-Evaluation",
     focus: "Rate yourself against the same standards your evaluator will use — before they do.",
@@ -289,16 +287,22 @@ export const MODULES = [
     id: "m2",
     num: "03",
     window: "AUGUST",
-    dueDate: "AUG 10",
     kind: "bucket",
     title: "What Fills Your Bucket?",
     focus: "What drives you, what drains you, and what makes this job worth doing.",
   },
   {
-    id: "m3",
+    id: "meeting1",
     num: "04",
+    window: "AUGUST",
+    kind: "meeting",
+    title: "1-on-1 Meeting",
+    focus: "A private check-in with your evaluator to talk through your self-evaluation and bucket answers before the season gets going.",
+  },
+  {
+    id: "m3",
+    num: "05",
     window: "SEPTEMBER",
-    dueDate: "AUG 20",
     kind: "rubric",
     title: "Set the Standard",
     focus: "Standards, communication, and organization that set the tone for the season.",
@@ -313,11 +317,13 @@ export const MODULES = [
     recording2: {
       format: "Standards meeting with players — office in Liberty, one per team",
       desc: "Record a standards meeting with your players, held in the office in Liberty, for every team you coach. Set expectations directly with the team — behavior, effort, and conduct for the season. If you coach more than one team, submit a separate link for each below.",
+      tip: "It's your team to manage — this meeting is where that job starts. Ground it in the same three things we ask of every coach: commitment, courage, passion. Before you ask your players, answer it yourself: what does commitment look like to you? Then make the standard concrete, not just a feeling.",
+      nonNegotiables: ["Training gear", "Attendance"],
     },
   },
   {
     id: "m4",
-    num: "05",
+    num: "06",
     window: "SEPTEMBER",
     draft: true,
     kind: "rubric",
@@ -330,7 +336,7 @@ export const MODULES = [
   },
   {
     id: "m7",
-    num: "06",
+    num: "07",
     window: "OCTOBER",
     draft: true,
     kind: "rubric",
@@ -343,7 +349,7 @@ export const MODULES = [
   },
   {
     id: "m5",
-    num: "07",
+    num: "08",
     window: "NOVEMBER",
     draft: true,
     kind: "rubric",
@@ -356,7 +362,7 @@ export const MODULES = [
   },
   {
     id: "m6",
-    num: "08",
+    num: "09",
     window: "DECEMBER",
     draft: true,
     kind: "rubric",
@@ -368,8 +374,17 @@ export const MODULES = [
     },
   },
   {
+    id: "midseason",
+    num: "10",
+    window: "JANUARY",
+    draft: true,
+    kind: "placeholder",
+    title: "Midseason Feedback",
+    focus: "TBD",
+  },
+  {
     id: "m9",
-    num: "09",
+    num: "11",
     window: "JANUARY – FEBRUARY",
     draft: true,
     kind: "rubric",
@@ -383,7 +398,7 @@ export const MODULES = [
   },
   {
     id: "m8",
-    num: "10",
+    num: "12",
     window: "MARCH – APRIL",
     draft: true,
     kind: "rubric",
@@ -396,7 +411,7 @@ export const MODULES = [
   },
   {
     id: "m10",
-    num: "11",
+    num: "13",
     window: "MAY – JUNE",
     draft: true,
     kind: "rubric",
@@ -411,8 +426,27 @@ export const MODULES = [
 
 export const RUBRIC_MODULES = MODULES.filter((m) => m.kind === "rubric");
 
+// Schedule shown above the module list — same modules, two tracks by team
+// age (see src/data/teams.js). Dates confirmed so far only cover Modules
+// 1-5; everything else is TBD until the rest of the calendar is set.
+export const SCHEDULE_DATES = {
+  intro: { young: "AUG 10", old: "AUG 10" },
+  m1: { young: "AUG 10", old: "AUG 10" },
+  m2: { young: "AUG 10", old: "AUG 10" },
+  meeting1: { young: "AUG 10", old: "AUG 10" },
+  m3: { young: "AUG 20", old: "AUG 20" },
+};
+
+// Evaluator-set completion status per module, separate from the coach's own
+// "submitted" toggle — this is the evaluator's call, not the coach's.
+export const STATUS_OPTIONS = [
+  { value: "complete", label: "COMPLETE" },
+  { value: "incomplete", label: "INCOMPLETE (LATE)" },
+];
+
 export const emptyModuleState = () => ({
   grade: null,
+  status: null,
   evalNotes: "",
   submitted: false,
   subDate: "",
@@ -433,6 +467,7 @@ export const defaultData = (coachName = "") => ({
   coachName,
   lastOpenId: null,
   intro: { read: false },
+  meeting: { completed: false },
   selfEval: { ratings: {}, meta: {}, reflections: {}, submitted: false },
   bucket: { answers: {}, submitted: false },
   bonding: emptyBonding(),
