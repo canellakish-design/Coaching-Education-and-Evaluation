@@ -39,6 +39,9 @@ export const RUBRIC_ITEMS = [
   { id: "i3", module: "m3", coachText: "My scheduling, rosters, and season logistics are consistently well-organized.", evalText: "Scheduling, rosters, and season logistics are consistently well-organized." },
   { id: "i4", module: "m3", meta: true, coachText: "I stay composed and professional when parent or player conflicts arise.", evalText: "Stays composed and professional when parent or player conflicts arise." },
   { id: "i34", module: "m3", verifiable: true, coachText: "I manage PlayMetrics and double-check it for accuracy.", evalText: "Manages PlayMetrics and double-checks it for accuracy." },
+  { id: "i35", module: "m3", coachText: "I check my email regularly.", evalText: "Checks email regularly." },
+  { id: "i36", module: "m3", coachText: "I respond to messages in a timely manner.", evalText: "Responds to messages in a timely manner." },
+  { id: "i37", module: "m3", coachText: "I contact the appropriate person on technical staff for the task at hand.", evalText: "Contacts the appropriate person on technical staff for the task at hand." },
 
   // Module 4 — Maryland United Game Model
   { id: "i5", module: "m4", coachText: "I can articulate our style of play in simple, memorable terms.", evalText: "Articulates the team's style of play in simple, memorable terms." },
@@ -57,6 +60,7 @@ export const RUBRIC_ITEMS = [
   { id: "i14", module: "m6", coachText: "My team talks are clear, concise, and player-focused.", evalText: "Team talks are clear, concise, and player-focused." },
   { id: "i15", module: "m6", coachText: "I make timely, well-reasoned adjustments during matches.", evalText: "Makes timely, well-reasoned in-match adjustments." },
   { id: "i16", module: "m6", meta: true, coachText: "I stay level-headed and set the emotional tone on the sideline.", evalText: "Stays level-headed and sets the emotional tone on the sideline." },
+  { id: "i38", module: "m6", coachText: "I work as a colleague with other staff on competitive nights.", evalText: "Works as a colleague with other staff on competitive nights." },
 
   // Module 7 — Analysis
   { id: "i17", module: "m7", coachText: "I do thorough, specific prep on opponent tendencies.", evalText: "Opponent prep is thorough and specific to tendencies." },
@@ -82,6 +86,8 @@ export const RUBRIC_ITEMS = [
   { id: "i31", module: "m10", coachText: "I understand club pathway options well enough to guide families.", evalText: "Understands club pathway options well enough to guide families." },
   { id: "i32", module: "m10", coachText: "I actively advocate for my players' next steps within the club.", evalText: "Advocates for players' next steps within the club." },
   { id: "i33", module: "m10", meta: true, coachText: "I communicate pathway conversations early enough to avoid surprises.", evalText: "Communicates pathway conversations early enough to avoid surprises." },
+  { id: "i39", module: "m10", coachText: "I actively help my players through the recruiting process.", evalText: "Actively helps players through the recruiting process." },
+  { id: "i40", module: "m10", verifiable: true, coachText: "I hold a one-on-one meeting with every sophomore to discuss recruiting.", evalText: "Holds a one-on-one meeting with every sophomore to discuss recruiting." },
 ];
 
 export const itemsForModule = (moduleId) => RUBRIC_ITEMS.filter((i) => i.module === moduleId);
