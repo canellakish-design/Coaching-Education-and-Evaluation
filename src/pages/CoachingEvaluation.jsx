@@ -261,7 +261,10 @@ export default function CoachingEvaluation() {
                 >
                   <span className="mu-card-num">{m.num}</span>
                   <span className="mu-card-title-block">
-                    <span className="mu-card-window">{m.window}</span>
+                    <span className="mu-card-window">
+                      {m.window}
+                      {m.dueDate && ` · DUE ${m.dueDate}`}
+                    </span>
                     <span className="mu-card-title">{m.title.toUpperCase()}</span>
                   </span>
                   <span className="mu-card-pills">

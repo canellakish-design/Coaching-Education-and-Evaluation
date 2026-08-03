@@ -1,4 +1,4 @@
-import { itemsForModule, GRADE_SCALE } from "../data/modules";
+import { itemsForModule, GRADE_SCALE, SUBMISSION_STEPS } from "../data/modules";
 import RatingRow from "./RatingRow";
 
 export default function RubricModule({ module: m, state, update, bonding, setBonding, isAdmin }) {
@@ -24,10 +24,18 @@ export default function RubricModule({ module: m, state, update, bonding, setBon
           RECORDING · <span className="mu-accent">{m.recording.format.toUpperCase()}</span>
         </p>
         <p className="mu-recording-desc">{m.recording.desc}</p>
+
+        <p className="mu-section-label">HOW TO SUBMIT</p>
+        <ol className="mu-steps">
+          {SUBMISSION_STEPS.map((step, i) => (
+            <li key={i}>{step}</li>
+          ))}
+        </ol>
+
         <div className="mu-form-col">
-          <input
-            className="mu-input"
-            placeholder="Video link (Veo, Hudl, Drive…)"
+          <textarea
+            className="mu-input mu-textarea"
+            placeholder="Video link(s) — one per team, one per line (Drive, Veo, Hudl…)"
             value={state.subLink}
             onChange={(e) => update({ subLink: e.target.value })}
           />

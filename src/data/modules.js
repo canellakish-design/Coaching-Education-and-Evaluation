@@ -11,6 +11,14 @@ export const GRADE_SCALE = [
   { value: 4, label: "Exemplary", desc: "Models the standard and can mentor other coaches." },
 ];
 
+// How to submit a recording — shown in every rubric module's submission box.
+export const SUBMISSION_STEPS = [
+  "Open Google Drive using your Maryland United Google account.",
+  "Upload your recording (or record straight into Drive from your phone).",
+  'Right-click the file → Share → set access to "Anyone with the link" (Viewer).',
+  "Copy the link and paste it below. Coaching more than one team? Paste one link per team, each on its own line.",
+];
+
 /* ---------------------------------------------------------------
    RUBRIC ITEMS
    Each item is rated twice: once by the coach in Module 1 (coachText),
@@ -21,7 +29,7 @@ export const GRADE_SCALE = [
    verifiable: true -> objectively checkable, not a judgment call
 ----------------------------------------------------------------*/
 export const RUBRIC_ITEMS = [
-  // Module 3 — Team Management
+  // Module 3 — Set the Standard (Team Management)
   { id: "i1", module: "m3", coachText: "I clearly define and communicate expectations for behavior, effort, and conduct at the start of the season.", evalText: "Defines and communicates expectations for behavior, effort, and conduct at the start of the season." },
   { id: "i2", module: "m3", coachText: "I proactively communicate with parents rather than only reacting to their questions or concerns.", evalText: "Communicates with parents proactively rather than only reactively." },
   { id: "i3", module: "m3", coachText: "My scheduling, rosters, and season logistics are consistently well-organized.", evalText: "Scheduling, rosters, and season logistics are consistently well-organized." },
@@ -209,7 +217,7 @@ export const INTRO_SECTIONS = [
   {
     heading: "THE EIGHT QUALITIES",
     list: [
-      "Team Management",
+      "Set the Standard",
       "Maryland United Game Model",
       "Analysis",
       "Maryland United Training Session",
@@ -259,6 +267,7 @@ export const MODULES = [
     id: "intro",
     num: "01",
     window: "START HERE",
+    dueDate: "AUG 10",
     kind: "intro",
     title: "Introduction to the Maryland United Coaching Excellence Platform",
     focus: "What this program is, how the year works, and what we're asking of you.",
@@ -267,6 +276,7 @@ export const MODULES = [
     id: "m1",
     num: "02",
     window: "AUGUST",
+    dueDate: "AUG 10",
     kind: "selfEval",
     title: "Self-Evaluation",
     focus: "Rate yourself against the same standards your evaluator will use — before they do.",
@@ -275,6 +285,7 @@ export const MODULES = [
     id: "m2",
     num: "03",
     window: "AUGUST",
+    dueDate: "AUG 10",
     kind: "bucket",
     title: "What Fills Your Bucket?",
     focus: "What drives you, what drains you, and what makes this job worth doing.",
@@ -283,12 +294,13 @@ export const MODULES = [
     id: "m3",
     num: "04",
     window: "SEPTEMBER",
+    dueDate: "AUG 20",
     kind: "rubric",
-    title: "Team Management",
+    title: "Set the Standard",
     focus: "Standards, communication, and organization that set the tone for the season.",
     recording: {
-      format: "First parent meeting",
-      desc: "Record your first parent meeting of the season. Record and submit.",
+      format: "First parent meeting — one per team",
+      desc: "Record your first parent meeting of the season for every team you coach. If you coach more than one team, submit a separate link for each below.",
     },
   },
   {
