@@ -8,6 +8,7 @@ import {
   RUBRIC_MODULES,
   GRADE_SCALE,
   ADMIN_EMAILS,
+  CREATOR_EMAILS,
   defaultData,
   emptyModuleState,
   emptyBonding,
@@ -42,6 +43,7 @@ const hydrate = (remote, fallbackName) => {
 export default function CoachingEvaluation() {
   const { user, profile, logout } = useAuth();
   const isAdmin = ADMIN_EMAILS.includes((user?.email || "").toLowerCase());
+  const isCreator = CREATOR_EMAILS.includes((user?.email || "").toLowerCase());
 
   const [data, setData] = useState(null);
   const [openId, setOpenId] = useState(null);
@@ -119,7 +121,10 @@ export default function CoachingEvaluation() {
     setOpenId(id);
     if (data.lastOpenId !== id) persist({ ...data, lastOpenId: id });
   };
-  const toggleOpen = (m) => (openId === m.id ? setOpenId(null) : openModule(m.id));
+  const toggleOpen = (m) => {
+    if (m.draft && !isCreator) return;
+    return openId === m.id ? setOpenId(null) : openModule(m.id);
+  };
 
   const isSubmitted = (m) => {
     if (m.kind === "intro") return data.intro?.read;
@@ -161,6 +166,7 @@ export default function CoachingEvaluation() {
           qualities assessed through recorded submissions.
         </p>
         <p className="mu-values">OUR VALUES · COMMITMENT. COURAGE. PASSION.</p>
+        {isCreator && <p className="mu-creator-note">CREATOR VIEW · DRAFT MODULES UNLOCKED</p>}
 
         {isAdmin ? (
           <div className="mu-admin-bar">
@@ -250,14 +256,16 @@ export default function CoachingEvaluation() {
         {(openId ? MODULES.filter((m) => m.id === openId) : MODULES).map((m, idx) => {
           const open = openId === m.id;
           const grade = gradeFor(m);
+          const locked = m.draft && !isCreator;
           return (
             <div key={m.id}>
               {idx === 3 && <p className="mu-divider">THE RUBRIC</p>}
-              <article className={`mu-card ${open ? "mu-card-open" : ""}`}>
+              <article className={`mu-card ${open ? "mu-card-open" : ""} ${locked ? "mu-card-disabled" : ""}`}>
                 <button
                   className="mu-card-head"
                   onClick={() => toggleOpen(m)}
                   aria-expanded={open}
+                  disabled={locked}
                 >
                   <span className="mu-card-num">{m.num}</span>
                   <span className="mu-card-title-block">
@@ -268,12 +276,14 @@ export default function CoachingEvaluation() {
                     <span className="mu-card-title">{m.title.toUpperCase()}</span>
                   </span>
                   <span className="mu-card-pills">
+                    {locked && <span className="mu-pill mu-pill-soon">COMING SOON</span>}
+                    {m.draft && isCreator && <span className="mu-pill mu-pill-draft">DRAFT</span>}
                     {!open && data.lastOpenId === m.id && (
                       <span className="mu-pill mu-pill-continue">CONTINUE</span>
                     )}
                     {isSubmitted(m) && <span className="mu-pill mu-pill-gold">✓</span>}
                     {grade && <span className="mu-pill mu-pill-red">{grade.label.toUpperCase()}</span>}
-                    <span className="mu-toggle-icon">{open ? "–" : "+"}</span>
+                    {!locked && <span className="mu-toggle-icon">{open ? "–" : "+"}</span>}
                   </span>
                 </button>
 

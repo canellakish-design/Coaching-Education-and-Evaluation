@@ -79,6 +79,14 @@
   letter-spacing: 2px;
   color: #f5b917;
 }
+.mu-creator-note {
+  margin: 6px 0 0;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #d22730;
+}
 .mu-name-input {
   margin-top: 16px;
   background: transparent;
@@ -209,6 +217,9 @@
 .mu-card-open {
   border-color: #f5b917;
 }
+.mu-card-disabled {
+  opacity: 0.55;
+}
 .mu-card-head {
   display: flex;
   align-items: center;
@@ -220,6 +231,9 @@
   padding: 14px 16px;
   cursor: pointer;
   font-family: "Archivo", sans-serif;
+}
+.mu-card-head:disabled {
+  cursor: not-allowed;
 }
 .mu-card-num {
   font-family: "Barlow Condensed", sans-serif;
@@ -271,6 +285,16 @@
   background: transparent;
   border: 1px solid #f5b917;
   color: #f5b917;
+}
+.mu-pill-soon {
+  background: transparent;
+  border: 1px solid #2E2E2E;
+  color: #6B6B6B;
+}
+.mu-pill-draft {
+  background: transparent;
+  border: 1px solid #d22730;
+  color: #d22730;
 }
 .mu-toggle-icon {
   color: #6B6B6B;

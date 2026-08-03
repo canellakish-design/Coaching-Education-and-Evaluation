@@ -4,6 +4,10 @@ export const SEASON = "2026\u201327";
 // the self-vs-evaluator gap view, and archetype assignment.
 export const ADMIN_EMAILS = ["canellakish@gmail.com"];
 
+// Creator accounts. Only these emails can open modules marked draft: true —
+// everyone else sees them listed but can't click into them yet.
+export const CREATOR_EMAILS = ["canellakish@gmail.com"];
+
 export const GRADE_SCALE = [
   { value: 1, label: "Emerging", desc: "Early in development — needs structured support in this area." },
   { value: 2, label: "Developing", desc: "Applies the quality inconsistently — clear growth underway." },
@@ -311,6 +315,7 @@ export const MODULES = [
     id: "m4",
     num: "05",
     window: "SEPTEMBER",
+    draft: true,
     kind: "rubric",
     title: "Maryland United Game Model",
     focus: "A clear, coachable identity for how your team plays — understood well enough to teach it off the field.",
@@ -323,6 +328,7 @@ export const MODULES = [
     id: "m7",
     num: "06",
     window: "OCTOBER",
+    draft: true,
     kind: "rubric",
     title: "Analysis",
     focus: "Scouting the opponent and turning that work into a prepared, clear-eyed team.",
@@ -335,6 +341,7 @@ export const MODULES = [
     id: "m5",
     num: "07",
     window: "NOVEMBER",
+    draft: true,
     kind: "rubric",
     title: "Maryland United Training Session",
     focus: "Sessions that are safe, demanding, and full of touches, decisions, and joy.",
@@ -347,6 +354,7 @@ export const MODULES = [
     id: "m6",
     num: "08",
     window: "DECEMBER",
+    draft: true,
     kind: "rubric",
     title: "Match Preparation & Execution",
     focus: "Game plans, team talks, and in-match decisions that give players clarity.",
@@ -359,6 +367,7 @@ export const MODULES = [
     id: "m9",
     num: "09",
     window: "JANUARY – FEBRUARY",
+    draft: true,
     kind: "rubric",
     title: "Transformational Experience",
     focus: "Coaching that shapes people, not just players — culture, character, connection.",
@@ -372,6 +381,7 @@ export const MODULES = [
     id: "m8",
     num: "10",
     window: "MARCH – APRIL",
+    draft: true,
     kind: "rubric",
     title: "Individual Development",
     focus: "Every player has a plan, every plan stays current, and every plan gets real attention.",
@@ -384,6 +394,7 @@ export const MODULES = [
     id: "m10",
     num: "11",
     window: "MAY – JUNE",
+    draft: true,
     kind: "rubric",
     title: "Club Pathway",
     focus: "Guiding players and families through what comes next at Maryland United.",
