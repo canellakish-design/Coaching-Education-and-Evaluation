@@ -33,7 +33,7 @@ export const SUBMISSION_STEPS = [
    verifiable: true -> objectively checkable, not a judgment call
 ----------------------------------------------------------------*/
 export const RUBRIC_ITEMS = [
-  // Module 3 — Set the Standard (Team Management)
+  // Module 5 — Set the Standard (Team Management)
   { id: "i1", module: "m3", coachText: "I clearly define and communicate expectations for behavior, effort, and conduct at the start of the season.", evalText: "Defines and communicates expectations for behavior, effort, and conduct at the start of the season." },
   { id: "i2", module: "m3", coachText: "I proactively communicate with parents rather than only reacting to their questions or concerns.", evalText: "Communicates with parents proactively rather than only reactively." },
   { id: "i3", module: "m3", coachText: "My scheduling, rosters, and season logistics are consistently well-organized.", evalText: "Scheduling, rosters, and season logistics are consistently well-organized." },
@@ -43,7 +43,7 @@ export const RUBRIC_ITEMS = [
   { id: "i36", module: "m3", coachText: "I respond to messages in a timely manner.", evalText: "Responds to messages in a timely manner." },
   { id: "i37", module: "m3", coachText: "I contact the appropriate person on technical staff for the task at hand.", evalText: "Contacts the appropriate person on technical staff for the task at hand." },
 
-  // Module 5 — Maryland United Game Model
+  // Module 6 — Maryland United Game Model
   { id: "i5", module: "m4", coachText: "I can articulate our style of play in simple, memorable terms.", evalText: "Articulates the team's style of play in simple, memorable terms." },
   { id: "i6", module: "m4", coachText: "I present my Game Model to the team.", evalText: "Presents their Game Model to the team." },
   { id: "i7", module: "m4", meta: true, coachText: "My players can explain our game model in their own words.", evalText: "Players can explain the game model in their own words." },
@@ -318,21 +318,8 @@ export const MODULES = [
     focus: "What drives you, what drains you, and what makes this job worth doing.",
   },
   {
-    id: "m4",
-    num: "05",
-    window: "SEPTEMBER",
-    draft: true,
-    kind: "rubric",
-    title: "Maryland United Game Model",
-    focus: "A clear, coachable identity for how your team plays — understood well enough to teach it off the field.",
-    recording: {
-      format: "Office meeting with tactical board",
-      desc: "Record yourself presenting one aspect of your game model to the team using a tactical board. Record and submit.",
-    },
-  },
-  {
     id: "m3",
-    num: "06",
+    num: "05",
     window: "SEPTEMBER",
     kind: "rubric",
     title: "Set the Standard",
@@ -356,6 +343,19 @@ export const MODULES = [
         "100% commitment",
         "100% effort",
       ],
+    },
+  },
+  {
+    id: "m4",
+    num: "06",
+    window: "SEPTEMBER",
+    draft: true,
+    kind: "rubric",
+    title: "Maryland United Game Model",
+    focus: "A clear, coachable identity for how your team plays — understood well enough to teach it off the field.",
+    recording: {
+      format: "Office meeting with tactical board",
+      desc: "Record yourself presenting one aspect of your game model to the team using a tactical board. Record and submit.",
     },
   },
   {
@@ -460,7 +460,7 @@ export const RUBRIC_MODULES = MODULES.filter((m) => m.kind === "rubric");
 
 // Schedule shown above the module list — same modules, two tracks by team
 // age (see src/data/teams.js). Dates confirmed so far only cover the
-// U9-U14 track for Modules 1-8 (Module 5, Game Model, is still
+// U9-U14 track for Modules 1-8 (Module 6, Game Model, is still
 // draft/locked for coaches despite having a date); U15-U19 dates aren't
 // set yet, so they're TBD across the board (default fallback in
 // CoachingEvaluation.jsx).
@@ -469,8 +469,8 @@ export const SCHEDULE_DATES = {
   intro: { young: "AUG 14" },
   m1: { young: "AUG 14" },
   m2: { young: "AUG 14" },
-  m4: { young: "AUG 20" },
   m3: { young: "AUG 17" },
+  m4: { young: "AUG 20" },
   m8: { young: "AUG 31" },
 };
 

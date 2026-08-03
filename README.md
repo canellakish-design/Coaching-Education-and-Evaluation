@@ -32,8 +32,8 @@ Twelve open-response prompts on motivation, goals, energy, and what makes the jo
 doing. The evaluator reads these and assigns a coaching archetype.
 
 **Modules 5–10, 12–13 — The Rubric**
-Maryland United Game Model (currently `draft: true` and read-only for
-coaches while it's being rebuilt), Set the Standard, Individual Development
+Set the Standard, Maryland United Game Model (currently `draft: true` and
+locked for coaches while it's being rebuilt), Individual Development
 Plans, Analysis, Maryland United Training Session, Match Preparation &
 Execution, Transformational Experience (includes the Team Bonding
 exercise), Club Pathway. Each has a recorded submission and per-item
@@ -57,7 +57,7 @@ since the two age bands don't run the same season calendar (see
 `src/data/teams.js` for the team-to-track mapping). Modules don't carry
 their own due date anymore; `SCHEDULE_DATES` in `src/data/modules.js` is
 the single source of truth, keyed by module id. Only Modules 1–7 have
-confirmed dates so far — Module 5 (Game Model) is still draft/locked for
+confirmed dates so far — Module 6 (Game Model) is still draft/locked for
 coaches despite having a date, and everything from Module 8 onward shows
 "TBD" until the rest of the calendar is set.
 
