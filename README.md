@@ -81,8 +81,18 @@ and shown as a pill on the module card.
 
 Archetypes are a coaching-style vocabulary for framing feedback, **not** a
 clinical or psychometric assessment. Coaches never see their archetype or
-the gap analysis in the app — evaluator feedback is spoken, delivered
-through the 1-on-1 meeting rather than written per module.
+the gap analysis in the app. Structured per-module feedback is spoken,
+delivered through the 1-on-1 meeting rather than written — but see Notes
+below for a written channel that *is* coach-visible.
+
+### Notes (coach-visible)
+
+The **Notes** tab in the evaluator panel is the one exception to "coaches
+don't see evaluator content" — anything sent there (an observation,
+feedback, anything else) appears in a "Notes from your evaluator" section
+on the coach's own dashboard, dated and in order. If the Trigger Email
+extension (see Firebase setup below) is configured, the coach also gets an
+email.
 
 ## Local setup
 
@@ -104,6 +114,12 @@ npm run dev
    Contents don't matter, only existence. Anyone not listed is signed out.
 7. **Set evaluators** — update `ADMIN_EMAILS` in `src/data/modules.js` *and*
    the matching list inside `firestore.rules`. Both must agree.
+8. **(Optional) Email notes to coaches** — install the official **Trigger
+   Email** extension (Firebase Console → Extensions → search "Trigger
+   Email from Firestore"), point it at an SMTP provider (Gmail SMTP,
+   SendGrid, etc.), and set its watched collection to `mail`. Without this,
+   notes still save and show up in the app — they just won't also send an
+   email.
 
 ## Data model
 
@@ -113,7 +129,11 @@ npm run dev
   `intro` (read), `meeting` (completed), `selfEval` (ratings, meta,
   reflections), `bucket` (answers), `bonding` (4 entries), `modules`
   (per-module grade, status, itemGrades, submission links/context notes),
+  `notes` (array of `{ id, text, authorEmail, createdAt }`, coach-visible),
   and `archetype`.
+- `mail/{autoId}` — write-only queue for the Trigger Email extension;
+  evaluators create documents here when they send a note, nobody reads
+  them back through the app.
 
 `src/data/teams.js` holds the season's team roster (name, birth-year window,
 coaches, email, schedule track) — the actual coaches who log into the app.

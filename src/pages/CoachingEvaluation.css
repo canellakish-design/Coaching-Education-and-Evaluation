@@ -201,6 +201,13 @@
   width: 100%;
   box-sizing: border-box;
 }
+.mu-notes-section {
+  padding: 0 20px 18px;
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
 .mu-schedule-table-wrap {
   overflow-x: auto;
   border: 1px solid #242424;
@@ -728,6 +735,30 @@
 }
 .mu-bucket-read {
   margin-bottom: 20px;
+}
+.mu-notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mu-note {
+  border-left: 2px solid #f5b917;
+  padding: 6px 0 6px 12px;
+}
+.mu-note-date {
+  margin: 0 0 2px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #6B6B6B;
+  text-transform: uppercase;
+}
+.mu-note-text {
+  margin: 0;
+  font-size: 14px;
+  color: #F0F0F0;
+  line-height: 1.5;
+  white-space: pre-wrap;
 }
 .mu-archetype-grid {
   display: grid;

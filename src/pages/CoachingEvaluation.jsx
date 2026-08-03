@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
-import { doc, getDoc, setDoc, collection, getDocs, serverTimestamp } from "firebase/firestore";
+import { doc, getDoc, setDoc, addDoc, collection, getDocs, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase/config";
 import { useAuth } from "../contexts/AuthContext";
 import {
@@ -31,6 +31,7 @@ const hydrate = (remote, fallbackName) => {
   return {
     coachName: remote.coachName || base.coachName,
     lastOpenId: remote.lastOpenId || base.lastOpenId,
+    notes: Array.isArray(remote.notes) ? remote.notes : base.notes,
     intro: { ...base.intro, ...(remote.intro || {}) },
     meeting: { ...base.meeting, ...(remote.meeting || {}) },
     selfEval: { ...base.selfEval, ...(remote.selfEval || {}) },
@@ -121,6 +122,32 @@ export default function CoachingEvaluation() {
     persist({ ...data, bonding: next });
   };
   const setArchetype = (a) => persist({ ...data, archetype: a });
+
+  const addNote = async (text) => {
+    const note = {
+      id: crypto.randomUUID(),
+      text,
+      authorEmail: user.email,
+      createdAt: new Date().toISOString(),
+    };
+    await persist({ ...data, notes: [...(data.notes || []), note] });
+
+    const coachEmail =
+      coaches.find((c) => c.uid === targetUid)?.email || (targetUid === user.uid ? user.email : null);
+    if (coachEmail) {
+      try {
+        await addDoc(collection(db, "mail"), {
+          to: [coachEmail],
+          message: {
+            subject: "New note from your evaluator — Maryland United Coaching Excellence Pathway",
+            text,
+          },
+        });
+      } catch (err) {
+        console.error("Failed to queue note email", err);
+      }
+    }
+  };
 
   const openModule = (id) => {
     setOpenId(id);
@@ -240,7 +267,27 @@ export default function CoachingEvaluation() {
       </section>
 
       {isAdmin && showAdmin && (
-        <AdminPanel data={data} archetype={data.archetype} setArchetype={setArchetype} />
+        <AdminPanel data={data} archetype={data.archetype} setArchetype={setArchetype} addNote={addNote} />
+      )}
+
+      {!(isAdmin && showAdmin) && data.notes?.length > 0 && (
+        <section className="mu-notes-section">
+          <p className="mu-section-label">NOTES FROM YOUR EVALUATOR</p>
+          <div className="mu-notes-list">
+            {[...data.notes].reverse().map((n) => (
+              <div key={n.id} className="mu-note">
+                <p className="mu-note-date">
+                  {new Date(n.createdAt).toLocaleDateString(undefined, {
+                    month: "short",
+                    day: "numeric",
+                    year: "numeric",
+                  })}
+                </p>
+                <p className="mu-note-text">{n.text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
       )}
 
       <section className="mu-scale-section">

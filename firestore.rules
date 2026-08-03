@@ -29,5 +29,13 @@ service cloud.firestore {
       allow read, write: if request.auth != null
                           && (docId.matches('.*_' + request.auth.uid) || isAdmin());
     }
+
+    // Outgoing mail queue for the "Trigger Email" extension. Only evaluators
+    // can queue a send (via sending a coach a note); nobody reads it back.
+    match /mail/{mailId} {
+      allow read: if false;
+      allow create: if request.auth != null && isAdmin();
+      allow update, delete: if false;
+    }
   }
 }

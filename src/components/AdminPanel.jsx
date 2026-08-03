@@ -3,8 +3,22 @@ import { RUBRIC_ITEMS, RUBRIC_MODULES, ARCHETYPES, BUCKET_SECTIONS } from "../da
 
 /* Self-vs-evaluator gap analysis + archetype assignment.
    Visible only to evaluator accounts. */
-export default function AdminPanel({ data, archetype, setArchetype }) {
+export default function AdminPanel({ data, archetype, setArchetype, addNote }) {
   const [tab, setTab] = useState("gap");
+  const [draftNote, setDraftNote] = useState("");
+  const [sending, setSending] = useState(false);
+
+  const sendNote = async () => {
+    const text = draftNote.trim();
+    if (!text) return;
+    setSending(true);
+    try {
+      await addNote(text);
+      setDraftNote("");
+    } finally {
+      setSending(false);
+    }
+  };
 
   const selfRatings = data.selfEval?.ratings || {};
   const metaRatings = data.selfEval?.meta || {};
@@ -35,6 +49,7 @@ export default function AdminPanel({ data, archetype, setArchetype }) {
           ["meta", "Meta-Perception"],
           ["bucket", "Bucket Responses"],
           ["archetype", "Archetype"],
+          ["notes", "Notes"],
         ].map(([id, label]) => (
           <button
             key={id}
@@ -195,6 +210,55 @@ export default function AdminPanel({ data, archetype, setArchetype }) {
               onChange={(e) => setArchetype({ ...archetype, notes: e.target.value })}
             />
           </div>
+        </div>
+      )}
+
+      {tab === "notes" && (
+        <div>
+          <p className="mu-muted mu-empty">
+            Unlike the other tabs, the coach sees these — send an observation, feedback, or anything
+            else. If the email extension is set up, they'll also get it in their inbox.
+          </p>
+
+          <div className="mu-field">
+            <label className="mu-field-label">New note</label>
+            <textarea
+              className="mu-input mu-textarea"
+              placeholder="Write a note for this coach…"
+              value={draftNote}
+              onChange={(e) => setDraftNote(e.target.value)}
+            />
+            <button
+              className="mu-btn mu-btn-solid"
+              style={{ marginTop: 8 }}
+              disabled={!draftNote.trim() || sending}
+              onClick={sendNote}
+            >
+              {sending ? "SENDING…" : "SEND NOTE"}
+            </button>
+          </div>
+
+          <p className="mu-section-label" style={{ marginTop: 20 }}>
+            HISTORY
+          </p>
+          {!data.notes || data.notes.length === 0 ? (
+            <p className="mu-muted mu-empty">No notes sent to this coach yet.</p>
+          ) : (
+            <div className="mu-notes-list">
+              {[...data.notes].reverse().map((n) => (
+                <div key={n.id} className="mu-note">
+                  <p className="mu-note-date">
+                    {new Date(n.createdAt).toLocaleDateString(undefined, {
+                      month: "short",
+                      day: "numeric",
+                      year: "numeric",
+                    })}
+                  </p>
+                  <p className="mu-note-text">{n.text}</p>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       )}
     </section>
