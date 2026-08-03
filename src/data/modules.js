@@ -300,9 +300,11 @@ export const MODULES = [
     focus: "Standards, communication, and organization that set the tone for the season.",
     recording: {
       format: "First parent meeting — one per team",
-      desc: "Record your first parent meeting of the season for every team you coach. Before you record, build a short presentation of your core values — the things you want parents to know matter to you as a coach — and walk through it live during the meeting. If you coach more than one team, submit a separate link for each below.",
+      desc: "Record your first parent meeting of the season for every team you coach. Before you record, put together a short agenda or presentation covering your core values — the things you want parents to know matter to you as a coach — and walk through it live during the meeting. If you coach more than one team, submit a separate link for each below.",
+      tip: "Be concrete when you present — specifics build trust, vague reassurances don't. Say exactly what you'll do and what you expect, and don't promise anything you can't actually deliver. That's not the same as playing it safe: parents can tell the difference between a coach who's decisive and one who's hedging. Pick a position and hold it — nothing undercuts a first meeting faster than contradicting yourself twenty minutes in.",
       exampleUrl: "https://docs.google.com/presentation/d/1fOlaB8GfXE81QLNx7nN-yGB0K33yikcbs_P5tpCELl8/edit?slide=id.g18f4df606e3_0_16#slide=id.g18f4df606e3_0_16",
       exampleLabel: "View an example core values presentation",
+      needsMaterialLink: true,
     },
   },
   {
@@ -400,6 +402,7 @@ export const emptyModuleState = () => ({
   submitted: false,
   subDate: "",
   subLink: "",
+  subMaterialLink: "",
   subNotes: "",
   itemGrades: {}, // evaluator's per-item 1-4 ratings, keyed by item id
 });

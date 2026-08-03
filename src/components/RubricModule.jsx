@@ -34,6 +34,7 @@ export default function RubricModule({ module: m, state, update, bonding, setBon
             {m.recording.exampleLabel || "View example"} ↗
           </a>
         )}
+        {m.recording.tip && <p className="mu-recording-tip">{m.recording.tip}</p>}
 
         <p className="mu-section-label">HOW TO SUBMIT</p>
         <ol className="mu-steps">
@@ -49,6 +50,14 @@ export default function RubricModule({ module: m, state, update, bonding, setBon
             value={state.subLink}
             onChange={(e) => update({ subLink: e.target.value })}
           />
+          {m.recording.needsMaterialLink && (
+            <input
+              className="mu-input"
+              placeholder="Link to the agenda or presentation you used (Drive, Google Slides…)"
+              value={state.subMaterialLink || ""}
+              onChange={(e) => update({ subMaterialLink: e.target.value })}
+            />
+          )}
           <input
             className="mu-input"
             type="date"

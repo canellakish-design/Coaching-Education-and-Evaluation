@@ -344,6 +344,15 @@
   font-weight: 600;
   text-decoration: underline;
 }
+.mu-recording-tip {
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  border-left: 2px solid #f5b917;
+  background: #000000;
+  font-size: 13px;
+  color: #D6D6D6;
+  line-height: 1.5;
+}
 .mu-form-col {
   display: flex;
   flex-direction: column;
