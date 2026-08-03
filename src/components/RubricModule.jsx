@@ -79,6 +79,50 @@ export default function RubricModule({ module: m, state, update, bonding, setBon
         </div>
       </div>
 
+      {/* Second recording submission — coach-facing, only when the module needs two */}
+      {m.recording2 && (
+        <div className="mu-subbox">
+          <p className="mu-section-label">
+            RECORDING · <span className="mu-accent">{m.recording2.format.toUpperCase()}</span>
+          </p>
+          <p className="mu-recording-desc">{m.recording2.desc}</p>
+
+          <p className="mu-section-label">HOW TO SUBMIT</p>
+          <ol className="mu-steps">
+            {SUBMISSION_STEPS.map((step, i) => (
+              <li key={i}>{step}</li>
+            ))}
+          </ol>
+
+          <div className="mu-form-col">
+            <textarea
+              className="mu-input mu-textarea"
+              placeholder="Video link(s) — one per team, one per line (Drive, Veo, Hudl…)"
+              value={state.sub2Link}
+              onChange={(e) => update({ sub2Link: e.target.value })}
+            />
+            <input
+              className="mu-input"
+              type="date"
+              value={state.sub2Date}
+              onChange={(e) => update({ sub2Date: e.target.value })}
+            />
+            <textarea
+              className="mu-input mu-textarea"
+              placeholder="Context for the reviewer — age group, session objective, anything to watch for"
+              value={state.sub2Notes}
+              onChange={(e) => update({ sub2Notes: e.target.value })}
+            />
+            <button
+              className={`mu-btn ${state.submitted2 ? "mu-btn-outline" : "mu-btn-solid"}`}
+              onClick={() => update({ submitted2: !state.submitted2 })}
+            >
+              {state.submitted2 ? "SUBMITTED ✓ — TAP TO REOPEN" : "MARK RECORDING SUBMITTED"}
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Team Bonding — coach-facing, Transformational Experience only */}
       {m.hasBonding && (
         <div className="mu-subbox">

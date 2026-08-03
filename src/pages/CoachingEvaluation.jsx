@@ -130,7 +130,9 @@ export default function CoachingEvaluation() {
     if (m.kind === "intro") return data.intro?.read;
     if (m.kind === "selfEval") return data.selfEval.submitted;
     if (m.kind === "bucket") return data.bucket.submitted;
-    return data.modules[m.id]?.submitted;
+    const ms = data.modules[m.id];
+    if (m.recording2) return Boolean(ms?.submitted && ms?.submitted2);
+    return ms?.submitted;
   };
   const gradeFor = (m) =>
     m.kind === "rubric" ? GRADE_SCALE.find((g) => g.value === data.modules[m.id]?.grade) : null;

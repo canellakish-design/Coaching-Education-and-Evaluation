@@ -310,6 +310,10 @@ export const MODULES = [
       exampleLabel: "View an example core values presentation",
       needsMaterialLink: true,
     },
+    recording2: {
+      format: "Standards meeting with players — office in Liberty, one per team",
+      desc: "Record a standards meeting with your players, held in the office in Liberty, for every team you coach. Set expectations directly with the team — behavior, effort, and conduct for the season. If you coach more than one team, submit a separate link for each below.",
+    },
   },
   {
     id: "m4",
@@ -415,6 +419,11 @@ export const emptyModuleState = () => ({
   subLink: "",
   subMaterialLink: "",
   subNotes: "",
+  // Second recording — only used by modules with a `recording2` requirement.
+  submitted2: false,
+  sub2Date: "",
+  sub2Link: "",
+  sub2Notes: "",
   itemGrades: {}, // evaluator's per-item 1-4 ratings, keyed by item id
 });
 
