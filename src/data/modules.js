@@ -2,11 +2,11 @@ export const SEASON = "2026\u201327";
 
 // Admin / evaluator accounts. Only these emails see the admin dashboard,
 // the self-vs-evaluator gap view, and archetype assignment.
-export const ADMIN_EMAILS = ["canellakish@gmail.com"];
+export const ADMIN_EMAILS = ["canellakish@gmail.com", "harry.canellakis@mdunitedfc.org"];
 
 // Creator accounts. Only these emails can open modules marked draft: true —
 // everyone else sees them listed but can't click into them yet.
-export const CREATOR_EMAILS = ["canellakish@gmail.com"];
+export const CREATOR_EMAILS = ["canellakish@gmail.com", "harry.canellakis@mdunitedfc.org"];
 
 export const GRADE_SCALE = [
   { value: 1, label: "Emerging", desc: "Early in development — needs structured support in this area." },

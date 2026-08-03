@@ -5,7 +5,7 @@ service cloud.firestore {
     // Evaluator / admin accounts.
     function isAdmin() {
       return request.auth != null
-             && request.auth.token.email.lower() in ['canellakish@gmail.com'];
+             && request.auth.token.email.lower() in ['canellakish@gmail.com', 'harry.canellakis@mdunitedfc.org'];
     }
 
     // Allowlist of approved coach emails. Doc ID = lowercased email.
