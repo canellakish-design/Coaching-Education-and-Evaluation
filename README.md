@@ -27,7 +27,7 @@ meta-perception question ("how do you think your players would rate you?").
 Two reflection prompts close it out.
 
 **Module 4 — What Drives You?**
-Sixteen open-response prompts on motivation, goals, energy, and what makes the job worth
+Twelve open-response prompts on motivation, goals, energy, and what makes the job worth
 doing. The evaluator reads these and assigns a coaching archetype.
 
 **Modules 5–9, 11–13 — The Rubric**

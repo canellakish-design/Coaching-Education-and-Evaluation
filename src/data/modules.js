@@ -119,7 +119,6 @@ export const BUCKET_SECTIONS = [
     questions: [
       { id: "b5", text: "When a player you've coached succeeds, what kind of success makes you proudest?" },
       { id: "b6", text: "If results were taken off the table entirely, what would make a season feel successful?" },
-      { id: "b7", text: "What do you want your players saying about you ten years from now?" },
     ],
   },
   {
@@ -127,7 +126,6 @@ export const BUCKET_SECTIONS = [
     questions: [
       { id: "b8", text: "What's the hardest part of coaching for you personally — not the most irritating, the hardest?" },
       { id: "b9", text: "If you could permanently hand off one responsibility, what would it be? What would you take on instead?" },
-      { id: "b10", text: "Name a coach you admire and what specifically about them." },
     ],
   },
   {
@@ -135,7 +133,6 @@ export const BUCKET_SECTIONS = [
     questions: [
       { id: "b11", text: "Where do you want to be as a coach in five years?" },
       { id: "b12", text: "What's one goal you have for yourself this season that has nothing to do with wins or losses?" },
-      { id: "b13", text: "What's something you haven't accomplished yet as a coach that you still want to?" },
     ],
   },
   {
@@ -143,7 +140,6 @@ export const BUCKET_SECTIONS = [
     questions: [
       { id: "b14", text: "What's a belief about coaching you hold strongly that not everyone agrees with?" },
       { id: "b15", text: "What did coaching give you that you didn't expect when you started?" },
-      { id: "b16", text: "What's something about you your players would be surprised to learn?" },
     ],
   },
 ];
