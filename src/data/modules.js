@@ -459,9 +459,9 @@ export const RUBRIC_MODULES = MODULES.filter((m) => m.kind === "rubric");
 // U9-U14 track for Modules 1-5; U15-U19 dates aren't set yet, so they're
 // TBD across the board (default fallback in CoachingEvaluation.jsx).
 export const SCHEDULE_DATES = {
-  intro: { young: "AUG 10" },
-  m1: { young: "AUG 10" },
-  m2: { young: "AUG 10" },
+  intro: { young: "AUG 15" },
+  m1: { young: "AUG 15" },
+  m2: { young: "AUG 15" },
   meeting1: { young: "AUG 10" },
   m3: { young: "AUG 20" },
 };
