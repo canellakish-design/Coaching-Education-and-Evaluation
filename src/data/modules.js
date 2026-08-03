@@ -43,7 +43,7 @@ export const RUBRIC_ITEMS = [
   { id: "i36", module: "m3", coachText: "I respond to messages in a timely manner.", evalText: "Responds to messages in a timely manner." },
   { id: "i37", module: "m3", coachText: "I contact the appropriate person on technical staff for the task at hand.", evalText: "Contacts the appropriate person on technical staff for the task at hand." },
 
-  // Module 4 — Maryland United Game Model
+  // Module 5 — Maryland United Game Model (READ ONLY)
   { id: "i5", module: "m4", coachText: "I can articulate our style of play in simple, memorable terms.", evalText: "Articulates the team's style of play in simple, memorable terms." },
   { id: "i6", module: "m4", coachText: "I present my Game Model to the team.", evalText: "Presents their Game Model to the team." },
   { id: "i7", module: "m4", meta: true, coachText: "My players can explain our game model in their own words.", evalText: "Players can explain the game model in their own words." },
@@ -318,8 +318,21 @@ export const MODULES = [
     focus: "What drives you, what drains you, and what makes this job worth doing.",
   },
   {
-    id: "m3",
+    id: "m4",
     num: "05",
+    window: "SEPTEMBER",
+    draft: true,
+    kind: "rubric",
+    title: "Maryland United Game Model (READ ONLY)",
+    focus: "A clear, coachable identity for how your team plays — understood well enough to teach it off the field.",
+    recording: {
+      format: "Office meeting with tactical board",
+      desc: "Record yourself presenting one aspect of your game model to the team using a tactical board. Record and submit.",
+    },
+  },
+  {
+    id: "m3",
+    num: "06",
     window: "SEPTEMBER",
     kind: "rubric",
     title: "Set the Standard",
@@ -347,7 +360,7 @@ export const MODULES = [
   },
   {
     id: "m8",
-    num: "06",
+    num: "07",
     window: "AUGUST – SEPTEMBER",
     kind: "rubric",
     title: "Individual Development Plans",
@@ -355,19 +368,6 @@ export const MODULES = [
     recording: {
       format: "Individual / small-group session",
       desc: "A 1-on-1 or small-group session built around specific player development targets.",
-    },
-  },
-  {
-    id: "m4",
-    num: "07",
-    window: "SEPTEMBER",
-    draft: true,
-    kind: "rubric",
-    title: "Maryland United Game Model",
-    focus: "A clear, coachable identity for how your team plays — understood well enough to teach it off the field.",
-    recording: {
-      format: "Office meeting with tactical board",
-      desc: "Record yourself presenting one aspect of your game model to the team using a tactical board. Record and submit.",
     },
   },
   {
@@ -451,8 +451,10 @@ export const RUBRIC_MODULES = MODULES.filter((m) => m.kind === "rubric");
 
 // Schedule shown above the module list — same modules, two tracks by team
 // age (see src/data/teams.js). Dates confirmed so far only cover the
-// U9-U14 track for Modules 1-6; U15-U19 dates aren't set yet, so they're
-// TBD across the board (default fallback in CoachingEvaluation.jsx).
+// U9-U14 track for Modules 1-4, 6-7 (Module 5, Game Model, is still
+// read-only/draft and has no date yet); U15-U19 dates aren't set yet
+// either, so they're TBD across the board (default fallback in
+// CoachingEvaluation.jsx).
 export const SCHEDULE_DATES = {
   meeting1: { young: "AUG 14" },
   intro: { young: "AUG 14" },
