@@ -22,7 +22,7 @@ coaches. Marking it read unlocks the rest of the season.
 
 **Module 3 — Self-Evaluation**
 Coaches rate themselves 1–4 on all 40 rubric items — the *same* items their
-evaluator rates in Modules 5–9 and 11–13. Eight of those items also ask a
+evaluator rates in Modules 5–10 and 12–13. Eight of those items also ask a
 meta-perception question ("how do you think your players would rate you?").
 Two reflection prompts close it out.
 
@@ -30,15 +30,15 @@ Two reflection prompts close it out.
 Twelve open-response prompts on motivation, goals, energy, and what makes the job worth
 doing. The evaluator reads these and assigns a coaching archetype.
 
-**Modules 5–9, 11–13 — The Rubric**
-Set the Standard, Maryland United Game Model, Analysis, Maryland United Training Session, Match
-Preparation & Execution, Transformational Experience (includes the Team
-Bonding exercise), Individual Development, Club Pathway. Each has a recorded
-submission and per-item evaluator grading. There's no per-module written
-feedback field — the evaluator gives spoken feedback instead, via the
-1-on-1 meeting.
+**Modules 5–10, 12–13 — The Rubric**
+Set the Standard, Individual Development Plans, Maryland United Game Model,
+Analysis, Maryland United Training Session, Match Preparation & Execution,
+Transformational Experience (includes the Team Bonding exercise), Club
+Pathway. Each has a recorded submission and per-item evaluator grading.
+There's no per-module written feedback field — the evaluator gives spoken
+feedback instead, via the 1-on-1 meeting.
 
-**Module 10 — Midseason Feedback**
+**Module 11 — Midseason Feedback**
 Placeholder module (content TBD) sitting between Match Preparation &
 Execution and Transformational Experience, around January.
 
@@ -49,7 +49,7 @@ lists all thirteen modules against two date columns — U9–U14 and U15–U19 �
 since the two age bands don't run the same season calendar (see
 `src/data/teams.js` for the team-to-track mapping). Modules don't carry
 their own due date anymore; `SCHEDULE_DATES` in `src/data/modules.js` is
-the single source of truth, keyed by module id. Only Modules 1–5 have
+the single source of truth, keyed by module id. Only Modules 1–6 have
 confirmed dates so far — everything else shows "TBD" until the rest of the
 calendar is set.
 

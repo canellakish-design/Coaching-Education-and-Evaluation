@@ -68,7 +68,7 @@ export const RUBRIC_ITEMS = [
   { id: "i19", module: "m7", meta: true, coachText: "My players participate actively in analysis sessions rather than just watching.", evalText: "Players participate actively in analysis rather than passively watching." },
   { id: "i20", module: "m7", coachText: "I connect analysis findings back into training and match plans.", evalText: "Connects analysis findings back into training and match plans." },
 
-  // Module 8 — Individual Development
+  // Module 6 — Individual Development Plans
   { id: "i21", module: "m8", verifiable: true, coachText: "Every player has a specific, written development plan.", evalText: "Every player has a specific, written development plan." },
   { id: "i22", module: "m8", verifiable: true, coachText: "I keep each player's IDP updated regularly throughout the season, not just at the start.", evalText: "Player IDPs are updated regularly throughout the season, not just at the start." },
   { id: "i23", module: "m8", coachText: "I differentiate my coaching and feedback by player.", evalText: "Differentiates coaching and feedback by player." },
@@ -233,7 +233,7 @@ export const INTRO_SECTIONS = [
       "Maryland United Training Session",
       "Match Preparation & Execution",
       "Transformational Experience",
-      "Individual Development",
+      "Individual Development Plans",
       "Club Pathway",
     ],
     body: [
@@ -346,8 +346,20 @@ export const MODULES = [
     },
   },
   {
-    id: "m4",
+    id: "m8",
     num: "06",
+    window: "AUGUST – SEPTEMBER",
+    kind: "rubric",
+    title: "Individual Development Plans",
+    focus: "Every player has a plan, every plan stays current, and every plan gets real attention.",
+    recording: {
+      format: "Individual / small-group session",
+      desc: "A 1-on-1 or small-group session built around specific player development targets.",
+    },
+  },
+  {
+    id: "m4",
+    num: "07",
     window: "SEPTEMBER",
     draft: true,
     kind: "rubric",
@@ -360,7 +372,7 @@ export const MODULES = [
   },
   {
     id: "m7",
-    num: "07",
+    num: "08",
     window: "OCTOBER",
     draft: true,
     kind: "rubric",
@@ -373,7 +385,7 @@ export const MODULES = [
   },
   {
     id: "m5",
-    num: "08",
+    num: "09",
     window: "NOVEMBER",
     draft: true,
     kind: "rubric",
@@ -386,7 +398,7 @@ export const MODULES = [
   },
   {
     id: "m6",
-    num: "09",
+    num: "10",
     window: "DECEMBER",
     draft: true,
     kind: "rubric",
@@ -399,7 +411,7 @@ export const MODULES = [
   },
   {
     id: "midseason",
-    num: "10",
+    num: "11",
     window: "JANUARY",
     draft: true,
     kind: "placeholder",
@@ -408,7 +420,7 @@ export const MODULES = [
   },
   {
     id: "m9",
-    num: "11",
+    num: "12",
     window: "JANUARY – FEBRUARY",
     draft: true,
     kind: "rubric",
@@ -418,19 +430,6 @@ export const MODULES = [
     recording: {
       format: "Player check-in / culture moment",
       desc: "A recorded player check-in conversation or a team culture activity you lead.",
-    },
-  },
-  {
-    id: "m8",
-    num: "12",
-    window: "MARCH – APRIL",
-    draft: true,
-    kind: "rubric",
-    title: "Individual Development",
-    focus: "Every player has a plan, every plan stays current, and every plan gets real attention.",
-    recording: {
-      format: "Individual / small-group session",
-      desc: "A 1-on-1 or small-group session built around specific player development targets.",
     },
   },
   {
@@ -452,7 +451,7 @@ export const RUBRIC_MODULES = MODULES.filter((m) => m.kind === "rubric");
 
 // Schedule shown above the module list — same modules, two tracks by team
 // age (see src/data/teams.js). Dates confirmed so far only cover the
-// U9-U14 track for Modules 1-5; U15-U19 dates aren't set yet, so they're
+// U9-U14 track for Modules 1-6; U15-U19 dates aren't set yet, so they're
 // TBD across the board (default fallback in CoachingEvaluation.jsx).
 export const SCHEDULE_DATES = {
   meeting1: { young: "AUG 14" },
@@ -460,6 +459,7 @@ export const SCHEDULE_DATES = {
   m1: { young: "AUG 14" },
   m2: { young: "AUG 14" },
   m3: { young: "AUG 20" },
+  m8: { young: "AUG 31" },
 };
 
 // Evaluator-set completion status per module, separate from the coach's own
