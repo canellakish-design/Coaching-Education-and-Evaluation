@@ -48,7 +48,7 @@ export default function AdminPanel({ data, archetype, setArchetype, addNote }) {
         {[
           ["gap", "Self vs. Evaluator"],
           ["meta", "Meta-Perception"],
-          ["bucket", "Bucket Responses"],
+          ["bucket", "What Drives You"],
           ["archetype", "Archetype"],
           ["notes", "Notes"],
         ].map(([id, label]) => (
