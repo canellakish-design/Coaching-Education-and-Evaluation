@@ -205,7 +205,7 @@ export const ARCHETYPES = [
 ----------------------------------------------------------------*/
 export const INTRO_SECTIONS = [
   {
-    heading: "WHY THIS EXISTS",
+    heading: "INTRODUCTION TO PLATFORM",
     body: [
       "We ask our players to be developing all season — to work at the things they're not yet good at, to take feedback without flinching, to keep a plan and revisit it. This platform asks the same of us.",
       "Most coaching feedback happens by accident: a comment after a match, a conversation in a parking lot, a season that ends without anyone saying much at all. This replaces that with something deliberate. Over the year you'll work through eight qualities that define coaching at Maryland United, submit real footage of your actual coaching, and get specific feedback on each one.",
@@ -213,7 +213,7 @@ export const INTRO_SECTIONS = [
     ],
   },
   {
-    heading: "A CLUB THAT DEVELOPS EVERYONE",
+    heading: "COACHING EDUCATION AND EVALUATION PLATFORM",
     body: [
       "A club can't credibly claim to develop players while its coaches stand still. If we want players who are better in June than they were in August, the people teaching them have to be too. That's the whole idea here — coach development and player development as the same project, not separate ones.",
     ],
@@ -427,14 +427,15 @@ export const MODULES = [
 export const RUBRIC_MODULES = MODULES.filter((m) => m.kind === "rubric");
 
 // Schedule shown above the module list — same modules, two tracks by team
-// age (see src/data/teams.js). Dates confirmed so far only cover Modules
-// 1-5; everything else is TBD until the rest of the calendar is set.
+// age (see src/data/teams.js). Dates confirmed so far only cover the
+// U9-U14 track for Modules 1-5; U15-U19 dates aren't set yet, so they're
+// TBD across the board (default fallback in CoachingEvaluation.jsx).
 export const SCHEDULE_DATES = {
-  intro: { young: "AUG 10", old: "AUG 10" },
-  m1: { young: "AUG 10", old: "AUG 10" },
-  m2: { young: "AUG 10", old: "AUG 10" },
-  meeting1: { young: "AUG 10", old: "AUG 10" },
-  m3: { young: "AUG 20", old: "AUG 20" },
+  intro: { young: "AUG 10" },
+  m1: { young: "AUG 10" },
+  m2: { young: "AUG 10" },
+  meeting1: { young: "AUG 10" },
+  m3: { young: "AUG 20" },
 };
 
 // Evaluator-set completion status per module, separate from the coach's own
