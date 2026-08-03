@@ -151,49 +151,6 @@
   background: #d22730;
 }
 
-.mu-scale-section {
-  padding: 0 20px;
-  max-width: 860px;
-  margin: 0 auto;
-  width: 100%;
-  box-sizing: border-box;
-}
-.mu-scale-toggle {
-  background: transparent;
-  border: none;
-  color: #f5b917;
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: underline;
-  cursor: pointer;
-  padding: 4px 0 10px;
-}
-.mu-scale-box {
-  border: 1px solid #242424;
-  background: #0D0D0D;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 8px;
-}
-.mu-scale-row {
-  display: flex;
-  gap: 12px;
-  align-items: baseline;
-}
-.mu-scale-row p {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.5;
-}
-.mu-scale-num {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 800;
-  font-size: 22px;
-  color: #d22730;
-  min-width: 18px;
-}
 .mu-schedule-section {
   padding: 4px 20px 18px;
   max-width: 860px;

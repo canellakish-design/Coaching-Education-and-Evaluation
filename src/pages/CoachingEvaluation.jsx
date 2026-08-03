@@ -53,7 +53,6 @@ export default function CoachingEvaluation() {
   const [data, setData] = useState(null);
   const [openId, setOpenId] = useState(null);
   const [saveState, setSaveState] = useState("idle");
-  const [showScale, setShowScale] = useState(false);
 
   // Admin: browse other coaches
   const [coaches, setCoaches] = useState([]);
@@ -289,25 +288,6 @@ export default function CoachingEvaluation() {
           </div>
         </section>
       )}
-
-      <section className="mu-scale-section">
-        <button className="mu-scale-toggle" onClick={() => setShowScale(!showScale)}>
-          {showScale ? "Hide grading scale" : "View grading scale"}
-        </button>
-        {showScale && (
-          <div className="mu-scale-box">
-            {GRADE_SCALE.map((g) => (
-              <div key={g.value} className="mu-scale-row">
-                <span className="mu-scale-num">{g.value}</span>
-                <p>
-                  <strong className="mu-accent">{g.label}.</strong>{" "}
-                  <span className="mu-muted">{g.desc}</span>
-                </p>
-              </div>
-            ))}
-          </div>
-        )}
-      </section>
 
       <section className="mu-schedule-section">
         <p className="mu-section-label">SCHEDULE</p>
