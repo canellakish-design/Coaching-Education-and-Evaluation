@@ -338,6 +338,7 @@ export default function CoachingEvaluation() {
                   <span className="mu-card-title-block">
                     <span className="mu-card-window">{m.window}</span>
                     <span className="mu-card-title">{m.title.toUpperCase()}</span>
+                    <span className="mu-card-focus">{m.focus}</span>
                   </span>
                   <span className="mu-card-pills">
                     {locked && <span className="mu-pill mu-pill-soon">COMING SOON</span>}

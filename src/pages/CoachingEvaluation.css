@@ -221,13 +221,13 @@
 }
 .mu-card-head {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 14px;
   width: 100%;
   background: transparent;
   border: none;
   color: #F0F0F0;
-  padding: 14px 16px;
+  padding: 16px;
   cursor: pointer;
   font-family: "Archivo", sans-serif;
 }
@@ -237,9 +237,10 @@
 .mu-card-num {
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 800;
-  font-size: 30px;
+  font-size: 36px;
   color: #f5b917;
   line-height: 1;
+  padding-top: 2px;
 }
 .mu-card-title-block {
   flex: 1;
@@ -260,10 +261,18 @@
   letter-spacing: 1px;
   line-height: 1.1;
 }
+.mu-card-focus {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #A3A3A3;
+}
 .mu-card-pills {
   display: flex;
   gap: 6px;
   align-items: center;
+  padding-top: 4px;
 }
 .mu-pill {
   font-family: "Barlow Condensed", sans-serif;
