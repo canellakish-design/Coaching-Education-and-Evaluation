@@ -42,7 +42,7 @@ export const RUBRIC_ITEMS = [
 
   // Module 4 — Maryland United Game Model
   { id: "i5", module: "m4", coachText: "I can articulate our style of play in simple, memorable terms.", evalText: "Articulates the team's style of play in simple, memorable terms." },
-  { id: "i6", module: "m4", coachText: "I regularly connect training activities back to our game model.", evalText: "Connects training activities back to the game model." },
+  { id: "i6", module: "m4", coachText: "I present my Game Model to the team.", evalText: "Presents their Game Model to the team." },
   { id: "i7", module: "m4", meta: true, coachText: "My players can explain our game model in their own words.", evalText: "Players can explain the game model in their own words." },
   { id: "i8", module: "m4", coachText: "I adjust our game model based on personnel and opponent without losing our core identity.", evalText: "Adjusts the game model for personnel and opponent without losing core identity." },
 
