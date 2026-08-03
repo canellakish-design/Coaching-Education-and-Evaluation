@@ -336,6 +336,14 @@
   color: #A3A3A3;
   line-height: 1.5;
 }
+.mu-example-link {
+  display: inline-block;
+  margin: 0 0 16px;
+  color: #f5b917;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: underline;
+}
 .mu-form-col {
   display: flex;
   flex-direction: column;

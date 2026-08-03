@@ -24,6 +24,16 @@ export default function RubricModule({ module: m, state, update, bonding, setBon
           RECORDING · <span className="mu-accent">{m.recording.format.toUpperCase()}</span>
         </p>
         <p className="mu-recording-desc">{m.recording.desc}</p>
+        {m.recording.exampleUrl && (
+          <a
+            className="mu-example-link"
+            href={m.recording.exampleUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {m.recording.exampleLabel || "View example"} ↗
+          </a>
+        )}
 
         <p className="mu-section-label">HOW TO SUBMIT</p>
         <ol className="mu-steps">

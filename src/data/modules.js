@@ -300,7 +300,9 @@ export const MODULES = [
     focus: "Standards, communication, and organization that set the tone for the season.",
     recording: {
       format: "First parent meeting — one per team",
-      desc: "Record your first parent meeting of the season for every team you coach. If you coach more than one team, submit a separate link for each below.",
+      desc: "Record your first parent meeting of the season for every team you coach. Before you record, build a short presentation of your core values — the things you want parents to know matter to you as a coach — and walk through it live during the meeting. If you coach more than one team, submit a separate link for each below.",
+      exampleUrl: "https://docs.google.com/presentation/d/1fOlaB8GfXE81QLNx7nN-yGB0K33yikcbs_P5tpCELl8/edit?slide=id.g18f4df606e3_0_16#slide=id.g18f4df606e3_0_16",
+      exampleLabel: "View an example core values presentation",
     },
   },
   {
