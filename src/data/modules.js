@@ -268,7 +268,7 @@ export const MODULES = [
     num: "02",
     window: "AUGUST",
     kind: "selfEval",
-    title: "Self-Evaluation of the Key Qualities of a Maryland United Coach",
+    title: "Self-Evaluation",
     focus: "Rate yourself against the same standards your evaluator will use — before they do.",
   },
   {
