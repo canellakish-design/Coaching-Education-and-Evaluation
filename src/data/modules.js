@@ -43,7 +43,7 @@ export const RUBRIC_ITEMS = [
   { id: "i36", module: "m3", coachText: "I respond to messages in a timely manner.", evalText: "Responds to messages in a timely manner." },
   { id: "i37", module: "m3", coachText: "I contact the appropriate person on technical staff for the task at hand.", evalText: "Contacts the appropriate person on technical staff for the task at hand." },
 
-  // Module 5 — Maryland United Game Model (READ ONLY)
+  // Module 5 — Maryland United Game Model
   { id: "i5", module: "m4", coachText: "I can articulate our style of play in simple, memorable terms.", evalText: "Articulates the team's style of play in simple, memorable terms." },
   { id: "i6", module: "m4", coachText: "I present my Game Model to the team.", evalText: "Presents their Game Model to the team." },
   { id: "i7", module: "m4", meta: true, coachText: "My players can explain our game model in their own words.", evalText: "Players can explain the game model in their own words." },
@@ -323,7 +323,7 @@ export const MODULES = [
     window: "SEPTEMBER",
     draft: true,
     kind: "rubric",
-    title: "Maryland United Game Model (READ ONLY)",
+    title: "Maryland United Game Model",
     focus: "A clear, coachable identity for how your team plays — understood well enough to teach it off the field.",
     recording: {
       format: "Office meeting with tactical board",
