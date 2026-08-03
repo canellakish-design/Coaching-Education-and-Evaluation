@@ -1,6 +1,18 @@
 import { useState } from "react";
 import { INTRO_SECTIONS, INTRO_NEXT, GRADE_SCALE } from "../data/modules";
 
+const renderParagraph = (p, i) =>
+  typeof p === "string" ? (
+    <p key={i} className="mu-focus">
+      {p}
+    </p>
+  ) : (
+    <p key={i} className="mu-focus">
+      <strong className="mu-accent">{p.strong}</strong>
+      {p.text}
+    </p>
+  );
+
 export default function IntroModule({ state, update, onContinue }) {
   const [step, setStep] = useState(0);
   const total = INTRO_SECTIONS.length;
@@ -36,6 +48,7 @@ export default function IntroModule({ state, update, onContinue }) {
       {!isFinal ? (
         <div className="mu-intro-section">
           <p className="mu-section-label">{section.heading}</p>
+          {section.lead && <p className="mu-focus">{section.lead}</p>}
           {section.list && (
             <div className="mu-intro-list">
               {section.list.map((item) => (
@@ -54,16 +67,12 @@ export default function IntroModule({ state, update, onContinue }) {
               ))}
             </div>
           )}
-          {section.body.map((p, i) => (
-            <p key={i} className="mu-focus">
-              {p}
-            </p>
-          ))}
+          {section.body.map(renderParagraph)}
         </div>
       ) : (
         <div className="mu-intro-section">
           <p className="mu-section-label">{INTRO_NEXT.heading}</p>
-          <p className="mu-focus">{INTRO_NEXT.body}</p>
+          {INTRO_NEXT.body.map(renderParagraph)}
           <p className="mu-intro-cta">{INTRO_NEXT.cta}</p>
         </div>
       )}

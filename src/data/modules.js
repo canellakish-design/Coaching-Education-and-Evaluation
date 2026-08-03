@@ -205,21 +205,25 @@ export const ARCHETYPES = [
 ----------------------------------------------------------------*/
 export const INTRO_SECTIONS = [
   {
-    heading: "INTRODUCTION TO PLATFORM",
+    heading: "WHY THIS EXISTS",
     body: [
-      "We ask our players to be developing all season — to work at the things they're not yet good at, to take feedback without flinching, to keep a plan and revisit it. This platform asks the same of us.",
-      "Most coaching feedback happens by accident: a comment after a match, a conversation in a parking lot, a season that ends without anyone saying much at all. This replaces that with something deliberate. Over the year you'll work through eight qualities that define coaching at Maryland United, submit real footage of your actual coaching, and get specific feedback on each one.",
-      "This is a development program, not a performance review. Nothing here decides who coaches what team. The point is to give you the same thing we try to give every player — a clear picture of where you are, and a specific idea of what to work on next.",
+      "We ask our players to spend the whole season getting better. To work at the things they aren't good at yet. To take feedback without flinching. To keep a plan and actually come back to it.",
+      "This platform asks the same of us.",
+      "Most coaching feedback happens by accident — a comment after a match, a conversation in the parking lot, a season that ends without anyone saying much at all. This replaces that with something deliberate. Over the year you'll work through the eight qualities that define coaching at Maryland United, submit real footage of your own coaching, and get specific feedback on each one.",
+      "It's a development program, not a verdict. No single score here decides who coaches what team. The point is to give you exactly what we try to give every player: a clear picture of where you are, and a specific idea of what to work on next.",
     ],
   },
   {
-    heading: "COACHING EDUCATION AND EVALUATION PLATFORM",
+    heading: "THE IDEA BEHIND IT",
     body: [
-      "A club can't credibly claim to develop players while its coaches stand still. If we want players who are better in June than they were in August, the people teaching them have to be too. That's the whole idea here — coach development and player development as the same project, not separate ones.",
+      "A club can't credibly claim to develop players while its coaches stand still.",
+      "If we want players who are better in June than they were in August, the people teaching them have to be moving too. That's the whole idea here — coach development and player development aren't two projects. They're the same one, seen from two sides of the same touchline.",
+      "Everything that follows is built on that.",
     ],
   },
   {
     heading: "THE EIGHT QUALITIES",
+    lead: "These are the eight qualities that define coaching at Maryland United. You'll work through one at a time, across the year.",
     list: [
       "Set the Standard",
       "Maryland United Game Model",
@@ -237,21 +241,29 @@ export const INTRO_SECTIONS = [
   {
     heading: "HOW THE YEAR WORKS",
     body: [
-      "Modules run sequentially from August through June, roughly one a month. Each of the eight quality modules asks for a recorded submission — a parent meeting, a training session, a match day, a film session. You record it, link it, and add context on what you'd like the reviewer to notice.",
+      "The eight modules run in sequence, August through June — roughly one a month.",
+      "Each one asks for a real piece of your coaching: a parent meeting, a training session, a match day, a film session. You record it, link it, and add a short note on what you'd like your reviewer to notice. Then you get feedback on that quality, specific to what you submitted.",
+      "Real footage, one quality at a time, all year. That's the rhythm.",
     ],
   },
   {
     heading: "HOW THE SCALE WORKS",
+    lead: "Every quality is scored on a four-point scale:",
     scale: true,
     body: [
-      "Three is the standard. Four isn't the expectation — it's what happens when a coach is ready to teach others. A 2 isn't a bad mark; it's a starting point with a direction attached. We'd rather see honest 2s that move than defensive 3s that don't.",
+      { strong: "Three is the standard.", text: " It's what strong, effective coaching at this club looks like." },
+      "Four isn't the expectation — it's what shows up when a coach is ready to teach others. And a 2 isn't a bad mark; it's a starting point with a direction attached. We would rather see honest 2s that move over the year than defensive 3s that don't.",
+      "The score matters less than what it points you toward.",
     ],
   },
   {
     heading: "WHAT WE ASK OF YOU",
     body: [
-      "Submit real footage, not curated highlights. Rate yourself honestly — the gap between how you see yourself and how you're seen is the most useful thing this process produces, and it only works if you're candid. When feedback comes back, sit with it before responding to it.",
-      "Over time, this becomes part of the fuller picture the club has of you as a coach — the same picture that naturally factors into staffing decisions down the line. It's not a scorecard, and it's not about any single form. Coaches who lean into this tend to be the coaches who lean into everything else here, and that shows.",
+      "Three things.",
+      { strong: "Submit real footage, not curated highlights.", text: " The process only works on the coaching you actually do." },
+      { strong: "Rate yourself honestly.", text: " The gap between how you see yourself and how you're seen is the single most useful thing this produces — and it only appears if you're candid." },
+      { strong: "Sit with the feedback before you respond to it.", text: " Read it, let it land, then decide what to do with it." },
+      "And to be straight with you about the bigger picture: no single score here is a scorecard, and no one form decides anything. But over time, how you engage with your own development becomes part of how the club knows you as a coach — the same way it does with everything else you do here. Coaches who lean into this tend to be the ones who lean into everything, and that has a way of showing.",
       "That's the ask. It's the same one we make of our players every week.",
     ],
   },
@@ -259,7 +271,11 @@ export const INTRO_SECTIONS = [
 
 export const INTRO_NEXT = {
   heading: "WHAT COMES NEXT",
-  body: "Module 2 asks you to rate yourself on the same criteria your evaluator will use, before any evaluation happens. Module 3 asks what actually drives you as a coach. Both take real time — do them when you can think, not between two other things.",
+  body: [
+    { strong: "Module 2", text: " asks you to rate yourself on the exact criteria your evaluator will use — before any evaluation happens." },
+    { strong: "Module 3", text: " asks what actually drives you as a coach." },
+    "Both take real thought. Do them when you can think, not between two other things.",
+  ],
   cta: "Mark this as read to continue to Module 2.",
 };
 

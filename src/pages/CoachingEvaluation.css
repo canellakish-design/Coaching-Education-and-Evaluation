@@ -810,6 +810,8 @@
 .mu-intro-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, auto);
+  grid-auto-flow: column;
   gap: 10px;
   margin: 14px 0;
 }
@@ -844,5 +846,7 @@
   }
   .mu-intro-list {
     grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-auto-flow: row;
   }
 }
