@@ -445,6 +445,15 @@ export const MODULES = [
       desc: "A player/family review meeting covering the season and the road ahead.",
     },
   },
+  {
+    id: "recruiting",
+    num: "14",
+    window: "TBD",
+    draft: true,
+    kind: "placeholder",
+    title: "Recruiting Support (15-18 Coaches Only)",
+    focus: "TBD",
+  },
 ];
 
 export const RUBRIC_MODULES = MODULES.filter((m) => m.kind === "rubric");

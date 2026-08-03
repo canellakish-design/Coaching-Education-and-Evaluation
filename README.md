@@ -1,11 +1,12 @@
 # Maryland United — Coaching Excellence Pathway
 
 A standalone Vite + React app with Firebase Authentication (Google Sign-In,
-gated by an approved-coach allowlist) and Firestore. Thirteen modules across
+gated by an approved-coach allowlist) and Firestore. Fourteen modules across
 the season: an introduction, a self-evaluation, a motivational profile, a
-1-on-1 meeting, a midseason feedback placeholder, and eight coaching
-qualities assessed through recorded submissions. A schedule sits above the
-module list showing when each module is due — see "Schedule" below.
+1-on-1 meeting, a midseason feedback placeholder, eight coaching qualities
+assessed through recorded submissions, and a recruiting support module for
+U15–U19 coaches. A schedule sits above the module list showing when each
+module is due — see "Schedule" below.
 
 ## Structure
 
@@ -43,10 +44,15 @@ evaluator gives spoken feedback instead, via the 1-on-1 meeting.
 Placeholder module (content TBD) sitting between Match Preparation &
 Execution and Transformational Experience, around January.
 
+**Module 14 — Recruiting Support (15-18 Coaches Only)**
+Placeholder module (content TBD) at the end of the season, for U15–U19
+coaches only — the title says so, but this isn't yet enforced in code, so
+all coaches currently see it listed (draft/locked) the same way.
+
 ## Schedule
 
 A schedule table sits above the module list, visible to every coach. It
-lists all thirteen modules against two date columns — U9–U14 and U15–U19 —
+lists all fourteen modules against two date columns — U9–U14 and U15–U19 —
 since the two age bands don't run the same season calendar (see
 `src/data/teams.js` for the team-to-track mapping). Modules don't carry
 their own due date anymore; `SCHEDULE_DATES` in `src/data/modules.js` is
