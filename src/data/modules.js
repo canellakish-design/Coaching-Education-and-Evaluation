@@ -340,7 +340,13 @@ export const MODULES = [
       format: "Standards meeting with players — office in Liberty, one per team",
       desc: "Record a standards meeting with your players, held in the office in Liberty, for every team you coach. Set expectations directly with the team — behavior, effort, and conduct for the season. If you coach more than one team, submit a separate link for each below.",
       tip: "It's your team to manage — this meeting is where that job starts. Ground it in the same three things we ask of every coach: commitment, courage, passion. Before you ask your players, answer it yourself: what does commitment look like to you? Then make the standard concrete, not just a feeling.",
-      nonNegotiables: ["Training gear", "Attendance"],
+      nonNegotiables: [
+        "Communicate directly with your coach",
+        "PlayMetrics availability doesn't replace direct communication",
+        "Maryland United gear at all times — cold, rain, or shine",
+        "100% commitment",
+        "100% effort",
+      ],
     },
   },
   {
