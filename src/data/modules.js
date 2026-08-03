@@ -325,7 +325,7 @@ export const MODULES = [
     title: "Set the Standard",
     focus: "Standards, communication, and organization that set the tone for the season.",
     recording: {
-      format: "First parent meeting — one per team",
+      format: "1st Parent Meeting — one per team",
       desc: "Record your first parent meeting of the season for every team you coach. Before you record, put together a short agenda or presentation covering your core values — the things you want parents to know matter to you as a coach — and walk through it live during the meeting. If you coach more than one team, submit a separate link for each below.",
       tip: "Be concrete when you present — specifics build trust, vague reassurances don't. Say exactly what you'll do and what you expect, and don't promise anything you can't actually deliver. That's not the same as playing it safe: parents can tell the difference between a coach who's decisive and one who's hedging. Pick a position and hold it — nothing undercuts a first meeting faster than contradicting yourself twenty minutes in.",
       exampleUrl: "https://docs.google.com/presentation/d/1fOlaB8GfXE81QLNx7nN-yGB0K33yikcbs_P5tpCELl8/edit?slide=id.g18f4df606e3_0_16#slide=id.g18f4df606e3_0_16",
@@ -333,7 +333,7 @@ export const MODULES = [
       needsMaterialLink: true,
     },
     recording2: {
-      format: "Standards meeting with players — office in Liberty, one per team",
+      format: "1st Player Meeting — office in Liberty, one per team",
       desc: "Record a standards meeting with your players, held in the office in Liberty, for every team you coach. Set expectations directly with the team — behavior, effort, and conduct for the season. If you coach more than one team, submit a separate link for each below.",
       tip: "It's your team to manage — this meeting is where that job starts. Ground it in the same three things we ask of every coach: commitment, courage, passion. Before you ask your players, answer it yourself: what does commitment look like to you? Then make the standard concrete, not just a feeling.",
       nonNegotiables: [
@@ -458,7 +458,7 @@ export const SCHEDULE_DATES = {
   meeting1: { young: "AUG 14" },
   intro: { young: "AUG 14" },
   m1: { young: "AUG 14" },
-  m2: { young: "AUG 15" },
+  m2: { young: "AUG 14" },
   m3: { young: "AUG 20" },
 };
 
