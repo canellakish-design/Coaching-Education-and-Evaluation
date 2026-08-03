@@ -44,6 +44,7 @@ export default function SelfEvalModule({ state, update }) {
                 label={item.coachText}
                 value={ratings[item.id] ?? null}
                 onChange={(v) => setRating(item.id, v)}
+                allowNA
               />
               {item.meta && (
                 <RatingRow
@@ -51,6 +52,7 @@ export default function SelfEvalModule({ state, update }) {
                   sublabel=" "
                   value={meta[item.id] ?? null}
                   onChange={(v) => setMeta(item.id, v)}
+                  allowNA
                 />
               )}
             </div>

@@ -1,6 +1,6 @@
 import { GRADE_SCALE } from "../data/modules";
 
-export default function RatingRow({ label, value, onChange, sublabel }) {
+export default function RatingRow({ label, value, onChange, sublabel, allowNA }) {
   return (
     <div className="mu-rating-row">
       <p className="mu-rating-label">
@@ -19,6 +19,16 @@ export default function RatingRow({ label, value, onChange, sublabel }) {
             {g.value}
           </button>
         ))}
+        {allowNA && (
+          <button
+            type="button"
+            title="Not applicable"
+            className={`mu-rating-chip mu-rating-chip-na ${value === "N/A" ? "is-active" : ""}`}
+            onClick={() => onChange(value === "N/A" ? null : "N/A")}
+          >
+            N/A
+          </button>
+        )}
       </div>
     </div>
   );

@@ -557,6 +557,16 @@
   border-color: #d22730;
   color: #fff;
 }
+.mu-rating-chip-na {
+  width: auto;
+  padding: 0 8px;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+.mu-rating-chip-na.is-active {
+  background: #6B6B6B;
+  border-color: #6B6B6B;
+}
 
 /* ---------- team bonding ---------- */
 .mu-bonding-entry {

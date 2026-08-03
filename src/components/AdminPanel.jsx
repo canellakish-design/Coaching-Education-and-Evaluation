@@ -25,8 +25,9 @@ export default function AdminPanel({ data, archetype, setArchetype, addNote }) {
 
   const rows = RUBRIC_ITEMS.map((item) => {
     const self = selfRatings[item.id] ?? null;
+    const selfNum = typeof self === "number" ? self : null;
     const evaluator = data.modules?.[item.module]?.itemGrades?.[item.id] ?? null;
-    const gap = self != null && evaluator != null ? self - evaluator : null;
+    const gap = selfNum != null && evaluator != null ? selfNum - evaluator : null;
     return { item, self, evaluator, gap, meta: metaRatings[item.id] ?? null };
   });
 
