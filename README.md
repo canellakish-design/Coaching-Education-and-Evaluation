@@ -39,9 +39,9 @@ picks up where they left off. The module's own ✓ checkmark only appears
 once all four underlying tasks are done.
 
 **Modules 2–3, 5–8, 10–11 — The Rubric**
-Set the Standard, Maryland United Game Model (currently `draft: true` and
+Set the Standard, Program Game Model (currently `draft: true` and
 locked for coaches while it's being rebuilt), Individual Development
-Plans, Video Analysis, Maryland United Training Session, Match Preparation &
+Plans, Video Analysis, Training Session Basics, Match Preparation &
 Execution, Transformational Experience (includes the Team Bonding
 exercise), Club Pathway. Each has a recorded submission and per-item
 evaluator grading. There's no per-module written feedback field — the

@@ -44,13 +44,13 @@ export const RUBRIC_ITEMS = [
   { id: "i36", module: "m3", coachText: "I respond to messages in a timely manner.", evalText: "Responds to messages in a timely manner." },
   { id: "i37", module: "m3", coachText: "I contact the appropriate person on technical staff for the task at hand.", evalText: "Contacts the appropriate person on technical staff for the task at hand." },
 
-  // Module 3 — Maryland United Game Model
+  // Module 3 — Program Game Model
   { id: "i5", module: "m4", coachText: "I can articulate our style of play in simple, memorable terms.", evalText: "Articulates the team's style of play in simple, memorable terms." },
   { id: "i6", module: "m4", coachText: "I present my Game Model to the team.", evalText: "Presents their Game Model to the team." },
   { id: "i7", module: "m4", meta: true, coachText: "My players can explain our game model in their own words.", evalText: "Players can explain the game model in their own words." },
   { id: "i8", module: "m4", coachText: "I adjust our game model based on personnel and opponent without losing our core identity.", evalText: "Adjusts the game model for personnel and opponent without losing core identity." },
 
-  // Module 6 — Maryland United Training Session
+  // Module 6 — Training Session Basics
   { id: "i9", module: "m5", coachText: "My sessions are purposefully sequenced with clear objectives.", evalText: "Sessions are purposefully sequenced with clear objectives." },
   { id: "i10", module: "m5", coachText: "I minimize standing in lines and maximize touches and reps.", evalText: "Minimizes lines; maximizes touches and reps." },
   { id: "i11", module: "m5", meta: true, coachText: "I create a training environment where players feel safe to make mistakes.", evalText: "Creates an environment where players are willing to risk mistakes." },
@@ -229,9 +229,9 @@ export const INTRO_SECTIONS = [
     lead: "These are the eight qualities that define coaching at Maryland United. You'll work through one at a time, across the year.",
     list: [
       "Set the Standard",
-      "Maryland United Game Model",
+      "Program Game Model",
       "Video Analysis",
-      "Maryland United Training Session",
+      "Training Session Basics",
       "Match Preparation & Execution",
       "Transformational Experience",
       "Individual Development Plans",
@@ -328,7 +328,7 @@ export const MODULES = [
     window: "SEPTEMBER",
     draft: true,
     kind: "rubric",
-    title: "Maryland United Game Model",
+    title: "Program Game Model",
     focus: "A clear, coachable identity for how your team plays — understood well enough to teach it off the field.",
     recording: {
       format: "Office meeting with tactical board",
@@ -375,7 +375,7 @@ export const MODULES = [
     window: "NOVEMBER",
     draft: true,
     kind: "rubric",
-    title: "Maryland United Training Session",
+    title: "Training Session Basics",
     focus: "Sessions that are safe, demanding, and full of touches, decisions, and joy.",
     recording: {
       format: "Full team training session",
