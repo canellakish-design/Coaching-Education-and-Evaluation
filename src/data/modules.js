@@ -54,14 +54,6 @@ export const RUBRIC_ITEMS = [
   { id: "i58", module: "m4", coachText: "My pressing scheme is man-to-man regardless of formation — that identity doesn't change based on the opponent.", evalText: "Pressing scheme is man-to-man regardless of formation — the identity doesn't change based on the opponent." },
   { id: "i59", module: "m4", coachText: "My build-out is anchored on a one-player overload — I can show exactly where that extra player comes from (a center back stepping in, a midfielder dropping, the goalkeeper in the build).", evalText: "Build-out is anchored on a one-player overload — the coach can show exactly where that extra player comes from." },
 
-  // Module 4 — Girls Program Technical Plan
-  { id: "i43", module: "technicalPlan", coachText: "My current cycle traces to a game-model principle by name — I can say which and why.", evalText: "Current cycle traces to a game-model principle by name — the coach can say which and why." },
-  { id: "i44", module: "technicalPlan", coachText: "My week is sequenced: Tuesday group night, Wednesday primary phase, Thursday the transition that follows it.", evalText: "Week is sequenced: Tuesday group night, Wednesday primary phase, Thursday the transition that follows it." },
-  { id: "i45", module: "technicalPlan", coachText: "I arrive at the bi-weekly meeting with match evidence for the next cycle pick.", evalText: "Arrives at the bi-weekly meeting with match evidence for the next cycle pick." },
-  { id: "i46", module: "technicalPlan", coachText: "My players can name the week's theme in game-model language.", evalText: "Players can name the week's theme in game-model language." },
-  { id: "i47", module: "technicalPlan", coachText: "Homework goes out every week — S&C plus a half of soccer — and I follow up on it.", evalText: "Homework goes out every week — S&C plus a half of soccer — and the coach follows up on it." },
-  { id: "i60", module: "technicalPlan", coachText: "I expose my players to real 1v1 defending situations rather than shielding them from it — that's what our pressing identity requires downstream.", evalText: "Exposes players to real 1v1 defending situations rather than shielding them from it — what the pressing identity requires downstream." },
-
   // Module 5 — Individual Development Plans
   { id: "i21", module: "m8", verifiable: true, coachText: "Every player has a current, specific plan — not a generic one.", evalText: "Every player has a current, specific plan — not a generic one." },
   { id: "i22", module: "m8", coachText: "Feedback is continuous through the year, not a single end-of-season report.", evalText: "Feedback is continuous through the year, not a single end-of-season report." },
@@ -381,26 +373,12 @@ export const MODULES = [
     num: "04",
     window: "SEPTEMBER",
     draft: true,
-    kind: "rubric",
+    kind: "placeholder",
     title: "Girls Program Technical Plan",
-    focus: "The game model, translated into what every player must master.",
-    standardNote: "Three is the standard. Four is a coach whose cycle plans other coaches ask to copy.",
+    focus: "We will meet once a month to establish a plan as a staff.",
     resources: [
-      { title: "Coaching Manual — Technical Plan: Phase-of-Play Weekly Cycles", description: "The five cycles, the Tue/Wed/Thu structure, and the meeting governance — one document with the game model", url: "https://docs.google.com/document/d/17Cy9KC2P2QFqqU5DKT1m6Il2fvQy9C0Mvoz_IsV9Ex4/edit" },
-      { title: "Girls Technical Plan — planning spreadsheet", description: "The operational calendar view: weekly themes, day formats, homework, post-match video standard", url: "https://docs.google.com/spreadsheets/d/1resX2lX2XaCSmzvFP9t8zzB4-7H6dlY0MqdzVMLzSe0/edit" },
-      { title: "Technical Plan | 13–18 ECNL, RL, and Premier", description: "The age-banded delivery deck of Cycles 1–5", url: "https://docs.google.com/presentation/d/1VwqjHq_rqe9ukRUJ7RLvflmbDgi4to7J3nzUFpZnoXY/edit" },
-      { title: "Girls Program Coaches Handbook — Google Site", description: "The hub every technical plan document links back to", url: "https://sites.google.com/mdunitedfc.org/girls-program-coaches-handbook/home" },
+      { title: "Girls Program Technical Plan", description: "The staff planning deck", url: "https://docs.google.com/presentation/d/1a7CqkchbC0jbEz2bBqcsd8DRppJsCIMlSYT64Id3qlo/edit?sAlide=id.g36fd269d887_0_26#slide=id.g36fd269d887_0_26" },
     ],
-    reflectPrompts: [
-      "Which game-model demand does your team meet worst right now — and which cycle trains it?",
-      "Could a visitor at Thursday's session name your week's cycle without asking you?",
-      "Pick one player: what is her positional demand, and where does it show up in her plan?",
-    ],
-    recording: {
-      format: "Weekly phase-of-play cycle plan (Tue–Thu)",
-      desc: "Submit your weekly plan for a current phase-of-play cycle — Tuesday through Thursday — with a note naming the game-model principle it trains and what you want your reviewer to notice.",
-      tip: "Younger age groups should get real exposure to 1v1 defensive situations, not protection from them — that's what the club's man-to-man pressing identity requires downstream. It's the coaching, not the exposure, that turns those reps into good habits.",
-    },
   },
   {
     id: "m8",

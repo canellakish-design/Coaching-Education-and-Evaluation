@@ -24,9 +24,9 @@ bottom progress bar (`src/components/OnboardingModule.jsx`):
 8. **What Comes Next** — the closing intro page, with its own "Mark as
    Read" action (separate from the Next control, same pattern as every
    other page).
-9. **Self-Evaluation** — coaches rate themselves 1–4 on all 52 rubric
-   items — the *same* items their evaluator rates across Modules 2–10.
-   Two reflection prompts close it out.
+9. **Self-Evaluation** — coaches rate themselves 1–4 on all 49 rubric
+   items — the *same* items their evaluator rates across Modules 2–3
+   and 5–10. Two reflection prompts close it out.
 10. **What Drives You** — twelve open-response prompts on motivation,
    goals, energy, and what makes the job worth doing. The evaluator reads
    these and assigns a coaching archetype.
@@ -39,18 +39,17 @@ position are also saved (`onboardingStep`), so a coach who leaves mid-flow
 picks up where they left off. The module's own ✓ checkmark only appears
 once all four underlying tasks are done.
 
-**Modules 2–10 — The Rubric**
-Set the Standard, Program Game Model, Girls Program Technical Plan,
-Individual Development Plans, Video Analysis, Training Session Basics,
-Match Preparation & Execution, Transformational Experience (includes
-the Team Bonding exercise), Club Pathway. All but Set the Standard are
-currently `draft: true` — shown as "COMING SOON" and unclickable for
-coaches while they're being reviewed; accounts in `CREATOR_EMAILS`
-(`src/data/modules.js`) can still open them, tagged "DRAFT". Each has
-a recorded submission and per-item
-evaluator grading. There's no per-module written feedback field — the
-evaluator gives spoken feedback instead, via the 1-on-1 meeting (or a
-written Note — see below).
+**Modules 2–3, 5–10 — The Rubric**
+Set the Standard, Program Game Model, Individual Development Plans,
+Video Analysis, Training Session Basics, Match Preparation & Execution,
+Transformational Experience (includes the Team Bonding exercise), Club
+Pathway. All but Set the Standard are currently `draft: true` — shown
+as "COMING SOON" and unclickable for coaches while they're being
+reviewed; accounts in `CREATOR_EMAILS` (`src/data/modules.js`) can
+still open them, tagged "DRAFT". Each has a recorded submission and
+per-item evaluator grading. There's no per-module written feedback
+field — the evaluator gives spoken feedback instead, via the 1-on-1
+meeting (or a written Note — see below).
 
 Every rubric module also carries, straight from the handbook: a **WHAT
 WE LOOK FOR** criteria list (the same items rated in Module 1's
@@ -58,6 +57,13 @@ Self-Evaluation and by the evaluator here), a short **standard note**
 on what a 3 vs. a 4 looks like, a **RESOURCES** list of the real
 planning docs/decks/sheets behind that module, and a closing **REFLECT**
 section of open questions — display-only, not collected as data.
+
+**Module 4 — Girls Program Technical Plan**
+A lightweight placeholder, not a rubric module — no criteria, no
+recorded submission, no evaluator grading. Just a short note ("we will
+meet once a month to establish a plan as a staff") and a link to the
+staff planning deck, under a **RESOURCES** list like the rubric
+modules use.
 
 ## Schedule
 

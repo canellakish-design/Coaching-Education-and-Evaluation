@@ -379,6 +379,25 @@ export default function CoachingEvaluation() {
                 {open && m.kind === "placeholder" && (
                   <div className="mu-card-body">
                     <p className="mu-focus">{m.focus}</p>
+                    {m.resources && (
+                      <div className="mu-subbox">
+                        <p className="mu-section-label">RESOURCES</p>
+                        <div className="mu-resources">
+                          {m.resources.map((r) => (
+                            <a
+                              key={r.url}
+                              className="mu-resource-row"
+                              href={r.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <span className="mu-resource-title">{r.title}</span>
+                              <span className="mu-resource-desc">{r.description}</span>
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 )}
                 {open && m.kind === "rubric" && (
