@@ -766,26 +766,6 @@
 }
 
 /* ---------- intro module ---------- */
-.mu-intro-dashes {
-  display: flex;
-  gap: 4px;
-  margin: 4px 0 8px;
-}
-.mu-intro-dash {
-  height: 3px;
-  flex: 1;
-  background: #242424;
-}
-.mu-intro-dash.is-filled {
-  background: #f5b917;
-}
-.mu-intro-count {
-  font-family: "Barlow Condensed", sans-serif;
-  letter-spacing: 2px;
-  font-size: 12px;
-  color: #6B6B6B;
-  margin: 0 0 14px;
-}
 .mu-intro-section {
   margin-bottom: 4px;
 }
@@ -802,14 +782,6 @@
   padding: 4px 0 4px 10px;
   font-size: 14px;
   color: #D6D6D6;
-}
-.mu-intro-nav {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-.mu-intro-nav .mu-btn {
-  flex: 1;
 }
 .mu-intro-cta {
   margin: 14px 0 0;
