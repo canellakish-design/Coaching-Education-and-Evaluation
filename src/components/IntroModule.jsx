@@ -13,13 +13,19 @@ const renderParagraph = (p, i) =>
     </p>
   );
 
-export default function IntroModule({ state, update, onContinue }) {
+export default function IntroModule({ state, update, onContinue, onBack }) {
   const [step, setStep] = useState(0);
   const total = INTRO_SECTIONS.length;
   const isFinal = step === total;
   const section = isFinal ? null : INTRO_SECTIONS[step];
 
-  const goBack = () => setStep((s) => Math.max(0, s - 1));
+  const goBack = () => {
+    if (step === 0) {
+      onBack?.();
+    } else {
+      setStep((s) => Math.max(0, s - 1));
+    }
+  };
   const goNext = () => setStep((s) => Math.min(total, s + 1));
 
   const finish = () => {
@@ -78,11 +84,9 @@ export default function IntroModule({ state, update, onContinue }) {
       )}
 
       <div className="mu-intro-nav">
-        {step > 0 && (
-          <button className="mu-btn mu-btn-outline" onClick={goBack}>
-            BACK
-          </button>
-        )}
+        <button className="mu-btn mu-btn-outline" onClick={goBack}>
+          BACK
+        </button>
         {!isFinal ? (
           <button className="mu-btn mu-btn-solid" onClick={goNext}>
             CONTINUE

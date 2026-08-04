@@ -40,7 +40,7 @@ export default function OnboardingModule({
         <OneOnOneModule state={data.meeting} update={updateMeeting} />
       )}
       {current.key === "intro" && (
-        <IntroModule state={data.intro} update={updateIntro} onContinue={goNext} />
+        <IntroModule state={data.intro} update={updateIntro} onContinue={goNext} onBack={goBack} />
       )}
       {current.key === "selfEval" && (
         <SelfEvalModule state={data.selfEval} update={updateSelfEval} />
@@ -49,23 +49,25 @@ export default function OnboardingModule({
         <BucketModule state={data.bucket} update={updateBucket} />
       )}
 
-      <div className="mu-onboarding-nav">
-        {step > 0 && (
-          <button className="mu-btn mu-btn-outline" onClick={goBack}>
-            BACK
-          </button>
-        )}
-        {step < STEPS.length - 1 && (
-          <button
-            className="mu-btn mu-btn-solid"
-            disabled={!canAdvance}
-            title={canAdvance ? undefined : "Complete this step to continue"}
-            onClick={goNext}
-          >
-            NEXT
-          </button>
-        )}
-      </div>
+      {current.key !== "intro" && (
+        <div className="mu-onboarding-nav">
+          {step > 0 && (
+            <button className="mu-btn mu-btn-outline" onClick={goBack}>
+              BACK
+            </button>
+          )}
+          {step < STEPS.length - 1 && (
+            <button
+              className="mu-btn mu-btn-solid"
+              disabled={!canAdvance}
+              title={canAdvance ? undefined : "Complete this step to continue"}
+              onClick={goNext}
+            >
+              NEXT
+            </button>
+          )}
+        </div>
+      )}
 
       <div className="mu-onboarding-progress-wrap">
         <p className="mu-onboarding-progress-label">
