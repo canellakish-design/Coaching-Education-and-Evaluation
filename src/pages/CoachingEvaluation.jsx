@@ -151,8 +151,15 @@ export default function CoachingEvaluation() {
     setOpenId(id);
     if (data.lastOpenId !== id) persist({ ...data, lastOpenId: id });
   };
+  const confirmLeave = () =>
+    window.confirm(
+      "Saved ✓ — your work in this module is saved automatically. Leave this module?"
+    );
+
   const toggleOpen = (m) => {
     if (m.draft && !isCreator) return;
+    const current = MODULES.find((x) => x.id === openId);
+    if (current && isSubmitted(current) && !confirmLeave()) return;
     return openId === m.id ? setOpenId(null) : openModule(m.id);
   };
 
