@@ -15,10 +15,7 @@ import {
   emptyModuleState,
   emptyBonding,
 } from "../data/modules";
-import IntroModule from "../components/IntroModule";
-import OneOnOneModule from "../components/OneOnOneModule";
-import SelfEvalModule from "../components/SelfEvalModule";
-import BucketModule from "../components/BucketModule";
+import OnboardingModule from "../components/OnboardingModule";
 import RubricModule from "../components/RubricModule";
 import AdminPanel from "../components/AdminPanel";
 import "./CoachingEvaluation.css";
@@ -32,6 +29,7 @@ const hydrate = (remote, fallbackName) => {
     coachName: remote.coachName || base.coachName,
     lastOpenId: remote.lastOpenId || base.lastOpenId,
     notes: Array.isArray(remote.notes) ? remote.notes : base.notes,
+    onboardingStep: typeof remote.onboardingStep === "number" ? remote.onboardingStep : base.onboardingStep,
     intro: { ...base.intro, ...(remote.intro || {}) },
     meeting: { ...base.meeting, ...(remote.meeting || {}) },
     selfEval: { ...base.selfEval, ...(remote.selfEval || {}) },
@@ -116,6 +114,7 @@ export default function CoachingEvaluation() {
   const updateMeeting = (patch) => persist({ ...data, meeting: { ...data.meeting, ...patch } });
   const updateSelfEval = (patch) => persist({ ...data, selfEval: { ...data.selfEval, ...patch } });
   const updateBucket = (patch) => persist({ ...data, bucket: { ...data.bucket, ...patch } });
+  const setOnboardingStep = (onboardingStep) => persist({ ...data, onboardingStep });
   const setBonding = (idx, patch) => {
     const next = data.bonding.map((b, i) => (i === idx ? { ...b, ...patch } : b));
     persist({ ...data, bonding: next });
@@ -158,10 +157,11 @@ export default function CoachingEvaluation() {
   };
 
   const isSubmitted = (m) => {
-    if (m.kind === "intro") return data.intro?.read;
-    if (m.kind === "meeting") return data.meeting?.completed;
-    if (m.kind === "selfEval") return data.selfEval.submitted;
-    if (m.kind === "bucket") return data.bucket.submitted;
+    if (m.kind === "onboarding") {
+      return Boolean(
+        data.meeting?.completed && data.intro?.read && data.selfEval?.submitted && data.bucket?.submitted
+      );
+    }
     const ms = data.modules[m.id];
     if (m.recording2) return Boolean(ms?.submitted && ms?.submitted2);
     return ms?.submitted;
@@ -177,7 +177,7 @@ export default function CoachingEvaluation() {
 
   return (
     <div className="mu-page">
-      {openId !== "intro" && (
+      {openId !== "onboarding" && (
         <div aria-hidden="true">
           <div className="mu-checker" />
           <div className="mu-redline" />
@@ -326,7 +326,7 @@ export default function CoachingEvaluation() {
           const locked = m.draft && !isCreator;
           return (
             <div key={m.id}>
-              {idx === 4 && <p className="mu-divider">THE RUBRIC</p>}
+              {idx === 1 && <p className="mu-divider">THE RUBRIC</p>}
               <article className={`mu-card ${open ? "mu-card-open" : ""} ${locked ? "mu-card-disabled" : ""}`}>
                 <button
                   className="mu-card-head"
@@ -359,26 +359,21 @@ export default function CoachingEvaluation() {
                   </span>
                 </button>
 
-                {open && m.kind === "intro" && (
-                  <IntroModule
-                    state={data.intro}
-                    update={updateIntro}
-                    onContinue={() => openModule("m1")}
+                {open && m.kind === "onboarding" && (
+                  <OnboardingModule
+                    data={data}
+                    step={data.onboardingStep ?? 0}
+                    setStep={setOnboardingStep}
+                    updateMeeting={updateMeeting}
+                    updateIntro={updateIntro}
+                    updateSelfEval={updateSelfEval}
+                    updateBucket={updateBucket}
                   />
-                )}
-                {open && m.kind === "meeting" && (
-                  <OneOnOneModule state={data.meeting} update={updateMeeting} />
                 )}
                 {open && m.kind === "placeholder" && (
                   <div className="mu-card-body">
                     <p className="mu-focus">{m.focus}</p>
                   </div>
-                )}
-                {open && m.kind === "selfEval" && (
-                  <SelfEvalModule state={data.selfEval} update={updateSelfEval} />
-                )}
-                {open && m.kind === "bucket" && (
-                  <BucketModule state={data.bucket} update={updateBucket} />
                 )}
                 {open && m.kind === "rubric" && (
                   <RubricModule

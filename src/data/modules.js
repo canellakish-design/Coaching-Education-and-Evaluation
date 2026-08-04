@@ -25,7 +25,8 @@ export const SUBMISSION_STEPS = [
 
 /* ---------------------------------------------------------------
    RUBRIC ITEMS
-   Each item is rated twice: once by the coach in Module 1 (coachText),
+   Each item is rated twice: once by the coach in the Self-Evaluation step
+   of Module 1 (coachText),
    once by the evaluator in the matching rubric module (evalText).
    Same construct, same 1-4 anchors — that pairing is what makes the
    self-vs-evaluator gap meaningful.
@@ -33,7 +34,7 @@ export const SUBMISSION_STEPS = [
    verifiable: true -> objectively checkable, not a judgment call
 ----------------------------------------------------------------*/
 export const RUBRIC_ITEMS = [
-  // Module 5 — Set the Standard (Team Management)
+  // Module 2 — Set the Standard (Team Management)
   { id: "i1", module: "m3", coachText: "I clearly define and communicate expectations for behavior, effort, and conduct at the start of the season.", evalText: "Defines and communicates expectations for behavior, effort, and conduct at the start of the season." },
   { id: "i2", module: "m3", coachText: "I proactively communicate with parents rather than only reacting to their questions or concerns.", evalText: "Communicates with parents proactively rather than only reactively." },
   { id: "i3", module: "m3", coachText: "My scheduling, rosters, and season logistics are consistently well-organized.", evalText: "Scheduling, rosters, and season logistics are consistently well-organized." },
@@ -43,32 +44,32 @@ export const RUBRIC_ITEMS = [
   { id: "i36", module: "m3", coachText: "I respond to messages in a timely manner.", evalText: "Responds to messages in a timely manner." },
   { id: "i37", module: "m3", coachText: "I contact the appropriate person on technical staff for the task at hand.", evalText: "Contacts the appropriate person on technical staff for the task at hand." },
 
-  // Module 6 — Maryland United Game Model
+  // Module 3 — Maryland United Game Model
   { id: "i5", module: "m4", coachText: "I can articulate our style of play in simple, memorable terms.", evalText: "Articulates the team's style of play in simple, memorable terms." },
   { id: "i6", module: "m4", coachText: "I present my Game Model to the team.", evalText: "Presents their Game Model to the team." },
   { id: "i7", module: "m4", meta: true, coachText: "My players can explain our game model in their own words.", evalText: "Players can explain the game model in their own words." },
   { id: "i8", module: "m4", coachText: "I adjust our game model based on personnel and opponent without losing our core identity.", evalText: "Adjusts the game model for personnel and opponent without losing core identity." },
 
-  // Module 5 — Maryland United Training Session
+  // Module 6 — Maryland United Training Session
   { id: "i9", module: "m5", coachText: "My sessions are purposefully sequenced with clear objectives.", evalText: "Sessions are purposefully sequenced with clear objectives." },
   { id: "i10", module: "m5", coachText: "I minimize standing in lines and maximize touches and reps.", evalText: "Minimizes lines; maximizes touches and reps." },
   { id: "i11", module: "m5", meta: true, coachText: "I create a training environment where players feel safe to make mistakes.", evalText: "Creates an environment where players are willing to risk mistakes." },
   { id: "i12", module: "m5", coachText: "My coaching points are timely and specific — not constant or vague.", evalText: "Coaching points are timely and specific rather than constant or vague." },
 
-  // Module 6 — Match Preparation & Execution
+  // Module 7 — Match Preparation & Execution
   { id: "i13", module: "m6", coachText: "My pregame plan is specific to the opponent, not generic.", evalText: "Pregame plan is opponent-specific rather than generic." },
   { id: "i14", module: "m6", coachText: "My team talks are clear, concise, and player-focused.", evalText: "Team talks are clear, concise, and player-focused." },
   { id: "i15", module: "m6", coachText: "I make timely, well-reasoned adjustments during matches.", evalText: "Makes timely, well-reasoned in-match adjustments." },
   { id: "i16", module: "m6", meta: true, coachText: "I stay level-headed and set the emotional tone on the sideline.", evalText: "Stays level-headed and sets the emotional tone on the sideline." },
   { id: "i38", module: "m6", coachText: "I work as a colleague with other staff on competitive nights.", evalText: "Works as a colleague with other staff on competitive nights." },
 
-  // Module 7 — Analysis
+  // Module 5 — Analysis
   { id: "i17", module: "m7", coachText: "I do thorough, specific prep on opponent tendencies.", evalText: "Opponent prep is thorough and specific to tendencies." },
   { id: "i18", module: "m7", coachText: "My video clips are purposeful, not just a highlight reel.", evalText: "Clips are purposeful and thematic, not a highlight reel." },
   { id: "i19", module: "m7", meta: true, coachText: "My players participate actively in analysis sessions rather than just watching.", evalText: "Players participate actively in analysis rather than passively watching." },
   { id: "i20", module: "m7", coachText: "I connect analysis findings back into training and match plans.", evalText: "Connects analysis findings back into training and match plans." },
 
-  // Module 6 — Individual Development Plans
+  // Module 4 — Individual Development Plans
   { id: "i21", module: "m8", verifiable: true, coachText: "Every player has a specific, written development plan.", evalText: "Every player has a specific, written development plan." },
   { id: "i22", module: "m8", verifiable: true, coachText: "I keep each player's IDP updated regularly throughout the season, not just at the start.", evalText: "Player IDPs are updated regularly throughout the season, not just at the start." },
   { id: "i23", module: "m8", coachText: "I differentiate my coaching and feedback by player.", evalText: "Differentiates coaching and feedback by player." },
@@ -94,7 +95,7 @@ export const itemsForModule = (moduleId) => RUBRIC_ITEMS.filter((i) => i.module 
 export const META_ITEMS = RUBRIC_ITEMS.filter((i) => i.meta);
 
 /* ---------------------------------------------------------------
-   MODULE 1 — reflection prompts
+   SELF-EVALUATION — closing reflection prompts (part of Module 1)
 ----------------------------------------------------------------*/
 export const REFLECTION_PROMPTS = [
   { id: "r1", text: "What's one piece of feedback you've received that surprised you?" },
@@ -102,7 +103,7 @@ export const REFLECTION_PROMPTS = [
 ];
 
 /* ---------------------------------------------------------------
-   MODULE 2 — What Drives You?
+   WHAT DRIVES YOU — bucket questionnaire (part of Module 1)
 ----------------------------------------------------------------*/
 export const BUCKET_SECTIONS = [
   {
@@ -149,7 +150,7 @@ export const BUCKET_QUESTIONS = BUCKET_SECTIONS.flatMap((s) => s.questions);
 /* ---------------------------------------------------------------
    COACH ARCHETYPES — internal / evaluator-facing only.
    A coaching-style vocabulary, not a clinical assessment.
-   Assigned by the evaluator after reading Module 2 responses.
+   Assigned by the evaluator after reading the What Drives You responses.
 ----------------------------------------------------------------*/
 export const ARCHETYPES = [
   {
@@ -274,11 +275,11 @@ export const INTRO_SECTIONS = [
 export const INTRO_NEXT = {
   heading: "WHAT COMES NEXT",
   body: [
-    { strong: "Module 3", text: " asks you to rate yourself on the exact criteria your evaluator will use — before any evaluation happens." },
-    { strong: "Module 4", text: " asks what actually drives you as a coach." },
+    { strong: "Self-Evaluation", text: " asks you to rate yourself on the exact criteria your evaluator will use — before any evaluation happens." },
+    { strong: "What Drives You", text: " asks what actually drives you as a coach." },
     "Both take real thought. Do them when you can think, not between two other things.",
   ],
-  cta: "Mark this as read to continue to Module 3.",
+  cta: "Mark this as read to continue.",
 };
 
 /* ---------------------------------------------------------------
@@ -286,40 +287,16 @@ export const INTRO_NEXT = {
 ----------------------------------------------------------------*/
 export const MODULES = [
   {
-    id: "meeting1",
+    id: "onboarding",
     num: "01",
     window: "AUGUST",
-    kind: "meeting",
-    title: "1-on-1 Meeting",
-    focus: "A private kickoff meeting with your evaluator to start the season — what to expect, what's ahead, and a chance to ask questions before you dive in.",
-  },
-  {
-    id: "intro",
-    num: "02",
-    window: "START HERE",
-    kind: "intro",
-    title: "Introduction to the Maryland United Coaching Excellence Platform",
-    focus: "What this program is, how the year works, and what we're asking of you.",
-  },
-  {
-    id: "m1",
-    num: "03",
-    window: "AUGUST",
-    kind: "selfEval",
-    title: "Self-Evaluation",
-    focus: "Rate yourself against the same standards your evaluator will use — before they do.",
-  },
-  {
-    id: "m2",
-    num: "04",
-    window: "AUGUST",
-    kind: "bucket",
-    title: "What Drives You?",
-    focus: "What drives you, what drains you, and what makes this job worth doing.",
+    kind: "onboarding",
+    title: "Getting Started",
+    focus: "Your 1-on-1 meeting, the platform introduction, your self-evaluation, and what drives you — one flow, four steps.",
   },
   {
     id: "m3",
-    num: "05",
+    num: "02",
     window: "SEPTEMBER",
     kind: "rubric",
     title: "Set the Standard",
@@ -347,7 +324,7 @@ export const MODULES = [
   },
   {
     id: "m4",
-    num: "06",
+    num: "03",
     window: "SEPTEMBER",
     draft: true,
     kind: "rubric",
@@ -360,7 +337,7 @@ export const MODULES = [
   },
   {
     id: "m8",
-    num: "07",
+    num: "04",
     window: "AUGUST – SEPTEMBER",
     kind: "rubric",
     title: "Individual Development Plans",
@@ -372,7 +349,7 @@ export const MODULES = [
   },
   {
     id: "m7",
-    num: "08",
+    num: "05",
     window: "OCTOBER",
     draft: true,
     kind: "rubric",
@@ -385,7 +362,7 @@ export const MODULES = [
   },
   {
     id: "m5",
-    num: "09",
+    num: "06",
     window: "NOVEMBER",
     draft: true,
     kind: "rubric",
@@ -398,7 +375,7 @@ export const MODULES = [
   },
   {
     id: "m6",
-    num: "10",
+    num: "07",
     window: "DECEMBER",
     draft: true,
     kind: "rubric",
@@ -411,7 +388,7 @@ export const MODULES = [
   },
   {
     id: "midseason",
-    num: "11",
+    num: "08",
     window: "JANUARY",
     draft: true,
     kind: "placeholder",
@@ -420,7 +397,7 @@ export const MODULES = [
   },
   {
     id: "m9",
-    num: "12",
+    num: "09",
     window: "JANUARY – FEBRUARY",
     draft: true,
     kind: "rubric",
@@ -434,7 +411,7 @@ export const MODULES = [
   },
   {
     id: "m10",
-    num: "13",
+    num: "10",
     window: "MAY – JUNE",
     draft: true,
     kind: "rubric",
@@ -447,7 +424,7 @@ export const MODULES = [
   },
   {
     id: "recruiting",
-    num: "14",
+    num: "11",
     window: "TBD",
     draft: true,
     kind: "placeholder",
@@ -460,15 +437,12 @@ export const RUBRIC_MODULES = MODULES.filter((m) => m.kind === "rubric");
 
 // Schedule shown above the module list — same modules, two tracks by team
 // age (see src/data/teams.js). Dates confirmed so far only cover the
-// U9-U14 track for Modules 1-8 (Module 6, Game Model, is still
+// U9-U14 track for Modules 1-4 (Module 3, Game Model, is still
 // draft/locked for coaches despite having a date); U15-U19 dates aren't
 // set yet, so they're TBD across the board (default fallback in
 // CoachingEvaluation.jsx).
 export const SCHEDULE_DATES = {
-  meeting1: { young: "AUG 14" },
-  intro: { young: "AUG 14" },
-  m1: { young: "AUG 14" },
-  m2: { young: "AUG 14" },
+  onboarding: { young: "AUG 14" },
   m3: { young: "AUG 17" },
   m4: { young: "AUG 20" },
   m8: { young: "AUG 31" },
@@ -504,6 +478,7 @@ export const defaultData = (coachName = "") => ({
   coachName,
   lastOpenId: null,
   notes: [],
+  onboardingStep: 0,
   intro: { read: false },
   meeting: { completed: false },
   selfEval: { ratings: {}, meta: {}, reflections: {}, submitted: false },

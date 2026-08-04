@@ -1,50 +1,56 @@
 # Maryland United — Coaching Excellence Pathway
 
 A standalone Vite + React app with Firebase Authentication (Google Sign-In,
-gated by an approved-coach allowlist) and Firestore. Fourteen modules across
-the season: an introduction, a self-evaluation, a motivational profile, a
-1-on-1 meeting, a midseason feedback placeholder, eight coaching qualities
-assessed through recorded submissions, and a recruiting support module for
-U15–U19 coaches. A schedule sits above the module list showing when each
-module is due — see "Schedule" below.
+gated by an approved-coach allowlist) and Firestore. Eleven modules across
+the season: a combined onboarding module, a midseason feedback placeholder,
+eight coaching qualities assessed through recorded submissions, and a
+recruiting support module for U15–U19 coaches. A schedule sits above the
+module list showing when each module is due — see "Schedule" below.
 
 ## Structure
 
-**Module 1 — 1-on-1 Meeting**
-A private, spoken kickoff meeting between coach and evaluator at the very
-start of the season — what to expect, what's ahead, a chance to ask
-questions. No written notes are collected in the app for this one — the
-coach just marks it completed once it's happened.
+**Module 1 — Getting Started**
+A single combined module that steps a coach through four pages, one at a
+time, with Back/Next navigation and a bottom progress bar
+(`src/components/OnboardingModule.jsx`):
 
-**Module 2 — Introduction to the Maryland United Coaching Excellence Platform**
-A short onboarding read, stepped one section at a time: why the program
-exists, how the year works, how the 1–4 scale works, and what's asked of
-coaches. Marking it read unlocks the rest of the season.
+1. **1-on-1 Meeting** — a private, spoken kickoff meeting between coach and
+   evaluator at the very start of the season. No written notes are
+   collected in the app for this one — the coach just marks it completed.
+2. **Introduction** — a short onboarding read, itself stepped one section
+   at a time: why the program exists, how the year works, how the 1–4
+   scale works, and what's asked of coaches.
+3. **Self-Evaluation** — coaches rate themselves 1–4 on all 40 rubric
+   items — the *same* items their evaluator rates in Modules 2–7 and 9–10.
+   Eight of those items also ask a meta-perception question ("how do you
+   think your players would rate you?"). Two reflection prompts close it
+   out.
+4. **What Drives You** — twelve open-response prompts on motivation,
+   goals, energy, and what makes the job worth doing. The evaluator reads
+   these and assigns a coaching archetype.
 
-**Module 3 — Self-Evaluation**
-Coaches rate themselves 1–4 on all 40 rubric items — the *same* items their
-evaluator rates in Modules 5–10 and 12–13. Eight of those items also ask a
-meta-perception question ("how do you think your players would rate you?").
-Two reflection prompts close it out.
+"Next" is gated on completing the current page (meeting marked complete /
+intro read / self-eval submitted / bucket submitted). Each page still
+autosaves on every change — the progress bar and current page are also
+saved (`onboardingStep`), so a coach who leaves mid-flow picks up where
+they left off. The module's own ✓ checkmark only appears once all four
+pages are done.
 
-**Module 4 — What Drives You?**
-Twelve open-response prompts on motivation, goals, energy, and what makes the job worth
-doing. The evaluator reads these and assigns a coaching archetype.
-
-**Modules 5–10, 12–13 — The Rubric**
+**Modules 2–7, 9–10 — The Rubric**
 Set the Standard, Maryland United Game Model (currently `draft: true` and
 locked for coaches while it's being rebuilt), Individual Development
 Plans, Analysis, Maryland United Training Session, Match Preparation &
 Execution, Transformational Experience (includes the Team Bonding
 exercise), Club Pathway. Each has a recorded submission and per-item
 evaluator grading. There's no per-module written feedback field — the
-evaluator gives spoken feedback instead, via the 1-on-1 meeting.
+evaluator gives spoken feedback instead, via the 1-on-1 meeting (or a
+written Note — see below).
 
-**Module 11 — Midseason Feedback**
+**Module 8 — Midseason Feedback**
 Placeholder module (content TBD) sitting between Match Preparation &
 Execution and Transformational Experience, around January.
 
-**Module 14 — Recruiting Support (15-18 Coaches Only)**
+**Module 11 — Recruiting Support (15-18 Coaches Only)**
 Placeholder module (content TBD) at the end of the season, for U15–U19
 coaches only — the title says so, but this isn't yet enforced in code, so
 all coaches currently see it listed (draft/locked) the same way.
@@ -52,23 +58,24 @@ all coaches currently see it listed (draft/locked) the same way.
 ## Schedule
 
 A schedule table sits above the module list, visible to every coach. It
-lists all fourteen modules against two date columns — U9–U14 and U15–U19 —
+lists all eleven modules against two date columns — U9–U14 and U15–U19 —
 since the two age bands don't run the same season calendar (see
 `src/data/teams.js` for the team-to-track mapping). Modules don't carry
 their own due date anymore; `SCHEDULE_DATES` in `src/data/modules.js` is
-the single source of truth, keyed by module id. Only Modules 1–7 have
-confirmed dates so far — Module 6 (Game Model) is still draft/locked for
-coaches despite having a date, and everything from Module 8 onward shows
+the single source of truth, keyed by module id. Only Modules 1–4 have
+confirmed dates so far — Module 3 (Game Model) is still draft/locked for
+coaches despite having a date, and everything from Module 5 onward shows
 "TBD" until the rest of the calendar is set.
 
 ## The paired-item design
 
-Every rubric item is stored with two wordings — `coachText` (first person, for
-Module 3) and `evalText` (third person, for the evaluator). Same construct,
-same 1–4 anchors. This pairing is what makes the self-vs-evaluator gap
-meaningful; it's the standard approach in the coaching-leadership literature
-(cf. the Leadership Scale for Sports, which exists in parallel coach and
-athlete forms). If you add or edit items, keep both wordings aligned.
+Every rubric item is stored with two wordings — `coachText` (first person,
+for the Self-Evaluation page of Module 1) and `evalText` (third person, for
+the evaluator). Same construct, same 1–4 anchors. This pairing is what makes
+the self-vs-evaluator gap meaningful; it's the standard approach in the
+coaching-leadership literature (cf. the Leadership Scale for Sports, which
+exists in parallel coach and athlete forms). If you add or edit items, keep
+both wordings aligned.
 
 ## Evaluator view
 
@@ -78,7 +85,7 @@ Accounts listed in `ADMIN_EMAILS` (`src/data/modules.js`) see an extra panel:
   gap means the coach rates themselves higher than you do.
 - **Meta-Perception** — self-rating vs. predicted player rating vs. your
   rating, for the 8 flagged items.
-- **What Drives You** — all Module 4 answers on one screen.
+- **What Drives You** — all answers from that page of Module 1 on one screen.
 - **Archetype** — assign one of six archetypes with your reasoning. Each
   carries a strength and its characteristic blind spots.
 
@@ -134,11 +141,11 @@ npm run dev
 - `approvedCoaches/{email}` — allowlist.
 - `coaches/{uid}` — `{ name, email, createdAt }`, created on first sign-in.
 - `coachEvaluations/{season}_{uid}` — one doc per coach per season:
-  `intro` (read), `meeting` (completed), `selfEval` (ratings, meta,
-  reflections), `bucket` (answers), `bonding` (4 entries), `modules`
-  (per-module grade, status, itemGrades, submission links/context notes),
-  `notes` (array of `{ id, text, authorEmail, createdAt }`, coach-visible),
-  and `archetype`.
+  `onboardingStep` (which page of Module 1 the coach is on, 0-3), `intro`
+  (read), `meeting` (completed), `selfEval` (ratings, meta, reflections),
+  `bucket` (answers), `bonding` (4 entries), `modules` (per-module grade,
+  status, itemGrades, submission links/context notes), `notes` (array of
+  `{ id, text, authorEmail, createdAt }`, coach-visible), and `archetype`.
 - `mail/{autoId}` — write-only queue for the Trigger Email extension;
   evaluators create documents here when they send a note, nobody reads
   them back through the app.

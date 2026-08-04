@@ -5,7 +5,7 @@ export default function BucketModule({ state, update }) {
   const setAnswer = (id, v) => update({ answers: { ...answers, [id]: v } });
 
   return (
-    <div className="mu-card-body">
+    <>
       <p className="mu-focus">
         No right answers here, and nothing is scored. Write like you'd talk — a few sentences each
         is plenty.
@@ -33,6 +33,6 @@ export default function BucketModule({ state, update }) {
       >
         {submitted ? "SUBMITTED ✓ — TAP TO REOPEN" : "SUBMIT RESPONSES"}
       </button>
-    </div>
+    </>
   );
 }

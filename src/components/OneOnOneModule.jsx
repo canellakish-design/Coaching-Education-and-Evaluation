@@ -2,11 +2,11 @@ export default function OneOnOneModule({ state, update }) {
   const { completed } = state;
 
   return (
-    <div className="mu-card-body">
+    <>
       <p className="mu-focus">
-        Schedule a private 1-on-1 with your evaluator to talk through your self-evaluation and bucket
-        answers before the season gets going. This is where you get real, spoken feedback — nothing
-        written here, just a conversation.
+        Schedule a private kickoff meeting with your evaluator before the season gets going — what to
+        expect, what's ahead, and a chance to ask questions. This is where you get real, spoken
+        feedback — nothing written here, just a conversation.
       </p>
 
       <button
@@ -15,6 +15,6 @@ export default function OneOnOneModule({ state, update }) {
       >
         {completed ? "MEETING COMPLETED ✓ — TAP TO REOPEN" : "MARK MEETING COMPLETED"}
       </button>
-    </div>
+    </>
   );
 }

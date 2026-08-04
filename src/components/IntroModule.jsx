@@ -28,7 +28,7 @@ export default function IntroModule({ state, update, onContinue }) {
   };
 
   return (
-    <div className="mu-card-body">
+    <>
       <img src="/crest.png" alt="Maryland United FC" className="mu-crest" />
 
       <div className="mu-intro-dashes">
@@ -89,10 +89,10 @@ export default function IntroModule({ state, update, onContinue }) {
           </button>
         ) : (
           <button className="mu-btn mu-btn-solid" onClick={finish}>
-            MARK AS READ &amp; CONTINUE TO MODULE 3
+            MARK AS READ &amp; CONTINUE
           </button>
         )}
       </div>
-    </div>
+    </>
   );
 }

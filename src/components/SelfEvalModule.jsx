@@ -17,7 +17,7 @@ export default function SelfEvalModule({ state, update }) {
   const done = Object.values(ratings).filter(Boolean).length;
 
   return (
-    <div className="mu-card-body">
+    <>
       <p className="mu-focus">
         Rate yourself on each quality using the same 1–4 scale your evaluator will use. Answer
         honestly — the value here comes from comparing your view against theirs, not from a high score.
@@ -80,6 +80,6 @@ export default function SelfEvalModule({ state, update }) {
       >
         {submitted ? "SUBMITTED ✓ — TAP TO REOPEN" : "SUBMIT SELF-EVALUATION"}
       </button>
-    </div>
+    </>
   );
 }
