@@ -1,8 +1,8 @@
 # Maryland United — Coaching Excellence Pathway
 
 A standalone Vite + React app with Firebase Authentication (Google Sign-In,
-gated by an approved-coach allowlist) and Firestore. Eleven modules across
-the season: a combined onboarding module and ten coaching qualities, each
+gated by an approved-coach allowlist) and Firestore. Ten modules across
+the season: a combined onboarding module and nine coaching qualities, each
 assessed through a recorded submission. Content for every module — criteria,
 resources, and reflection prompts — is drawn from *The Maryland United
 Coaching Handbook 2026–27*. A schedule sits above the module list showing
@@ -24,9 +24,9 @@ bottom progress bar (`src/components/OnboardingModule.jsx`):
 8. **What Comes Next** — the closing intro page, with its own "Mark as
    Read" action (separate from the Next control, same pattern as every
    other page).
-9. **Self-Evaluation** — coaches rate themselves 1–4 on all 40 rubric
-   items — the *same* items their evaluator rates in Modules 2–3, 5–8, and
-   10–11. Two reflection prompts close it out.
+9. **Self-Evaluation** — coaches rate themselves 1–4 on all 52 rubric
+   items — the *same* items their evaluator rates across Modules 2–10.
+   Two reflection prompts close it out.
 10. **What Drives You** — twelve open-response prompts on motivation,
    goals, energy, and what makes the job worth doing. The evaluator reads
    these and assigns a coaching archetype.
@@ -39,15 +39,15 @@ position are also saved (`onboardingStep`), so a coach who leaves mid-flow
 picks up where they left off. The module's own ✓ checkmark only appears
 once all four underlying tasks are done.
 
-**Modules 2–11 — The Rubric**
+**Modules 2–10 — The Rubric**
 Set the Standard, Program Game Model, Girls Program Technical Plan,
 Individual Development Plans, Video Analysis, Training Session Basics,
-Match Preparation & Execution, Midseason Feedback, Transformational
-Experience (includes the Team Bonding exercise), Club Pathway. All but
-Set the Standard and Individual Development Plans are currently
-`draft: true` — shown as "COMING SOON" and unclickable for coaches while
-they're being reviewed; accounts in `CREATOR_EMAILS` (`src/data/modules.js`)
-can still open them, tagged "DRAFT". Each has a recorded submission and per-item
+Match Preparation & Execution, Transformational Experience (includes
+the Team Bonding exercise), Club Pathway. All but Set the Standard are
+currently `draft: true` — shown as "COMING SOON" and unclickable for
+coaches while they're being reviewed; accounts in `CREATOR_EMAILS`
+(`src/data/modules.js`) can still open them, tagged "DRAFT". Each has
+a recorded submission and per-item
 evaluator grading. There's no per-module written feedback field — the
 evaluator gives spoken feedback instead, via the 1-on-1 meeting (or a
 written Note — see below).
@@ -62,7 +62,7 @@ section of open questions — display-only, not collected as data.
 ## Schedule
 
 A schedule table sits above the module list, visible to every coach. It
-lists all eleven modules against two date columns — U9–U14 and U15–U19 —
+lists all ten modules against two date columns — U9–U14 and U15–U19 —
 since the two age bands don't run the same season calendar (see
 `src/data/teams.js` for the team-to-track mapping). Modules don't carry
 their own due date anymore; `SCHEDULE_DATES` in `src/data/modules.js` is

@@ -88,21 +88,14 @@ export const RUBRIC_ITEMS = [
   { id: "i50", module: "m6", verifiable: true, coachText: "My matchday and travel standards hold: gear, arrival, phones, sanctioned hotels, supervised events.", evalText: "Matchday and travel standards hold: gear, arrival, phones, sanctioned hotels, supervised events." },
   { id: "i38", module: "m6", coachText: "I work as a colleague with other staff on competitive nights.", evalText: "Works as a colleague with other staff on competitive nights." },
 
-  // Module 9 — Midseason Feedback
-  { id: "i51", module: "midseason", coachText: "I re-rated myself honestly, before seeing the evaluator's scores — not after.", evalText: "Re-rated themselves honestly, before seeing the evaluator's scores — not after." },
-  { id: "i52", module: "midseason", coachText: "I reviewed my own audio and film from the fall as evidence, not memory.", evalText: "Reviewed their own audio and film from the fall as evidence, not memory." },
-  { id: "i53", module: "midseason", coachText: "My scores show movement since August — or I can give an honest account of why they don't.", evalText: "Scores show movement since August — or an honest account of why they don't." },
-  { id: "i54", module: "midseason", coachText: "I sat with the feedback before responding: read it, let it land, then decided what to do with it.", evalText: "Sat with the feedback before responding: read it, let it land, then decided what to do with it." },
-  { id: "i55", module: "midseason", coachText: "The gap between my reading and the evaluator's became a plan, not an argument.", evalText: "The gap between the coach's reading and the evaluator's became a plan, not an argument." },
-
-  // Module 10 — Transformational Experience
+  // Module 9 — Transformational Experience
   { id: "i26", module: "m9", coachText: "My players can say why a standard exists — not just what it is.", evalText: "Players can say why a standard exists — not just what it is." },
   { id: "i27", module: "m9", coachText: "Peer recognition runs on a rhythm on my team; effort and character are celebrated over results, in players' voices.", evalText: "Peer recognition runs on a rhythm; effort and character are celebrated over results, in players' voices." },
   { id: "i28", module: "m9", coachText: "My values work is periodized across the season — on the calendar like tactics, not a one-off talk.", evalText: "Values work is periodized across the season — on the calendar like tactics, not a one-off talk." },
   { id: "i29", module: "m9", coachText: "I coach disappointment — players respond to tough decisions with resilience and curiosity, not blame.", evalText: "Disappointment is coached: players respond to tough decisions with resilience and curiosity, not blame." },
   { id: "i56", module: "m9", coachText: "I model accountability — owning my mistakes in front of the team.", evalText: "Models accountability — owning mistakes in front of the team." },
 
-  // Module 11 — Club Pathway
+  // Module 10 — Club Pathway
   { id: "i30", module: "m10", coachText: "I can explain the full ladder — tiers, bands, birth-year placement — accurately, without notes.", evalText: "Can explain the full ladder — tiers, bands, birth-year placement — accurately, without notes." },
   { id: "i31", module: "m10", coachText: "My \"what comes next\" message matches the age — next tier and next band at U9–U14; the recruiting timeline only at U15+.", evalText: "\"What comes next\" message matches the age: next tier and next band at U9–U14; the recruiting timeline only at U15+." },
   { id: "i32", module: "m10", coachText: "Families hear developmental-environment framing from me, not league branding.", evalText: "Families hear developmental-environment framing from the coach, not league branding." },
@@ -508,32 +501,8 @@ export const MODULES = [
     },
   },
   {
-    id: "midseason",
-    num: "09",
-    window: "JANUARY",
-    draft: true,
-    kind: "rubric",
-    title: "Midseason Feedback",
-    focus: "The same criteria from August, re-scored — movement is what we measure.",
-    standardNote: "Three is the standard. At midseason we score how you engage with feedback itself — the quality this whole platform runs on.",
-    resources: [
-      { title: "COACHING IDP, 2026", description: "The current-season grid — End of Fall is the midseason re-score", url: "https://docs.google.com/spreadsheets/d/1Fu_XGRIW1_u6MY-Gn9_o9N-N21wxclfYDvAlB3IghWQ" },
-      { title: "Coaching Evaluations (13–18)", description: "The five-step live cycle: scrimmage → theme → HUDL meeting → filmed session → debrief", url: "https://docs.google.com/document/d/1vypwRmba2QvEzWfC7E_A6iR_GlgI55OqIh8XUcTzZL0" },
-      { title: "What Does Elite Coaching Look Like? Self-Evaluation", description: "The August self-evaluation your midseason reading is compared against", url: "https://docs.google.com/spreadsheets/d/1ruu40Yd6YskBfouHWfARk2aaaRF1AZhqFrNJIP1_XSg" },
-    ],
-    reflectPrompts: [
-      "Which quality moved the most since August — and what, specifically, moved it?",
-      "Where is the biggest gap between your reading and your evaluator's, and what does it tell you?",
-      "Is there a 3 on your sheet you haven't actually tested since August?",
-    ],
-    recording: {
-      format: "A real piece of your coaching (re-scored)",
-      desc: "Re-rate yourself on the same criteria you scored in August, before you see your evaluator's scores. Then submit a real piece of your coaching from this stretch of the season — record it, link it, and add a note telling your reviewer what you want them to notice. The specific midseason artifact is still being finalized — confirm the current ask on the platform before you submit.",
-    },
-  },
-  {
     id: "m9",
-    num: "10",
+    num: "09",
     window: "JANUARY – FEBRUARY",
     draft: true,
     kind: "rubric",
@@ -559,7 +528,7 @@ export const MODULES = [
   },
   {
     id: "m10",
-    num: "11",
+    num: "10",
     window: "MAY – JUNE",
     draft: true,
     kind: "rubric",
