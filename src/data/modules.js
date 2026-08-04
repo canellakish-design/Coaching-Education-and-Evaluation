@@ -378,6 +378,7 @@ export const MODULES = [
     focus: "We will meet once a month to establish a plan as a staff.",
     resources: [
       { title: "Girls Program Technical Plan", description: "The staff planning deck", url: "https://docs.google.com/presentation/d/1a7CqkchbC0jbEz2bBqcsd8DRppJsCIMlSYT64Id3qlo/edit?sAlide=id.g36fd269d887_0_26#slide=id.g36fd269d887_0_26" },
+      { title: "Girls Program Technical Plan — Slides", description: "Additional staff planning slides", url: "https://docs.google.com/presentation/d/1m5bxq5wL5N-zlGIazHXXkXj3Wrv15qvqXFPWnscQXA4/edit?slide=id.g3d06d108b64_2_16#slide=id.g3d06d108b64_2_16" },
     ],
   },
   {
