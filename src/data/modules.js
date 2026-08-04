@@ -51,6 +51,8 @@ export const RUBRIC_ITEMS = [
   { id: "i7", module: "m4", coachText: "My coaching points are written as IF/THEN sub-principles in game-model language.", evalText: "Coaching points are written as IF/THEN sub-principles in game-model language." },
   { id: "i8", module: "m4", coachText: "My players' turnovers show the model — press-or-cover decisions happen without prompting.", evalText: "Turnovers show the model: press-or-cover decisions happen without prompting." },
   { id: "i42", module: "m4", coachText: "My team's identity survives a formation change — principles first, shape second.", evalText: "The identity survives a formation change — principles first, shape second." },
+  { id: "i58", module: "m4", coachText: "My pressing scheme is man-to-man regardless of formation — that identity doesn't change based on the opponent.", evalText: "Pressing scheme is man-to-man regardless of formation — the identity doesn't change based on the opponent." },
+  { id: "i59", module: "m4", coachText: "My build-out is anchored on a one-player overload — I can show exactly where that extra player comes from (a center back stepping in, a midfielder dropping, the goalkeeper in the build).", evalText: "Build-out is anchored on a one-player overload — the coach can show exactly where that extra player comes from." },
 
   // Module 4 — Girls Program Technical Plan
   { id: "i43", module: "technicalPlan", coachText: "My current cycle traces to a game-model principle by name — I can say which and why.", evalText: "Current cycle traces to a game-model principle by name — the coach can say which and why." },
@@ -58,6 +60,7 @@ export const RUBRIC_ITEMS = [
   { id: "i45", module: "technicalPlan", coachText: "I arrive at the bi-weekly meeting with match evidence for the next cycle pick.", evalText: "Arrives at the bi-weekly meeting with match evidence for the next cycle pick." },
   { id: "i46", module: "technicalPlan", coachText: "My players can name the week's theme in game-model language.", evalText: "Players can name the week's theme in game-model language." },
   { id: "i47", module: "technicalPlan", coachText: "Homework goes out every week — S&C plus a half of soccer — and I follow up on it.", evalText: "Homework goes out every week — S&C plus a half of soccer — and the coach follows up on it." },
+  { id: "i60", module: "technicalPlan", coachText: "I expose my players to real 1v1 defending situations rather than shielding them from it — that's what our pressing identity requires downstream.", evalText: "Exposes players to real 1v1 defending situations rather than shielding them from it — what the pressing identity requires downstream." },
 
   // Module 5 — Individual Development Plans
   { id: "i21", module: "m8", verifiable: true, coachText: "Every player has a current, specific plan — not a generic one.", evalText: "Every player has a current, specific plan — not a generic one." },
@@ -370,6 +373,7 @@ export const MODULES = [
     recording: {
       format: "Team game model deck + off-field teaching walkthrough",
       desc: "Build your team game model deck from the club template, then record yourself teaching it off the field — a whiteboard or film-room walkthrough, not a live training session. Add a note on what you want your reviewer to notice.",
+      tip: "The two things not to lose: pressing is man-to-man regardless of formation, and build-out is anchored on a one-player overload — know exactly where that extra player comes from. A concrete pressing trap worth teaching: force play to the outside back, then double from the top.",
     },
   },
   {
@@ -395,6 +399,7 @@ export const MODULES = [
     recording: {
       format: "Weekly phase-of-play cycle plan (Tue–Thu)",
       desc: "Submit your weekly plan for a current phase-of-play cycle — Tuesday through Thursday — with a note naming the game-model principle it trains and what you want your reviewer to notice.",
+      tip: "Younger age groups should get real exposure to 1v1 defensive situations, not protection from them — that's what the club's man-to-man pressing identity requires downstream. It's the coaching, not the exposure, that turns those reps into good habits.",
     },
   },
   {
