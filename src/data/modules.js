@@ -408,6 +408,7 @@ export const MODULES = [
     id: "m8",
     num: "05",
     window: "AUGUST – SEPTEMBER",
+    draft: true,
     kind: "rubric",
     title: "Individual Development Plans",
     focus: "Every player has a plan, every plan stays current, and every plan gets real attention.",
