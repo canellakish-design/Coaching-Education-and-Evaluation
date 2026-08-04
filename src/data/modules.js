@@ -610,13 +610,11 @@ export const emptyModuleState = () => ({
   status: null,
   evalNotes: "",
   submitted: false,
-  subDate: "",
   subLink: "",
   subMaterialLink: "",
   subNotes: "",
   // Second recording — only used by modules with a `recording2` requirement.
   submitted2: false,
-  sub2Date: "",
   sub2Link: "",
   sub2Notes: "",
   itemGrades: {}, // evaluator's per-item 1-4 ratings, keyed by item id

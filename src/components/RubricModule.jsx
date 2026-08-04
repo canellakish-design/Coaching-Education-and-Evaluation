@@ -80,12 +80,6 @@ export default function RubricModule({ module: m, state, update, bonding, setBon
               onChange={(e) => update({ subMaterialLink: e.target.value })}
             />
           )}
-          <input
-            className="mu-input"
-            type="date"
-            value={state.subDate}
-            onChange={(e) => update({ subDate: e.target.value })}
-          />
           <textarea
             className="mu-input mu-textarea"
             placeholder="Context for the reviewer — age group, session objective, anything to watch for"
@@ -133,12 +127,6 @@ export default function RubricModule({ module: m, state, update, bonding, setBon
               placeholder="Video link(s) — one per team, one per line (Drive, Veo, Hudl…)"
               value={state.sub2Link}
               onChange={(e) => update({ sub2Link: e.target.value })}
-            />
-            <input
-              className="mu-input"
-              type="date"
-              value={state.sub2Date}
-              onChange={(e) => update({ sub2Date: e.target.value })}
             />
             <textarea
               className="mu-input mu-textarea"
