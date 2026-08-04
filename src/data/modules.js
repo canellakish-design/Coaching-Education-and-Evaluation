@@ -34,59 +34,80 @@ export const SUBMISSION_STEPS = [
    verifiable: true -> objectively checkable, not a judgment call
 ----------------------------------------------------------------*/
 export const RUBRIC_ITEMS = [
-  // Module 2 — Set the Standard (Team Management)
-  { id: "i1", module: "m3", coachText: "I clearly define and communicate expectations for behavior, effort, and conduct at the start of the season.", evalText: "Defines and communicates expectations for behavior, effort, and conduct at the start of the season." },
-  { id: "i2", module: "m3", coachText: "I proactively communicate with parents rather than only reacting to their questions or concerns.", evalText: "Communicates with parents proactively rather than only reactively." },
-  { id: "i3", module: "m3", coachText: "My scheduling, rosters, and season logistics are consistently well-organized.", evalText: "Scheduling, rosters, and season logistics are consistently well-organized." },
-  { id: "i4", module: "m3", meta: true, coachText: "I stay composed and professional when parent or player conflicts arise.", evalText: "Stays composed and professional when parent or player conflicts arise." },
+  // Module 2 — Set the Standard
+  { id: "i1", module: "m3", coachText: "The Set the Standard meeting has happened with my team, and my players can repeat the non-negotiables.", evalText: "The Set the Standard meeting has happened, and players can repeat the non-negotiables." },
+  { id: "i2", module: "m3", coachText: "The visible habits hold without me — gear, early arrival, phones away, walking out together.", evalText: "The visible habits hold without the coach present — gear, early arrival, phones away, walking out together." },
+  { id: "i3", module: "m3", coachText: "My language is consistent daily — effort, encouragement, we over me — and I correct silence like a technical mistake.", evalText: "Language is consistent daily — effort, encouragement, we over me — and silence gets corrected like a technical mistake." },
+  { id: "i4", module: "m3", coachText: "My players police the standard themselves, and recognition runs on a rhythm.", evalText: "Players police the standard themselves; recognition runs on a rhythm." },
+  { id: "i41", module: "m3", coachText: "I'm organized — brief, consistent in-person team meetings, and planning through the bi-weekly coaches' meetings.", evalText: "Organized: brief, consistent in-person team meetings; planning through the bi-weekly coaches' meetings." },
   { id: "i34", module: "m3", verifiable: true, coachText: "I manage PlayMetrics and double-check it for accuracy.", evalText: "Manages PlayMetrics and double-checks it for accuracy." },
   { id: "i35", module: "m3", coachText: "I check my email regularly.", evalText: "Checks email regularly." },
   { id: "i36", module: "m3", coachText: "I respond to messages in a timely manner.", evalText: "Responds to messages in a timely manner." },
   { id: "i37", module: "m3", coachText: "I contact the appropriate person on technical staff for the task at hand.", evalText: "Contacts the appropriate person on technical staff for the task at hand." },
 
   // Module 3 — Program Game Model
-  { id: "i5", module: "m4", coachText: "I can articulate our style of play in simple, memorable terms.", evalText: "Articulates the team's style of play in simple, memorable terms." },
-  { id: "i6", module: "m4", coachText: "I present my Game Model to the team.", evalText: "Presents their Game Model to the team." },
-  { id: "i7", module: "m4", meta: true, coachText: "My players can explain our game model in their own words.", evalText: "Players can explain the game model in their own words." },
-  { id: "i8", module: "m4", coachText: "I adjust our game model based on personnel and opponent without losing our core identity.", evalText: "Adjusts the game model for personnel and opponent without losing core identity." },
+  { id: "i5", module: "m4", coachText: "I can state our identity in one sentence — and so can my players.", evalText: "Can state the identity in one sentence — and so can their players." },
+  { id: "i6", module: "m4", coachText: "My team deck is complete — building vs a front 1/2/3, pressing vs a back four and back three, creation patterns #1–#3.", evalText: "Team deck is complete: building vs a front 1/2/3, pressing vs a back four and back three, creation patterns #1–#3." },
+  { id: "i7", module: "m4", coachText: "My coaching points are written as IF/THEN sub-principles in game-model language.", evalText: "Coaching points are written as IF/THEN sub-principles in game-model language." },
+  { id: "i8", module: "m4", coachText: "My players' turnovers show the model — press-or-cover decisions happen without prompting.", evalText: "Turnovers show the model: press-or-cover decisions happen without prompting." },
+  { id: "i42", module: "m4", coachText: "My team's identity survives a formation change — principles first, shape second.", evalText: "The identity survives a formation change — principles first, shape second." },
 
-  // Module 6 — Training Session Basics
-  { id: "i9", module: "m5", coachText: "My sessions are purposefully sequenced with clear objectives.", evalText: "Sessions are purposefully sequenced with clear objectives." },
-  { id: "i10", module: "m5", coachText: "I minimize standing in lines and maximize touches and reps.", evalText: "Minimizes lines; maximizes touches and reps." },
-  { id: "i11", module: "m5", meta: true, coachText: "I create a training environment where players feel safe to make mistakes.", evalText: "Creates an environment where players are willing to risk mistakes." },
-  { id: "i12", module: "m5", coachText: "My coaching points are timely and specific — not constant or vague.", evalText: "Coaching points are timely and specific rather than constant or vague." },
+  // Module 4 — Girls Program Technical Plan
+  { id: "i43", module: "technicalPlan", coachText: "My current cycle traces to a game-model principle by name — I can say which and why.", evalText: "Current cycle traces to a game-model principle by name — the coach can say which and why." },
+  { id: "i44", module: "technicalPlan", coachText: "My week is sequenced: Tuesday group night, Wednesday primary phase, Thursday the transition that follows it.", evalText: "Week is sequenced: Tuesday group night, Wednesday primary phase, Thursday the transition that follows it." },
+  { id: "i45", module: "technicalPlan", coachText: "I arrive at the bi-weekly meeting with match evidence for the next cycle pick.", evalText: "Arrives at the bi-weekly meeting with match evidence for the next cycle pick." },
+  { id: "i46", module: "technicalPlan", coachText: "My players can name the week's theme in game-model language.", evalText: "Players can name the week's theme in game-model language." },
+  { id: "i47", module: "technicalPlan", coachText: "Homework goes out every week — S&C plus a half of soccer — and I follow up on it.", evalText: "Homework goes out every week — S&C plus a half of soccer — and the coach follows up on it." },
 
-  // Module 7 — Match Preparation & Execution
-  { id: "i13", module: "m6", coachText: "My pregame plan is specific to the opponent, not generic.", evalText: "Pregame plan is opponent-specific rather than generic." },
-  { id: "i14", module: "m6", coachText: "My team talks are clear, concise, and player-focused.", evalText: "Team talks are clear, concise, and player-focused." },
-  { id: "i15", module: "m6", coachText: "I make timely, well-reasoned adjustments during matches.", evalText: "Makes timely, well-reasoned in-match adjustments." },
-  { id: "i16", module: "m6", meta: true, coachText: "I stay level-headed and set the emotional tone on the sideline.", evalText: "Stays level-headed and sets the emotional tone on the sideline." },
+  // Module 5 — Individual Development Plans
+  { id: "i21", module: "m8", verifiable: true, coachText: "Every player has a current, specific plan — not a generic one.", evalText: "Every player has a current, specific plan — not a generic one." },
+  { id: "i22", module: "m8", coachText: "Feedback is continuous through the year, not a single end-of-season report.", evalText: "Feedback is continuous through the year, not a single end-of-season report." },
+  { id: "i23", module: "m8", coachText: "The plan connects to training, home work, and film.", evalText: "The plan connects to training, home work, and film." },
+  { id: "i24", module: "m8", coachText: "The plan speaks the technical plan's language — her work maps to what her position is asked to do.", evalText: "The plan speaks the technical plan's language — the player's work maps to what her position is asked to do." },
+  { id: "i25", module: "m8", coachText: "The player owns it — she can tell me her focus in one sentence.", evalText: "The player owns it — she can tell the coach her focus in one sentence." },
+
+  // Module 6 — Video Analysis
+  { id: "i17", module: "m7", coachText: "Every clip I use is tagged to a playing-style principle — no generic film, ever.", evalText: "Every clip is tagged to a playing-style principle — no generic film, ever." },
+  { id: "i18", module: "m7", coachText: "Players do the analysis in position groups and present it themselves — I draft, give feedback, and review.", evalText: "Players do the analysis in position groups and present it themselves; the coach drafts, gives feedback, and reviews." },
+  { id: "i19", module: "m7", coachText: "Strong and weak moments carry equal weight in my sessions — clear-eyed, not a highlight reel.", evalText: "Strong and weak moments carry equal weight — clear-eyed, not a highlight reel." },
+  { id: "i20", module: "m7", coachText: "My opponent scouting produces a short list of coaching points the team actually hears before kickoff.", evalText: "Opponent scouting produces a short list of coaching points the team actually hears before kickoff." },
+  { id: "i48", module: "m7", coachText: "Each player's named HUDL playlist stays current across games and feeds her IDP.", evalText: "Each player's named HUDL playlist stays current across games and feeds her IDP." },
+
+  // Module 7 — Training Session Basics
+  { id: "i9", module: "m5", coachText: "My session theme comes from the current phase-of-play cycle, and my objectives are written in game-model language.", evalText: "Session theme comes from the current phase-of-play cycle, and objectives are written in game-model language." },
+  { id: "i10", module: "m5", coachText: "My stages build toward the game and reference each other — what Stage 1 rehearses, Stage 3 reveals.", evalText: "Stages build toward the game and reference each other — what Stage 1 rehearses, Stage 3 reveals." },
+  { id: "i11", module: "m5", coachText: "My intervals, formats, and intensity are planned before I arrive — demand is engineered, not improvised.", evalText: "Intervals, formats, and intensity are planned before arrival — demand is engineered, not improvised." },
+  { id: "i12", module: "m5", coachText: "My constraints produce constant touches and decisions; I coach within the game, with few stoppages.", evalText: "Constraints produce constant touches and decisions; coaching happens within the game, with few stoppages." },
+  { id: "i49", module: "m5", coachText: "My environment is safe and demanding at once — top intensity from the first minute, and players who love competing.", evalText: "Environment is safe and demanding at once — top intensity from the first minute, and players who love competing." },
+
+  // Module 8 — Match Preparation & Execution
+  { id: "i13", module: "m6", coachText: "Players see my plan before kickoff — a pre-match presentation, not a coach-only sheet.", evalText: "Players see the plan before kickoff — a pre-match presentation, not a coach-only sheet." },
+  { id: "i14", module: "m6", coachText: "My game plan is the game model applied, with keys drawn from the scouting work.", evalText: "The game plan is the game model applied, with keys drawn from the scouting work." },
+  { id: "i15", module: "m6", coachText: "My talks and halftime adjustments are short imperatives in game-model language — one idea each.", evalText: "Talks and halftime adjustments are short imperatives in game-model language — one idea each." },
+  { id: "i16", module: "m6", coachText: "I set the tone; I don't react. My touchline matches what I demand from the first minute.", evalText: "Sets the tone rather than reacting. The touchline matches what's demanded from the first minute." },
+  { id: "i50", module: "m6", verifiable: true, coachText: "My matchday and travel standards hold: gear, arrival, phones, sanctioned hotels, supervised events.", evalText: "Matchday and travel standards hold: gear, arrival, phones, sanctioned hotels, supervised events." },
   { id: "i38", module: "m6", coachText: "I work as a colleague with other staff on competitive nights.", evalText: "Works as a colleague with other staff on competitive nights." },
 
-  // Module 5 — Video Analysis
-  { id: "i17", module: "m7", coachText: "I do thorough, specific prep on opponent tendencies.", evalText: "Opponent prep is thorough and specific to tendencies." },
-  { id: "i18", module: "m7", coachText: "My video clips are purposeful, not just a highlight reel.", evalText: "Clips are purposeful and thematic, not a highlight reel." },
-  { id: "i19", module: "m7", meta: true, coachText: "My players participate actively in analysis sessions rather than just watching.", evalText: "Players participate actively in analysis rather than passively watching." },
-  { id: "i20", module: "m7", coachText: "I connect analysis findings back into training and match plans.", evalText: "Connects analysis findings back into training and match plans." },
+  // Module 9 — Midseason Feedback
+  { id: "i51", module: "midseason", coachText: "I re-rated myself honestly, before seeing the evaluator's scores — not after.", evalText: "Re-rated themselves honestly, before seeing the evaluator's scores — not after." },
+  { id: "i52", module: "midseason", coachText: "I reviewed my own audio and film from the fall as evidence, not memory.", evalText: "Reviewed their own audio and film from the fall as evidence, not memory." },
+  { id: "i53", module: "midseason", coachText: "My scores show movement since August — or I can give an honest account of why they don't.", evalText: "Scores show movement since August — or an honest account of why they don't." },
+  { id: "i54", module: "midseason", coachText: "I sat with the feedback before responding: read it, let it land, then decided what to do with it.", evalText: "Sat with the feedback before responding: read it, let it land, then decided what to do with it." },
+  { id: "i55", module: "midseason", coachText: "The gap between my reading and the evaluator's became a plan, not an argument.", evalText: "The gap between the coach's reading and the evaluator's became a plan, not an argument." },
 
-  // Module 4 — Individual Development Plans
-  { id: "i21", module: "m8", verifiable: true, coachText: "Every player has a specific, written development plan.", evalText: "Every player has a specific, written development plan." },
-  { id: "i22", module: "m8", verifiable: true, coachText: "I keep each player's IDP updated regularly throughout the season, not just at the start.", evalText: "Player IDPs are updated regularly throughout the season, not just at the start." },
-  { id: "i23", module: "m8", coachText: "I differentiate my coaching and feedback by player.", evalText: "Differentiates coaching and feedback by player." },
-  { id: "i24", module: "m8", meta: true, coachText: "I make time for individual attention even during busy stretches.", evalText: "Makes time for individual attention even during busy stretches." },
-  { id: "i25", module: "m8", coachText: "I track and revisit individual player progress over time.", evalText: "Tracks and revisits individual player progress over time." },
+  // Module 10 — Transformational Experience
+  { id: "i26", module: "m9", coachText: "My players can say why a standard exists — not just what it is.", evalText: "Players can say why a standard exists — not just what it is." },
+  { id: "i27", module: "m9", coachText: "Peer recognition runs on a rhythm on my team; effort and character are celebrated over results, in players' voices.", evalText: "Peer recognition runs on a rhythm; effort and character are celebrated over results, in players' voices." },
+  { id: "i28", module: "m9", coachText: "My values work is periodized across the season — on the calendar like tactics, not a one-off talk.", evalText: "Values work is periodized across the season — on the calendar like tactics, not a one-off talk." },
+  { id: "i29", module: "m9", coachText: "I coach disappointment — players respond to tough decisions with resilience and curiosity, not blame.", evalText: "Disappointment is coached: players respond to tough decisions with resilience and curiosity, not blame." },
+  { id: "i56", module: "m9", coachText: "I model accountability — owning my mistakes in front of the team.", evalText: "Models accountability — owning mistakes in front of the team." },
 
-  // Module 9 — Transformational Experience
-  { id: "i26", module: "m9", coachText: "I know my players as people, not just athletes.", evalText: "Knows players as people, not just athletes." },
-  { id: "i27", module: "m9", coachText: "I intentionally create moments that build team culture and identity.", evalText: "Intentionally creates moments that build team culture and identity." },
-  { id: "i28", module: "m9", meta: true, coachText: "My players leave interactions with me feeling built up, not diminished.", evalText: "Players leave interactions feeling built up, not diminished." },
-  { id: "i29", module: "m9", coachText: "I model the standards and values I ask of my players.", evalText: "Models the standards and values asked of players." },
-
-  // Module 10 — Club Pathway
-  { id: "i30", module: "m10", coachText: "I give honest, well-prepared end-of-season reviews to players and families.", evalText: "End-of-season reviews are honest and well-prepared." },
-  { id: "i31", module: "m10", coachText: "I understand club pathway options well enough to guide families.", evalText: "Understands club pathway options well enough to guide families." },
-  { id: "i32", module: "m10", coachText: "I actively advocate for my players' next steps within the club.", evalText: "Advocates for players' next steps within the club." },
-  { id: "i33", module: "m10", meta: true, coachText: "I communicate pathway conversations early enough to avoid surprises.", evalText: "Communicates pathway conversations early enough to avoid surprises." },
+  // Module 11 — Club Pathway
+  { id: "i30", module: "m10", coachText: "I can explain the full ladder — tiers, bands, birth-year placement — accurately, without notes.", evalText: "Can explain the full ladder — tiers, bands, birth-year placement — accurately, without notes." },
+  { id: "i31", module: "m10", coachText: "My \"what comes next\" message matches the age — next tier and next band at U9–U14; the recruiting timeline only at U15+.", evalText: "\"What comes next\" message matches the age: next tier and next band at U9–U14; the recruiting timeline only at U15+." },
+  { id: "i32", module: "m10", coachText: "Families hear developmental-environment framing from me, not league branding.", evalText: "Families hear developmental-environment framing from the coach, not league branding." },
+  { id: "i33", module: "m10", coachText: "My honest assessments run all season, so no placement conversation in May is a surprise.", evalText: "Honest assessments run all season, so no placement conversation in May is a surprise." },
+  { id: "i57", module: "m10", coachText: "I send dates and logistics to PlayMetrics; I carry the why.", evalText: "Dates and logistics go to PlayMetrics; the coach carries the why." },
   { id: "i39", module: "m10", coachText: "I actively help my players through the recruiting process.", evalText: "Actively helps players through the recruiting process." },
   { id: "i40", module: "m10", verifiable: true, coachText: "I hold a one-on-one meeting with every sophomore to discuss recruiting.", evalText: "Holds a one-on-one meeting with every sophomore to discuss recruiting." },
 ];
@@ -301,6 +322,18 @@ export const MODULES = [
     kind: "rubric",
     title: "Set the Standard",
     focus: "Standards, communication, and organization that set the tone for the season.",
+    standardNote: "Three is the standard. Four is a coach whose team pulls other teams up — the standard-bearers younger groups copy.",
+    resources: [
+      { title: "Set the Standard player meeting deck", description: "The 8-section meeting — per-team versions exist for every roster", url: "https://drive.google.com/file/d/1vXoUDYDSCAX-g0Vh-q2s_Sd_irHT_P-Q/view" },
+      { title: "U13–U18 Girls Program Coaching Manual — Culture & Standards", description: "Dress code, 15-minutes-early, phone policy, self-led warmups, awards, accountability", url: "https://docs.google.com/document/d/17Cy9KC2P2QFqqU5DKT1m6Il2fvQy9C0Mvoz_IsV9Ex4/edit" },
+      { title: "Building a High-Performance Culture from Day One", description: "Seven takeaways on designing culture: visible standards, guided arrival, peer awards, top-down modeling", url: "https://docs.google.com/document/d/1ZdRWy9tp8ouPx5Scp91Jufy0WxtaCgjr5PenGZPUGN4/edit" },
+      { title: "What intensity looks like for our team", description: "Make the game uglier; top intensity from the beginning; create the tone — don't react", url: "https://docs.google.com/document/d/1-UZ40eepT5nHrE0Wy2RjRLtS94CdwgYc1TblX3mE7bU/edit" },
+    ],
+    reflectPrompts: [
+      "What is one thing you have been tolerating that your standard says you shouldn't?",
+      "Could your players run the non-negotiables meeting without you — and who would lead it?",
+      "When the standard slips, does the correction come from you or from a teammate?",
+    ],
     recording: {
       format: "1st Parent Meeting — one per team",
       desc: "Record your first parent meeting of the season for every team you coach. Before you record, put together a short agenda or presentation covering your core values — the things you want parents to know matter to you as a coach — and walk through it live during the meeting. If you coach more than one team, submit a separate link for each below.",
@@ -330,9 +363,21 @@ export const MODULES = [
     kind: "rubric",
     title: "Program Game Model",
     focus: "A clear, coachable identity for how your team plays — understood well enough to teach it off the field.",
+    standardNote: "Three is the standard. Four is a coach other coaches borrow the whiteboard from.",
+    resources: [
+      { title: "Coaching Manual — Maryland United FC Tactical Game Model", description: "The five principles with IF/THEN sub-principles across all four moments, plus systems of play", url: "https://docs.google.com/document/d/17Cy9KC2P2QFqqU5DKT1m6Il2fvQy9C0Mvoz_IsV9Ex4/edit" },
+      { title: "Game Model Presentations — club template", description: "The deck every coach fills in: building shapes, pressing setups, creation patterns", url: "https://docs.google.com/presentation/d/1yxsxG1wvlmdD7ypGwTTTvj2exanqRmCn1RPDczWY2oo/edit" },
+      { title: "2011 ECNL Game Model 2025–26 — worked team example", description: "A full team model: style-of-play pillars, pressing cues, set pieces, opponent goals slide", url: "https://docs.google.com/presentation/d/10MFXUS4shML_vKbMWC0dQT5LELgLyb_a4Aw60rTxFnY/edit" },
+      { title: "13 ECNL Game Model (2024) — build-out example", description: "The \"accepted / rejected\" #6 build-out reads — teachable team-specific detail", url: "https://docs.google.com/presentation/d/1NaDcTc_Z7cMPInI9YGXELEKtAObfOMOTNc98X1vlz3s/edit" },
+    ],
+    reflectPrompts: [
+      "Could your players draw your building shape against a front two without you in the room?",
+      "Which of the five principles does your team live least on Saturdays — and what IF/THEN would fix it?",
+      "If you had to change formation tomorrow, what would actually change about how you play?",
+    ],
     recording: {
-      format: "Office meeting with tactical board",
-      desc: "Record yourself presenting one aspect of your game model to the team using a tactical board. Record and submit.",
+      format: "Team game model deck + off-field teaching walkthrough",
+      desc: "Build your team game model deck from the club template, then record yourself teaching it off the field — a whiteboard or film-room walkthrough, not a live training session. Add a note on what you want your reviewer to notice.",
     },
   },
   {
@@ -340,9 +385,25 @@ export const MODULES = [
     num: "04",
     window: "SEPTEMBER",
     draft: true,
-    kind: "placeholder",
+    kind: "rubric",
     title: "Girls Program Technical Plan",
-    focus: "TBD",
+    focus: "The game model, translated into what every player must master.",
+    standardNote: "Three is the standard. Four is a coach whose cycle plans other coaches ask to copy.",
+    resources: [
+      { title: "Coaching Manual — Technical Plan: Phase-of-Play Weekly Cycles", description: "The five cycles, the Tue/Wed/Thu structure, and the meeting governance — one document with the game model", url: "https://docs.google.com/document/d/17Cy9KC2P2QFqqU5DKT1m6Il2fvQy9C0Mvoz_IsV9Ex4/edit" },
+      { title: "Girls Technical Plan — planning spreadsheet", description: "The operational calendar view: weekly themes, day formats, homework, post-match video standard", url: "https://docs.google.com/spreadsheets/d/1resX2lX2XaCSmzvFP9t8zzB4-7H6dlY0MqdzVMLzSe0/edit" },
+      { title: "Technical Plan | 13–18 ECNL, RL, and Premier", description: "The age-banded delivery deck of Cycles 1–5", url: "https://docs.google.com/presentation/d/1VwqjHq_rqe9ukRUJ7RLvflmbDgi4to7J3nzUFpZnoXY/edit" },
+      { title: "Girls Program Coaches Handbook — Google Site", description: "The hub every technical plan document links back to", url: "https://sites.google.com/mdunitedfc.org/girls-program-coaches-handbook/home" },
+    ],
+    reflectPrompts: [
+      "Which game-model demand does your team meet worst right now — and which cycle trains it?",
+      "Could a visitor at Thursday's session name your week's cycle without asking you?",
+      "Pick one player: what is her positional demand, and where does it show up in her plan?",
+    ],
+    recording: {
+      format: "Weekly phase-of-play cycle plan (Tue–Thu)",
+      desc: "Submit your weekly plan for a current phase-of-play cycle — Tuesday through Thursday — with a note naming the game-model principle it trains and what you want your reviewer to notice.",
+    },
   },
   {
     id: "m8",
@@ -351,9 +412,23 @@ export const MODULES = [
     kind: "rubric",
     title: "Individual Development Plans",
     focus: "Every player has a plan, every plan stays current, and every plan gets real attention.",
+    standardNote: "Three is the standard — what strong, consistent IDP work looks like at this club. Four is what shows up when you're ready to help other coaches do it.",
+    resources: [
+      { title: "Next Level IDP Platform", description: "The U13–U18 player portal — where plans live", url: "https://marylandunitednextlevelidp.netlify.app/" },
+      { title: "Summer IDP Process", description: "The philosophy & family-facing rollout", url: "https://docs.google.com/document/d/10LJ5C0J2knsKabLB-pMZx3-rY5o3LFlaXAjabpbJnWg/edit" },
+      { title: "Team IDP Form", description: "Track your group's plans in one place", url: "https://docs.google.com/spreadsheets/d/1SiRaq2Lsuc3r1djZ-SINVVEuiC5pK0QKEnTgi7qKmFE/edit" },
+      { title: "Player IDP Plan — template", description: "The per-player plan structure", url: "https://docs.google.com/spreadsheets/d/1vwvv5Viu7T1zSJiODYsT3qlGcWtETTHDf5LOtwBRyHw/edit" },
+      { title: "IDP Webinar", description: "Walkthrough of the process", url: "https://docs.google.com/presentation/d/19hJWvRaxgzGbBdmsNp8MUV6zWNYxeRnx2eaO03gR7vg/edit" },
+      { title: "How to Make a Clip on HUDL", description: "Film habits that feed the plan", url: "https://docs.google.com/document/d/17x6quLKULnIZ_Nba6RtsAc-e5fVjYyOGWggxknwDrFc/edit" },
+    ],
+    reflectPrompts: [
+      "Can each of your players tell you her current focus in one sentence?",
+      "Where does the plan actually live — somewhere she returns to, or a slide she saw once?",
+      "Which player would gain the most from a sharper plan this month, and what's step one?",
+    ],
     recording: {
-      format: "Individual / small-group session",
-      desc: "A 1-on-1 or small-group session built around specific player development targets.",
+      format: "IDP meeting with a player",
+      desc: "Record one IDP meeting with a player, and submit the plan you built for her alongside it. We'll review it together in your one-on-one, with one question front and center: did the plan give her a clear next step she can act on this week?",
     },
   },
   {
@@ -364,9 +439,22 @@ export const MODULES = [
     kind: "rubric",
     title: "Video Analysis",
     focus: "Scouting the opponent and turning that work into a prepared, clear-eyed team.",
+    standardNote: "Three is the standard. Four is film work strong enough to teach other coaches.",
+    resources: [
+      { title: "TEMPLATE | Video Analysis", description: "The blank functional template — position groups, strong/weak pairs, 25 words + 3 bullets", url: "https://docs.google.com/presentation/d/14YU7E5zSsw86fihSPUybmihH1DYVB2mZka0t3TxqI90" },
+      { title: "Worked example — own-team film", description: "A completed player project; the standard of finished analysis", url: "https://docs.google.com/presentation/d/1kN_O_voYf7RpKqewyCxXfuzeANhKDQe8d8Lp0XSnk0w" },
+      { title: "Worked example — pro-match study", description: "The same template applied to a professional match", url: "https://docs.google.com/presentation/d/1Kv6HXX9XzrJKSV-ODYN5lagPPiAqy3dgN4jbfHggEMs" },
+      { title: "How to Make a Clip on HUDL", description: "Create, extend, save — one named playlist per player, shared with you", url: "https://docs.google.com/document/d/17x6quLKULnIZ_Nba6RtsAc-e5fVjYyOGWggxknwDrFc" },
+      { title: "U17 Video Session — coach notes", description: "Real coach-led film prep: timestamps plus one-line game-model points", url: "https://docs.google.com/document/d/1hDW3sCA7lm_O9FPFZIKjB0dvO84jmA116_RD1d5uFwY" },
+    ],
+    reflectPrompts: [
+      "Can your players name the principle a clip belongs to before you tell them?",
+      "When did a weak moment on film last change what you trained that week?",
+      "What did your last opponent scout give your team that they actually used on Saturday?",
+    ],
     recording: {
-      format: "Opponent scouting & prep session",
-      desc: "Record a session where you prepare the team for a scouted opponent. Submit clips analyzing what worked (success) versus what didn't (failure). Follow up by bringing in video analysts with the team afterwards.",
+      format: "Team film session",
+      desc: "Record a film session with your team — you, the screen, and your players. Link it on the platform and add a note on what you want your reviewer to notice.",
     },
   },
   {
@@ -377,9 +465,22 @@ export const MODULES = [
     kind: "rubric",
     title: "Training Session Basics",
     focus: "Sessions that are safe, demanding, and full of touches, decisions, and joy.",
+    standardNote: "Three is the standard. Four is a session other coaches should watch to learn from.",
+    resources: [
+      { title: "Weekly Session Plan | Maryland United FC", description: "The current weekly structure: theme, Tue/Wed/Thu, three stages", url: "https://docs.google.com/spreadsheets/d/10OdWvdEVpTjUHUq73Ak3vp58th96IzKlo4rq3w-10QY/edit" },
+      { title: "Training Sessions | Maryland United FC", description: "The session library by phase, with written intervals", url: "https://docs.google.com/spreadsheets/d/1ETMyLb4J3polwYLehjjVdIBFCvcgZWR7S-8dQA69Wy0/edit" },
+      { title: "Training Sessions | Spring 2025", description: "Full themed sessions, stage by stage, with coaching notes", url: "https://docs.google.com/spreadsheets/d/1_VgEQcGsGZIVCe5Joyh6huZfEbRlpg_HWjDY2SflMJQ/edit" },
+      { title: "Weekly Session Plan | 9–12", description: "The U9–U12 template: Activity / Objective / Description, plus Homework", url: "https://docs.google.com/spreadsheets/d/1qIy42zzOOL-TDnMU9V3QFT8aggJbIh16kRJagLcnI1E/edit" },
+      { title: "Session Planner Template", description: "Periodization: energy systems, intervals, intensity levels", url: "https://docs.google.com/spreadsheets/d/1gU4C7q-E1i5c0Hsqj98eOOqwriAvxOXNqMyucqpaoc4/edit" },
+    ],
+    reflectPrompts: [
+      "Could a stranger reading this week's session plans name your theme — and connect it to how we play?",
+      "In your last session, how many minutes did the ball sit still while you talked?",
+      "Was the intensity of each stage planned before you arrived, or decided on the fly?",
+    ],
     recording: {
-      format: "Full team training session",
-      desc: "An unedited team session from arrival to close, including your coaching interventions.",
+      format: "Full training session",
+      desc: "Record one full training session — link it on the platform with a note telling your reviewer what to watch for. Before you submit, listen back to yourself. The audio doesn't lie.",
     },
   },
   {
@@ -390,9 +491,20 @@ export const MODULES = [
     kind: "rubric",
     title: "Match Preparation & Execution",
     focus: "Game plans, team talks, and in-match decisions that give players clarity.",
+    standardNote: "Three is the standard. Four means you're ready to teach other coaches how to prepare a team.",
+    resources: [
+      { title: "Pre-Match Player Presentation (U12–U18)", description: "Prepare Well = Play Well, Playing to Play vs. Playing to Win, and the Pyramid of Success", url: "https://docs.google.com/presentation/d/1b9W6VeQt125-jI80H9pwFsaCTc8A5a5lR-QN_S_UAoQ" },
+      { title: "MD United Girls Travel Guide 2026–2027", description: "Per-event logistics: sanctioned hotels, booking deadlines, team links and codes", url: "https://docs.google.com/spreadsheets/d/1o4v5e167jIm_mTNoFz3lXDuPr_eN3KBxa0bFRhLtrUM" },
+      { title: "U17 Video Session (coach notes)", description: "The voice and brevity of in-match coaching points drawn from film", url: "https://docs.google.com/document/d/1hDW3sCA7lm_O9FPFZIKjB0dvO84jmA116_RD1d5uFwY" },
+    ],
+    reflectPrompts: [
+      "Could every player on your roster name the one key from this week's game plan?",
+      "Listen to your last halftime talk — how many tactical ideas did you give, and how many landed?",
+      "When the game turned against you, did you set the tone or react to it?",
+    ],
     recording: {
-      format: "Match day recording",
-      desc: "Warm-up, pregame talk, halftime, and bench coaching across one competitive match.",
+      format: "Matchday recording",
+      desc: "Record a real matchday — your pre-match talk, halftime, and touchline coaching. Link it on the platform and add a note on what you want your reviewer to notice. Then listen back before your reviewer does. The audio doesn't lie.",
     },
   },
   {
@@ -400,9 +512,24 @@ export const MODULES = [
     num: "09",
     window: "JANUARY",
     draft: true,
-    kind: "placeholder",
+    kind: "rubric",
     title: "Midseason Feedback",
-    focus: "TBD",
+    focus: "The same criteria from August, re-scored — movement is what we measure.",
+    standardNote: "Three is the standard. At midseason we score how you engage with feedback itself — the quality this whole platform runs on.",
+    resources: [
+      { title: "COACHING IDP, 2026", description: "The current-season grid — End of Fall is the midseason re-score", url: "https://docs.google.com/spreadsheets/d/1Fu_XGRIW1_u6MY-Gn9_o9N-N21wxclfYDvAlB3IghWQ" },
+      { title: "Coaching Evaluations (13–18)", description: "The five-step live cycle: scrimmage → theme → HUDL meeting → filmed session → debrief", url: "https://docs.google.com/document/d/1vypwRmba2QvEzWfC7E_A6iR_GlgI55OqIh8XUcTzZL0" },
+      { title: "What Does Elite Coaching Look Like? Self-Evaluation", description: "The August self-evaluation your midseason reading is compared against", url: "https://docs.google.com/spreadsheets/d/1ruu40Yd6YskBfouHWfARk2aaaRF1AZhqFrNJIP1_XSg" },
+    ],
+    reflectPrompts: [
+      "Which quality moved the most since August — and what, specifically, moved it?",
+      "Where is the biggest gap between your reading and your evaluator's, and what does it tell you?",
+      "Is there a 3 on your sheet you haven't actually tested since August?",
+    ],
+    recording: {
+      format: "A real piece of your coaching (re-scored)",
+      desc: "Re-rate yourself on the same criteria you scored in August, before you see your evaluator's scores. Then submit a real piece of your coaching from this stretch of the season — record it, link it, and add a note telling your reviewer what you want them to notice. The specific midseason artifact is still being finalized — confirm the current ask on the platform before you submit.",
+    },
   },
   {
     id: "m9",
@@ -412,10 +539,22 @@ export const MODULES = [
     kind: "rubric",
     title: "Transformational Experience",
     focus: "Coaching that shapes people, not just players — culture, character, connection.",
+    standardNote: "Three is the standard. Four is what shows up when you're ready to teach other coaches how you do it.",
+    resources: [
+      { title: "OUR VALUES — the six cultural principles", description: "The full text of the six principles, including the \"transformational\" line", url: "https://docs.google.com/presentation/d/1T63s_eHIu2oQFprndQnMEk0cklyoIHJf68URd7UITuA/edit" },
+      { title: "Periodization of Values", description: "The method for sequencing values work across a season: Your Why → Your Core → Your Commitment", url: "https://docs.google.com/presentation/d/1fdWGFK6X4KzULw54b3E3jCYUhghkbaAHcwzvEDN8rjQ/edit" },
+      { title: "Building a High-Performance Culture from Day One", description: "Celebrate effort and character over results; peer recognition as character education", url: "https://docs.google.com/document/d/1ZdRWy9tp8ouPx5Scp91Jufy0WxtaCgjr5PenGZPUGN4/edit" },
+      { title: "Coaching Manual — Leadership & Accountability", description: "Accountability beyond the field, coach modeling, the leadership ladder", url: "https://docs.google.com/document/d/17Cy9KC2P2QFqqU5DKT1m6Il2fvQy9C0Mvoz_IsV9Ex4/edit" },
+    ],
+    reflectPrompts: [
+      "Which of your habits this season were transactional — effort traded for validation — and what would the transformational version look like?",
+      "Think of the last tough decision you made. Did the player leave it with a teacher or just a verdict?",
+      "What will your players still be carrying from this season in ten years — and are you coaching that on purpose?",
+    ],
     hasBonding: true,
     recording: {
-      format: "Player check-in / culture moment",
-      desc: "A recorded player check-in conversation or a team culture activity you lead.",
+      format: "A real piece of your coaching in action",
+      desc: "Submit a real piece of your coaching that shows this quality in action — record it, link it, and add a note telling your reviewer what you want them to notice.",
     },
   },
   {
@@ -426,9 +565,23 @@ export const MODULES = [
     kind: "rubric",
     title: "Club Pathway",
     focus: "Guiding players and families through what comes next at Maryland United.",
+    standardNote: "Three is the standard. Four is the coach other coaches send confused families to.",
+    resources: [
+      { title: "2026–2027 Girls Teams & Coaches", description: "The canonical roster — every team and coach, U5–U18/19, including South", url: "https://docs.google.com/spreadsheets/d/17mDeybpAmoKkhXDQLoEmjt1RGSv5PZKvbo6Mf7HL-6g" },
+      { title: "Rising U11/U12 Program Webinar", description: "How we walk families into the Pre-ECNL step", url: "https://docs.google.com/presentation/d/15W5CXQt61-me77TVRFXvdb_7dpaza2rR_qeVeIatm64" },
+      { title: "Why Join our Premier and Elite Program? (U13–U18/19)", description: "The current-season pathway deck: bridge to ECNL/RL, National 1 League", url: "https://docs.google.com/presentation/d/1oxDC4gd2thleLnx4TTUTtvJBfzqDSIBW0nFAf6zR6tE" },
+      { title: "Why play in the MD United FC Premier | Elite Program?", description: "The coaching pod, internal promotion, and recruiting support in prose", url: "https://docs.google.com/document/d/1Qgvtf8E0InTNO4e5_1Leuvn6G5ulIafYT6LJ_bvzrlw" },
+      { title: "College Recruiting 101: Freshman Year", description: "The parent-facing script for \"be patient\" — NCAA rules, fit over speed", url: "https://docs.google.com/document/d/13ksNkALE_ol9LrlhMMJ245hHUyHlACoCoYmiwyoO-aY" },
+      { title: "2025 Girls College Recruiting Seminar", description: "D1/D2/D3 differences, contact dates, the coach-as-reference role", url: "https://docs.google.com/presentation/d/1vfEOM_NxVq1sbA_fLgRL_iAeWdyevOmQYMExtvR5ztU" },
+    ],
+    reflectPrompts: [
+      "Could you draw the club ladder for a family right now, from Academy to U18/19, without checking anything?",
+      "Which of your players is closest to being ready for the next tier — and does she already know what you think?",
+      "Is your \"what comes next\" message genuinely matched to your age group, or does college creep in early?",
+    ],
     recording: {
-      format: "End-of-season pathway meeting",
-      desc: "A player/family review meeting covering the season and the road ahead.",
+      format: "A real pathway conversation",
+      desc: "Record a real piece of your pathway coaching — a genuine \"what comes next\" conversation with a player or family, at the level appropriate to their age. Link it and add a note on what you want your reviewer to notice.",
     },
   },
 ];

@@ -17,6 +17,28 @@ export default function RubricModule({ module: m, state, update, bonding, setBon
           <li key={item.id}>{item.evalText}</li>
         ))}
       </ul>
+      {m.standardNote && <p className="mu-recording-tip">{m.standardNote}</p>}
+
+      {/* Resources — coach-facing */}
+      {m.resources && (
+        <div className="mu-subbox">
+          <p className="mu-section-label">RESOURCES · WHAT TO PULL FROM</p>
+          <div className="mu-resources">
+            {m.resources.map((r) => (
+              <a
+                key={r.url}
+                className="mu-resource-row"
+                href={r.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="mu-resource-title">{r.title}</span>
+                <span className="mu-resource-desc">{r.description}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Recording submission — coach-facing */}
       <div className="mu-subbox">
@@ -170,6 +192,18 @@ export default function RubricModule({ module: m, state, update, bonding, setBon
               />
             </div>
           ))}
+        </div>
+      )}
+
+      {/* Reflect — coach-facing */}
+      {m.reflectPrompts && (
+        <div className="mu-subbox">
+          <p className="mu-section-label">REFLECT · BEFORE YOU MOVE ON</p>
+          <ol className="mu-reflect">
+            {m.reflectPrompts.map((q, i) => (
+              <li key={i}>{q}</li>
+            ))}
+          </ol>
         </div>
       )}
 

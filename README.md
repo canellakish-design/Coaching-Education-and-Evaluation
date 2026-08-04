@@ -2,10 +2,11 @@
 
 A standalone Vite + React app with Firebase Authentication (Google Sign-In,
 gated by an approved-coach allowlist) and Firestore. Eleven modules across
-the season: a combined onboarding module, a midseason feedback placeholder,
-a technical plan placeholder, and eight coaching qualities assessed through
-recorded submissions. A schedule sits above the module list showing when
-each module is due — see "Schedule" below.
+the season: a combined onboarding module and ten coaching qualities, each
+assessed through a recorded submission. Content for every module — criteria,
+resources, and reflection prompts — is drawn from *The Maryland United
+Coaching Handbook 2026–27*. A schedule sits above the module list showing
+when each module is due — see "Schedule" below.
 
 ## Structure
 
@@ -38,22 +39,25 @@ position are also saved (`onboardingStep`), so a coach who leaves mid-flow
 picks up where they left off. The module's own ✓ checkmark only appears
 once all four underlying tasks are done.
 
-**Modules 2–3, 5–8, 10–11 — The Rubric**
-Set the Standard, Program Game Model (currently `draft: true` and
-locked for coaches while it's being rebuilt), Individual Development
-Plans, Video Analysis, Training Session Basics, Match Preparation &
-Execution, Transformational Experience (includes the Team Bonding
-exercise), Club Pathway. Each has a recorded submission and per-item
+**Modules 2–11 — The Rubric**
+Set the Standard, Program Game Model, Girls Program Technical Plan,
+Individual Development Plans, Video Analysis, Training Session Basics,
+Match Preparation & Execution, Midseason Feedback, Transformational
+Experience (includes the Team Bonding exercise), Club Pathway. All but
+Set the Standard and Individual Development Plans are currently
+`draft: true` — shown as "COMING SOON" and unclickable for coaches while
+they're being reviewed; accounts in `CREATOR_EMAILS` (`src/data/modules.js`)
+can still open them, tagged "DRAFT". Each has a recorded submission and per-item
 evaluator grading. There's no per-module written feedback field — the
 evaluator gives spoken feedback instead, via the 1-on-1 meeting (or a
 written Note — see below).
 
-**Module 4 — Girls Program Technical Plan**
-Placeholder module (content TBD), sitting right after Game Model.
-
-**Module 9 — Midseason Feedback**
-Placeholder module (content TBD) sitting between Match Preparation &
-Execution and Transformational Experience, around January.
+Every rubric module also carries, straight from the handbook: a **WHAT
+WE LOOK FOR** criteria list (the same items rated in Module 1's
+Self-Evaluation and by the evaluator here), a short **standard note**
+on what a 3 vs. a 4 looks like, a **RESOURCES** list of the real
+planning docs/decks/sheets behind that module, and a closing **REFLECT**
+section of open questions — display-only, not collected as data.
 
 ## Schedule
 

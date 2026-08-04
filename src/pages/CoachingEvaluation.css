@@ -385,6 +385,43 @@
   color: #D6D6D6;
   line-height: 1.5;
 }
+.mu-resources {
+  display: flex;
+  flex-direction: column;
+}
+.mu-resource-row {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 10px 0;
+  border-top: 1px solid #242424;
+  text-decoration: none;
+}
+.mu-resource-row:first-child {
+  border-top: none;
+}
+.mu-resource-title {
+  color: #f5b917;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+.mu-resource-desc {
+  color: #A3A3A3;
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+.mu-reflect {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mu-reflect li {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #D6D6D6;
+}
 .mu-form-col {
   display: flex;
   flex-direction: column;
