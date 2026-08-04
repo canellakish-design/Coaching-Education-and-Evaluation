@@ -63,7 +63,7 @@ export const RUBRIC_ITEMS = [
   { id: "i16", module: "m6", meta: true, coachText: "I stay level-headed and set the emotional tone on the sideline.", evalText: "Stays level-headed and sets the emotional tone on the sideline." },
   { id: "i38", module: "m6", coachText: "I work as a colleague with other staff on competitive nights.", evalText: "Works as a colleague with other staff on competitive nights." },
 
-  // Module 5 — Analysis
+  // Module 5 — Video Analysis
   { id: "i17", module: "m7", coachText: "I do thorough, specific prep on opponent tendencies.", evalText: "Opponent prep is thorough and specific to tendencies." },
   { id: "i18", module: "m7", coachText: "My video clips are purposeful, not just a highlight reel.", evalText: "Clips are purposeful and thematic, not a highlight reel." },
   { id: "i19", module: "m7", meta: true, coachText: "My players participate actively in analysis sessions rather than just watching.", evalText: "Players participate actively in analysis rather than passively watching." },
@@ -230,7 +230,7 @@ export const INTRO_SECTIONS = [
     list: [
       "Set the Standard",
       "Maryland United Game Model",
-      "Analysis",
+      "Video Analysis",
       "Maryland United Training Session",
       "Match Preparation & Execution",
       "Transformational Experience",
@@ -353,7 +353,7 @@ export const MODULES = [
     window: "OCTOBER",
     draft: true,
     kind: "rubric",
-    title: "Analysis",
+    title: "Video Analysis",
     focus: "Scouting the opponent and turning that work into a prepared, clear-eyed team.",
     recording: {
       format: "Opponent scouting & prep session",
