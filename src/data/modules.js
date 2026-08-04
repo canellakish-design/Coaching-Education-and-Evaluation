@@ -341,7 +341,7 @@ export const MODULES = [
     window: "SEPTEMBER",
     draft: true,
     kind: "placeholder",
-    title: "Maryland United Technical Plan",
+    title: "Girls Program Technical Plan",
     focus: "TBD",
   },
   {

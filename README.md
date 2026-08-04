@@ -48,7 +48,7 @@ evaluator grading. There's no per-module written feedback field — the
 evaluator gives spoken feedback instead, via the 1-on-1 meeting (or a
 written Note — see below).
 
-**Module 4 — Maryland United Technical Plan**
+**Module 4 — Girls Program Technical Plan**
 Placeholder module (content TBD), sitting right after Game Model.
 
 **Module 9 — Midseason Feedback**
