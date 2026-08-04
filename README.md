@@ -1,40 +1,42 @@
 # Maryland United — Coaching Excellence Pathway
 
 A standalone Vite + React app with Firebase Authentication (Google Sign-In,
-gated by an approved-coach allowlist) and Firestore. Eleven modules across
+gated by an approved-coach allowlist) and Firestore. Ten modules across
 the season: a combined onboarding module, a midseason feedback placeholder,
-eight coaching qualities assessed through recorded submissions, and a
-recruiting support module for U15–U19 coaches. A schedule sits above the
-module list showing when each module is due — see "Schedule" below.
+and eight coaching qualities assessed through recorded submissions. A
+schedule sits above the module list showing when each module is due — see
+"Schedule" below.
 
 ## Structure
 
 **Module 1 — Getting Started**
-A single combined module that steps a coach through four pages, one at a
-time, with Back/Next navigation and a bottom progress bar
-(`src/components/OnboardingModule.jsx`):
+A single combined module that steps a coach through one flat sequence of
+ten pages — no nested sections, one Back/Next control throughout, and a
+bottom progress bar (`src/components/OnboardingModule.jsx`):
 
 1. **1-on-1 Meeting** — a private, spoken kickoff meeting between coach and
    evaluator at the very start of the season. No written notes are
    collected in the app for this one — the coach just marks it completed.
-2. **Introduction** — a short onboarding read, itself stepped one section
-   at a time: why the program exists, how the year works, how the 1–4
-   scale works, and what's asked of coaches.
-3. **Self-Evaluation** — coaches rate themselves 1–4 on all 40 rubric
+2–7. **Introduction** — six individual reading pages (why the program
+   exists, how the year works, how the 1–4 scale works, what's asked of
+   coaches, etc.), each just Back/Next since there's nothing to complete.
+8. **What Comes Next** — the closing intro page, with its own "Mark as
+   Read" action (separate from the Next control, same pattern as every
+   other page).
+9. **Self-Evaluation** — coaches rate themselves 1–4 on all 40 rubric
    items — the *same* items their evaluator rates in Modules 2–7 and 9–10.
-   Eight of those items also ask a meta-perception question ("how do you
-   think your players would rate you?"). Two reflection prompts close it
-   out.
-4. **What Drives You** — twelve open-response prompts on motivation,
+   Two reflection prompts close it out.
+10. **What Drives You** — twelve open-response prompts on motivation,
    goals, energy, and what makes the job worth doing. The evaluator reads
    these and assigns a coaching archetype.
 
-"Next" is gated on completing the current page (meeting marked complete /
-intro read / self-eval submitted / bucket submitted). Each page still
-autosaves on every change — the progress bar and current page are also
-saved (`onboardingStep`), so a coach who leaves mid-flow picks up where
-they left off. The module's own ✓ checkmark only appears once all four
-pages are done.
+"Next" is gated on completing the current page where there's something to
+complete (meeting marked complete / intro marked read / self-eval
+submitted / bucket submitted) — reading-only pages never gate. Each page
+still autosaves on every change — the progress bar and current page
+position are also saved (`onboardingStep`), so a coach who leaves mid-flow
+picks up where they left off. The module's own ✓ checkmark only appears
+once all four underlying tasks are done.
 
 **Modules 2–7, 9–10 — The Rubric**
 Set the Standard, Maryland United Game Model (currently `draft: true` and
@@ -50,15 +52,10 @@ written Note — see below).
 Placeholder module (content TBD) sitting between Match Preparation &
 Execution and Transformational Experience, around January.
 
-**Module 11 — Recruiting Support (15-18 Coaches Only)**
-Placeholder module (content TBD) at the end of the season, for U15–U19
-coaches only — the title says so, but this isn't yet enforced in code, so
-all coaches currently see it listed (draft/locked) the same way.
-
 ## Schedule
 
 A schedule table sits above the module list, visible to every coach. It
-lists all eleven modules against two date columns — U9–U14 and U15–U19 —
+lists all ten modules against two date columns — U9–U14 and U15–U19 —
 since the two age bands don't run the same season calendar (see
 `src/data/teams.js` for the team-to-track mapping). Modules don't carry
 their own due date anymore; `SCHEDULE_DATES` in `src/data/modules.js` is
