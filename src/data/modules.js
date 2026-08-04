@@ -336,8 +336,17 @@ export const MODULES = [
     },
   },
   {
-    id: "m8",
+    id: "technicalPlan",
     num: "04",
+    window: "SEPTEMBER",
+    draft: true,
+    kind: "placeholder",
+    title: "Maryland United Technical Plan",
+    focus: "TBD",
+  },
+  {
+    id: "m8",
+    num: "05",
     window: "AUGUST – SEPTEMBER",
     kind: "rubric",
     title: "Individual Development Plans",
@@ -349,7 +358,7 @@ export const MODULES = [
   },
   {
     id: "m7",
-    num: "05",
+    num: "06",
     window: "OCTOBER",
     draft: true,
     kind: "rubric",
@@ -362,7 +371,7 @@ export const MODULES = [
   },
   {
     id: "m5",
-    num: "06",
+    num: "07",
     window: "NOVEMBER",
     draft: true,
     kind: "rubric",
@@ -375,7 +384,7 @@ export const MODULES = [
   },
   {
     id: "m6",
-    num: "07",
+    num: "08",
     window: "DECEMBER",
     draft: true,
     kind: "rubric",
@@ -388,7 +397,7 @@ export const MODULES = [
   },
   {
     id: "midseason",
-    num: "08",
+    num: "09",
     window: "JANUARY",
     draft: true,
     kind: "placeholder",
@@ -397,7 +406,7 @@ export const MODULES = [
   },
   {
     id: "m9",
-    num: "09",
+    num: "10",
     window: "JANUARY – FEBRUARY",
     draft: true,
     kind: "rubric",
@@ -411,7 +420,7 @@ export const MODULES = [
   },
   {
     id: "m10",
-    num: "10",
+    num: "11",
     window: "MAY – JUNE",
     draft: true,
     kind: "rubric",
