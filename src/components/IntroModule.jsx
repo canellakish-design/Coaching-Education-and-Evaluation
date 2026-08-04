@@ -14,7 +14,7 @@ const renderParagraph = (p, i) =>
   );
 
 export default function IntroModule({ state, update, onContinue, onBack }) {
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(state.read ? INTRO_SECTIONS.length : 0);
   const total = INTRO_SECTIONS.length;
   const isFinal = step === total;
   const section = isFinal ? null : INTRO_SECTIONS[step];

@@ -7,10 +7,9 @@ import {
 import RatingRow from "./RatingRow";
 
 export default function SelfEvalModule({ state, update }) {
-  const { ratings = {}, meta = {}, reflections = {}, submitted } = state;
+  const { ratings = {}, reflections = {}, submitted } = state;
 
   const setRating = (id, v) => update({ ratings: { ...ratings, [id]: v } });
-  const setMeta = (id, v) => update({ meta: { ...meta, [id]: v } });
   const setReflection = (id, v) => update({ reflections: { ...reflections, [id]: v } });
 
   const totalItems = RUBRIC_MODULES.reduce((n, m) => n + itemsForModule(m.id).length, 0);
@@ -39,23 +38,13 @@ export default function SelfEvalModule({ state, update }) {
         <div className="mu-subbox" key={m.id}>
           <p className="mu-section-label">{m.title.toUpperCase()}</p>
           {itemsForModule(m.id).map((item) => (
-            <div key={item.id}>
-              <RatingRow
-                label={item.coachText}
-                value={ratings[item.id] ?? null}
-                onChange={(v) => setRating(item.id, v)}
-                allowNA
-              />
-              {item.meta && (
-                <RatingRow
-                  label="How do you think your players would rate you on this?"
-                  sublabel=" "
-                  value={meta[item.id] ?? null}
-                  onChange={(v) => setMeta(item.id, v)}
-                  allowNA
-                />
-              )}
-            </div>
+            <RatingRow
+              key={item.id}
+              label={item.coachText}
+              value={ratings[item.id] ?? null}
+              onChange={(v) => setRating(item.id, v)}
+              allowNA
+            />
           ))}
         </div>
       ))}
