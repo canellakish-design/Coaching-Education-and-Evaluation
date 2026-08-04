@@ -436,16 +436,13 @@ export const MODULES = [
 export const RUBRIC_MODULES = MODULES.filter((m) => m.kind === "rubric");
 
 // Schedule shown above the module list — same modules, two tracks by team
-// age (see src/data/teams.js). Dates confirmed so far only cover the
-// U9-U14 track for Modules 1-4 (Module 3, Game Model, is still
-// draft/locked for coaches despite having a date); U15-U19 dates aren't
-// set yet, so they're TBD across the board (default fallback in
+// age (see src/data/teams.js). Only the U9-U14 track has confirmed dates
+// so far (Getting Started, Set the Standard); U15-U19 and everything
+// else is TBD across the board (default fallback in
 // CoachingEvaluation.jsx).
 export const SCHEDULE_DATES = {
   onboarding: { young: "AUG 14" },
-  m3: { young: "AUG 17" },
-  m4: { young: "AUG 20" },
-  m8: { young: "AUG 31" },
+  m3: { young: "AUG 20" },
 };
 
 // Evaluator-set completion status per module, separate from the coach's own

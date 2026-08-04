@@ -62,10 +62,10 @@ lists all eleven modules against two date columns — U9–U14 and U15–U19 —
 since the two age bands don't run the same season calendar (see
 `src/data/teams.js` for the team-to-track mapping). Modules don't carry
 their own due date anymore; `SCHEDULE_DATES` in `src/data/modules.js` is
-the single source of truth, keyed by module id. Only Modules 1–4 have
-confirmed dates so far — Module 3 (Game Model) is still draft/locked for
-coaches despite having a date, and everything from Module 5 onward shows
-"TBD" until the rest of the calendar is set.
+the single source of truth, keyed by module id. Only Modules 1–2 have
+confirmed U9–U14 dates so far (Getting Started, Set the Standard);
+U15–U19 and everything else shows "TBD" until the rest of the calendar
+is set.
 
 ## The paired-item design
 
