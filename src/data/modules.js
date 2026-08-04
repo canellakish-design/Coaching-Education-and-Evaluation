@@ -327,7 +327,6 @@ export const MODULES = [
       { title: "Set the Standard player meeting deck", description: "The 8-section meeting — per-team versions exist for every roster", url: "https://drive.google.com/file/d/1vXoUDYDSCAX-g0Vh-q2s_Sd_irHT_P-Q/view" },
       { title: "U13–U18 Girls Program Coaching Manual — Culture & Standards", description: "Dress code, 15-minutes-early, phone policy, self-led warmups, awards, accountability", url: "https://docs.google.com/document/d/17Cy9KC2P2QFqqU5DKT1m6Il2fvQy9C0Mvoz_IsV9Ex4/edit" },
       { title: "Building a High-Performance Culture from Day One", description: "Seven takeaways on designing culture: visible standards, guided arrival, peer awards, top-down modeling", url: "https://docs.google.com/document/d/1ZdRWy9tp8ouPx5Scp91Jufy0WxtaCgjr5PenGZPUGN4/edit" },
-      { title: "What intensity looks like for our team", description: "Make the game uglier; top intensity from the beginning; create the tone — don't react", url: "https://docs.google.com/document/d/1-UZ40eepT5nHrE0Wy2RjRLtS94CdwgYc1TblX3mE7bU/edit" },
     ],
     reflectPrompts: [
       "What is one thing you have been tolerating that your standard says you shouldn't?",
