@@ -24,9 +24,10 @@ bottom progress bar (`src/components/OnboardingModule.jsx`):
 8. **What Comes Next** — the closing intro page, with its own "Mark as
    Read" action (separate from the Next control, same pattern as every
    other page).
-9. **Self-Evaluation** — coaches rate themselves 1–4 on all 49 rubric
-   items — the *same* items their evaluator rates across Modules 2–3
-   and 5–10. Two reflection prompts close it out.
+9. **Self-Evaluation** — coaches rate themselves 1–4 on the 20-item
+   coaching rubric (four categories, five items each) — the *same*
+   items their evaluator rates centrally in the evaluator panel's
+   Coaching Rubric tab. Two reflection prompts close it out.
 10. **What Drives You** — twelve open-response prompts on motivation,
    goals, energy, and what makes the job worth doing. The evaluator reads
    these and assigns a coaching archetype.
@@ -46,17 +47,19 @@ Transformational Experience (includes the Team Bonding exercise), Club
 Pathway. All but Set the Standard are currently `draft: true` — shown
 as "COMING SOON" and unclickable for coaches while they're being
 reviewed; accounts in `CREATOR_EMAILS` (`src/data/modules.js`) can
-still open them, tagged "DRAFT". Each has a recorded submission and
-per-item evaluator grading. There's no per-module written feedback
-field — the evaluator gives spoken feedback instead, via the 1-on-1
-meeting (or a written Note — see below).
+still open them, tagged "DRAFT". Each has a recorded submission, an
+evaluator-set COMPLETE/INCOMPLETE status, and an overall 1–4 grade.
+There's no per-module criteria list or per-item grading anymore — the
+20-item coaching rubric (see below) is rated once, centrally, in the
+evaluator panel, not module by module. There's also no per-module
+written feedback field — the evaluator gives spoken feedback instead,
+via the 1-on-1 meeting (or a written Note — see below).
 
-Every rubric module also carries, straight from the handbook: a **WHAT
-WE LOOK FOR** criteria list (the same items rated in Module 1's
-Self-Evaluation and by the evaluator here), a short **standard note**
-on what a 3 vs. a 4 looks like, a **RESOURCES** list of the real
-planning docs/decks/sheets behind that module, and a closing **REFLECT**
-section of open questions — display-only, not collected as data.
+Every rubric module also carries, straight from the handbook: a short
+**standard note** on what a 3 vs. a 4 looks like, a **RESOURCES** list
+of the real planning docs/decks/sheets behind that module, and a
+closing **REFLECT** section of open questions — display-only, not
+collected as data.
 
 **Module 4 — Girls Program Technical Plan**
 A lightweight placeholder, not a rubric module — no criteria, no
@@ -77,32 +80,47 @@ confirmed U9–U14 dates so far (Getting Started, Set the Standard);
 U15–U19 and everything else shows "TBD" until the rest of the calendar
 is set.
 
-## The paired-item design
+## The coaching rubric
 
-Every rubric item is stored with two wordings — `coachText` (first person,
-for the Self-Evaluation page of Module 1) and `evalText` (third person, for
-the evaluator). Same construct, same 1–4 anchors. This pairing is what makes
-the self-vs-evaluator gap meaningful; it's the standard approach in the
-coaching-leadership literature (cf. the Leadership Scale for Sports, which
-exists in parallel coach and athlete forms). If you add or edit items, keep
-both wordings aligned.
+`RUBRIC_CATEGORIES` in `src/data/modules.js` holds the one coaching rubric
+used across the app — four categories (Technical Execution & Session
+Delivery; Tactical Application & Match Management; Leadership,
+Communication & Culture; Personal Drive, Initiative & Professional
+Development), five items each, 20 total. It's decoupled from the eight
+rubric modules above — coaches rate themselves against it once, in Module
+1's Self-Evaluation; evaluators rate it once, centrally, in the evaluator
+panel's Coaching Rubric tab. Content is sourced from the club's
+[Coaches Individual Development Plan](https://docs.google.com/spreadsheets/d/1Fu_XGRIW1_u6MY-Gn9_o9N-N21wxclfYDvAlB3IghWQ)
+spreadsheet.
+
+Every item is stored with two wordings — `coachText` (first person, for the
+coach's self-eval) and `evalText` (third person, for the evaluator). Same
+construct, same 1–4 anchors. This pairing is what makes the self-vs-evaluator
+gap meaningful; it's the standard approach in the coaching-leadership
+literature (cf. the Leadership Scale for Sports, which exists in parallel
+coach and athlete forms). If you add or edit items, keep both wordings
+aligned; `RUBRIC_ITEMS` is a flattened, auto-derived view of
+`RUBRIC_CATEGORIES` used wherever a flat list is more convenient (e.g. the
+gap analysis).
 
 ## Evaluator view
 
 Accounts listed in `ADMIN_EMAILS` (`src/data/modules.js`) see an extra panel:
 
-- **Self vs. Evaluator** — every compared item, sorted by gap size. Positive
-  gap means the coach rates themselves higher than you do.
-- **Meta-Perception** — self-rating vs. predicted player rating vs. your
-  rating, for the 8 flagged items.
+- **Self vs. Evaluator** — every compared item from the coaching rubric,
+  sorted by gap size. Positive gap means the coach rates themselves higher
+  than you do.
+- **Coaching Rubric** — where you actually grade: the same 20 items, grouped
+  by category, rated once centrally. Feeds the gap tab above.
 - **What Drives You** — all answers from that page of Module 1 on one screen.
 - **Archetype** — assign one of six archetypes with your reasoning. Each
   carries a strength and its characteristic blind spots.
 
 Admins also get a coach selector to view and grade any coach's record. Inside
 each rubric module's evaluator box, the admin sets a COMPLETE / INCOMPLETE
-(LATE) status per module — separate from the coach's own "submitted" toggle
-and shown as a pill on the module card.
+(LATE) status and an overall 1–4 grade per module — separate from the
+central coaching rubric and from the coach's own "submitted" toggle, and
+shown as pills on the module card.
 
 Archetypes are a coaching-style vocabulary for framing feedback, **not** a
 clinical or psychometric assessment. Coaches never see their archetype or
@@ -154,8 +172,10 @@ npm run dev
   `onboardingStep` (which page of Module 1 the coach is on, 0-3), `intro`
   (read), `meeting` (completed), `selfEval` (ratings, meta, reflections),
   `bucket` (answers), `bonding` (4 entries), `modules` (per-module grade,
-  status, itemGrades, submission links/context notes), `notes` (array of
-  `{ id, text, authorEmail, createdAt }`, coach-visible), and `archetype`.
+  status, submission links/context notes), `evalRatings` (evaluator's
+  1–4 rating per coaching-rubric item, keyed by item id), `notes` (array
+  of `{ id, text, authorEmail, createdAt }`, coach-visible), and
+  `archetype`.
 - `mail/{autoId}` — write-only queue for the Trigger Email extension;
   evaluators create documents here when they send a note, nobody reads
   them back through the app.

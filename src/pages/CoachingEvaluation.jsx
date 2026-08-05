@@ -39,6 +39,7 @@ const hydrate = (remote, fallbackName) => {
     modules: Object.fromEntries(
       RUBRIC_MODULES.map((m) => [m.id, { ...emptyModuleState(), ...(remote.modules?.[m.id] || {}) }])
     ),
+    evalRatings: { ...base.evalRatings, ...(remote.evalRatings || {}) },
     archetype: remote.archetype || null,
   };
 };
@@ -113,6 +114,8 @@ export default function CoachingEvaluation() {
   const updateIntro = (patch) => persist({ ...data, intro: { ...data.intro, ...patch } });
   const updateMeeting = (patch) => persist({ ...data, meeting: { ...data.meeting, ...patch } });
   const updateSelfEval = (patch) => persist({ ...data, selfEval: { ...data.selfEval, ...patch } });
+  const updateEvalRatings = (patch) =>
+    persist({ ...data, evalRatings: { ...data.evalRatings, ...patch } });
   const updateBucket = (patch) => persist({ ...data, bucket: { ...data.bucket, ...patch } });
   const setOnboardingStep = (onboardingStep) => persist({ ...data, onboardingStep });
   const setBonding = (idx, patch) => {
@@ -273,7 +276,13 @@ export default function CoachingEvaluation() {
       </section>
 
       {isAdmin && showAdmin && (
-        <AdminPanel data={data} archetype={data.archetype} setArchetype={setArchetype} addNote={addNote} />
+        <AdminPanel
+          data={data}
+          archetype={data.archetype}
+          setArchetype={setArchetype}
+          addNote={addNote}
+          updateEvalRatings={updateEvalRatings}
+        />
       )}
 
       {!(isAdmin && showAdmin) && data.notes?.length > 0 && (

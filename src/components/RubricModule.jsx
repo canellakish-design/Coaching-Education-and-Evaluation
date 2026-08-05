@@ -1,22 +1,9 @@
-import { itemsForModule, GRADE_SCALE, STATUS_OPTIONS, SUBMISSION_STEPS } from "../data/modules";
-import RatingRow from "./RatingRow";
+import { GRADE_SCALE, STATUS_OPTIONS, SUBMISSION_STEPS } from "../data/modules";
 
 export default function RubricModule({ module: m, state, update, bonding, setBonding, isAdmin }) {
-  const items = itemsForModule(m.id);
-  const itemGrades = state.itemGrades || {};
-
-  const setItemGrade = (id, v) => update({ itemGrades: { ...itemGrades, [id]: v } });
-
   return (
     <div className="mu-card-body">
       <p className="mu-focus">{m.focus}</p>
-
-      <p className="mu-section-label">WHAT WE LOOK FOR</p>
-      <ul className="mu-ul">
-        {items.map((item) => (
-          <li key={item.id}>{item.evalText}</li>
-        ))}
-      </ul>
       {m.standardNote && <p className="mu-recording-tip">{m.standardNote}</p>}
 
       {/* Resources — coach-facing */}
@@ -214,16 +201,6 @@ export default function RubricModule({ module: m, state, update, bonding, setBon
               </button>
             ))}
           </div>
-
-          {items.map((item) => (
-            <RatingRow
-              key={item.id}
-              label={item.evalText}
-              sublabel={item.verifiable ? " · verifiable" : undefined}
-              value={itemGrades[item.id] ?? null}
-              onChange={(v) => setItemGrade(item.id, v)}
-            />
-          ))}
 
           <p className="mu-section-label" style={{ marginTop: 16 }}>
             OVERALL

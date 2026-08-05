@@ -24,83 +24,69 @@ export const SUBMISSION_STEPS = [
 ];
 
 /* ---------------------------------------------------------------
-   RUBRIC ITEMS
-   Each item is rated twice: once by the coach in the Self-Evaluation step
-   of Module 1 (coachText),
-   once by the evaluator in the matching rubric module (evalText).
-   Same construct, same 1-4 anchors — that pairing is what makes the
-   self-vs-evaluator gap meaningful.
-   meta: true  -> also asks "how do you think your players would rate you?"
-   verifiable: true -> objectively checkable, not a judgment call
+   COACHING RUBRIC — Coaches Individual Development Plan
+   Source: https://docs.google.com/spreadsheets/d/1Fu_XGRIW1_u6MY-Gn9_o9N-N21wxclfYDvAlB3IghWQ
+   One unified rubric across four categories, decoupled from any single
+   module. Each item is rated twice: once by the coach in the
+   Self-Evaluation step of Module 1 (coachText), once by the evaluator
+   in the AdminPanel's Coaching Rubric tab (evalText). Same construct,
+   same 1-4 anchors — that pairing is what makes the self-vs-evaluator
+   gap meaningful.
 ----------------------------------------------------------------*/
-export const RUBRIC_ITEMS = [
-  // Module 2 — Set the Standard
-  { id: "i1", module: "m3", coachText: "The Set the Standard meeting has happened with my team, and my players can repeat the non-negotiables.", evalText: "The Set the Standard meeting has happened, and players can repeat the non-negotiables." },
-  { id: "i2", module: "m3", coachText: "The visible habits hold without me — gear, early arrival, phones away, walking out together.", evalText: "The visible habits hold without the coach present — gear, early arrival, phones away, walking out together." },
-  { id: "i4", module: "m3", coachText: "My players police the standard themselves, and recognition runs on a rhythm.", evalText: "Players police the standard themselves; recognition runs on a rhythm." },
-  { id: "i41", module: "m3", coachText: "I'm organized — brief, consistent in-person team meetings, and planning through the bi-weekly coaches' meetings.", evalText: "Organized: brief, consistent in-person team meetings; planning through the bi-weekly coaches' meetings." },
-  { id: "i34", module: "m3", verifiable: true, coachText: "I manage PlayMetrics and double-check it for accuracy.", evalText: "Manages PlayMetrics and double-checks it for accuracy." },
-  { id: "i35", module: "m3", coachText: "I check my email regularly.", evalText: "Checks email regularly." },
-  { id: "i36", module: "m3", coachText: "I respond to messages in a timely manner.", evalText: "Responds to messages in a timely manner." },
-  { id: "i37", module: "m3", coachText: "I contact the appropriate person on technical staff for the task at hand.", evalText: "Contacts the appropriate person on technical staff for the task at hand." },
-
-  // Module 3 — Program Game Model
-  { id: "i5", module: "m4", coachText: "I can state our identity in one sentence — and so can my players.", evalText: "Can state the identity in one sentence — and so can their players." },
-  { id: "i6", module: "m4", coachText: "My team deck is complete — building vs a front 1/2/3, pressing vs a back four and back three, creation patterns #1–#3.", evalText: "Team deck is complete: building vs a front 1/2/3, pressing vs a back four and back three, creation patterns #1–#3." },
-  { id: "i7", module: "m4", coachText: "My coaching points are written as IF/THEN sub-principles in game-model language.", evalText: "Coaching points are written as IF/THEN sub-principles in game-model language." },
-  { id: "i8", module: "m4", coachText: "My players' turnovers show the model — press-or-cover decisions happen without prompting.", evalText: "Turnovers show the model: press-or-cover decisions happen without prompting." },
-  { id: "i42", module: "m4", coachText: "My team's identity survives a formation change — principles first, shape second.", evalText: "The identity survives a formation change — principles first, shape second." },
-  { id: "i58", module: "m4", coachText: "My pressing scheme is man-to-man regardless of formation — that identity doesn't change based on the opponent.", evalText: "Pressing scheme is man-to-man regardless of formation — the identity doesn't change based on the opponent." },
-  { id: "i59", module: "m4", coachText: "My build-out is anchored on a one-player overload — I can show exactly where that extra player comes from (a center back stepping in, a midfielder dropping, the goalkeeper in the build).", evalText: "Build-out is anchored on a one-player overload — the coach can show exactly where that extra player comes from." },
-
-  // Module 5 — Individual Development Plans
-  { id: "i21", module: "m8", verifiable: true, coachText: "Every player has a current, specific plan — not a generic one.", evalText: "Every player has a current, specific plan — not a generic one." },
-  { id: "i22", module: "m8", coachText: "Feedback is continuous through the year, not a single end-of-season report.", evalText: "Feedback is continuous through the year, not a single end-of-season report." },
-  { id: "i23", module: "m8", coachText: "The plan connects to training, home work, and film.", evalText: "The plan connects to training, home work, and film." },
-  { id: "i24", module: "m8", coachText: "The plan speaks the technical plan's language — her work maps to what her position is asked to do.", evalText: "The plan speaks the technical plan's language — the player's work maps to what her position is asked to do." },
-  { id: "i25", module: "m8", coachText: "The player owns it — she can tell me her focus in one sentence.", evalText: "The player owns it — she can tell the coach her focus in one sentence." },
-
-  // Module 6 — Video Analysis
-  { id: "i17", module: "m7", coachText: "Every clip I use is tagged to a playing-style principle — no generic film, ever.", evalText: "Every clip is tagged to a playing-style principle — no generic film, ever." },
-  { id: "i18", module: "m7", coachText: "Players do the analysis in position groups and present it themselves — I draft, give feedback, and review.", evalText: "Players do the analysis in position groups and present it themselves; the coach drafts, gives feedback, and reviews." },
-  { id: "i19", module: "m7", coachText: "Strong and weak moments carry equal weight in my sessions — clear-eyed, not a highlight reel.", evalText: "Strong and weak moments carry equal weight — clear-eyed, not a highlight reel." },
-  { id: "i20", module: "m7", coachText: "My opponent scouting produces a short list of coaching points the team actually hears before kickoff.", evalText: "Opponent scouting produces a short list of coaching points the team actually hears before kickoff." },
-  { id: "i48", module: "m7", coachText: "Each player's named HUDL playlist stays current across games and feeds her IDP.", evalText: "Each player's named HUDL playlist stays current across games and feeds her IDP." },
-
-  // Module 7 — Training Session Basics
-  { id: "i9", module: "m5", coachText: "My session theme comes from the current phase-of-play cycle, and my objectives are written in game-model language.", evalText: "Session theme comes from the current phase-of-play cycle, and objectives are written in game-model language." },
-  { id: "i10", module: "m5", coachText: "My stages build toward the game and reference each other — what Stage 1 rehearses, Stage 3 reveals.", evalText: "Stages build toward the game and reference each other — what Stage 1 rehearses, Stage 3 reveals." },
-  { id: "i11", module: "m5", coachText: "My intervals, formats, and intensity are planned before I arrive — demand is engineered, not improvised.", evalText: "Intervals, formats, and intensity are planned before arrival — demand is engineered, not improvised." },
-  { id: "i12", module: "m5", coachText: "My constraints produce constant touches and decisions; I coach within the game, with few stoppages.", evalText: "Constraints produce constant touches and decisions; coaching happens within the game, with few stoppages." },
-  { id: "i49", module: "m5", coachText: "My environment is safe and demanding at once — top intensity from the first minute, and players who love competing.", evalText: "Environment is safe and demanding at once — top intensity from the first minute, and players who love competing." },
-
-  // Module 8 — Match Preparation & Execution
-  { id: "i13", module: "m6", coachText: "Players see my plan before kickoff — a pre-match presentation, not a coach-only sheet.", evalText: "Players see the plan before kickoff — a pre-match presentation, not a coach-only sheet." },
-  { id: "i14", module: "m6", coachText: "My game plan is the game model applied, with keys drawn from the scouting work.", evalText: "The game plan is the game model applied, with keys drawn from the scouting work." },
-  { id: "i15", module: "m6", coachText: "My talks and halftime adjustments are short imperatives in game-model language — one idea each.", evalText: "Talks and halftime adjustments are short imperatives in game-model language — one idea each." },
-  { id: "i16", module: "m6", coachText: "I set the tone; I don't react. My touchline matches what I demand from the first minute.", evalText: "Sets the tone rather than reacting. The touchline matches what's demanded from the first minute." },
-  { id: "i50", module: "m6", verifiable: true, coachText: "My matchday and travel standards hold: gear, arrival, phones, sanctioned hotels, supervised events.", evalText: "Matchday and travel standards hold: gear, arrival, phones, sanctioned hotels, supervised events." },
-  { id: "i38", module: "m6", coachText: "I work as a colleague with other staff on competitive nights.", evalText: "Works as a colleague with other staff on competitive nights." },
-
-  // Module 9 — Transformational Experience
-  { id: "i26", module: "m9", coachText: "My players can say why a standard exists — not just what it is.", evalText: "Players can say why a standard exists — not just what it is." },
-  { id: "i27", module: "m9", coachText: "Peer recognition runs on a rhythm on my team; effort and character are celebrated over results, in players' voices.", evalText: "Peer recognition runs on a rhythm; effort and character are celebrated over results, in players' voices." },
-  { id: "i28", module: "m9", coachText: "My values work is periodized across the season — on the calendar like tactics, not a one-off talk.", evalText: "Values work is periodized across the season — on the calendar like tactics, not a one-off talk." },
-  { id: "i29", module: "m9", coachText: "I coach disappointment — players respond to tough decisions with resilience and curiosity, not blame.", evalText: "Disappointment is coached: players respond to tough decisions with resilience and curiosity, not blame." },
-  { id: "i56", module: "m9", coachText: "I model accountability — owning my mistakes in front of the team.", evalText: "Models accountability — owning mistakes in front of the team." },
-
-  // Module 10 — Club Pathway
-  { id: "i30", module: "m10", coachText: "I can explain the full ladder — tiers, bands, birth-year placement — accurately, without notes.", evalText: "Can explain the full ladder — tiers, bands, birth-year placement — accurately, without notes." },
-  { id: "i31", module: "m10", coachText: "My \"what comes next\" message matches the age — next tier and next band at U9–U14; the recruiting timeline only at U15+.", evalText: "\"What comes next\" message matches the age: next tier and next band at U9–U14; the recruiting timeline only at U15+." },
-  { id: "i32", module: "m10", coachText: "Families hear developmental-environment framing from me, not league branding.", evalText: "Families hear developmental-environment framing from the coach, not league branding." },
-  { id: "i33", module: "m10", coachText: "My honest assessments run all season, so no placement conversation in May is a surprise.", evalText: "Honest assessments run all season, so no placement conversation in May is a surprise." },
-  { id: "i57", module: "m10", coachText: "I send dates and logistics to PlayMetrics; I carry the why.", evalText: "Dates and logistics go to PlayMetrics; the coach carries the why." },
-  { id: "i39", module: "m10", coachText: "I actively help my players through the recruiting process.", evalText: "Actively helps players through the recruiting process." },
-  { id: "i40", module: "m10", verifiable: true, coachText: "I hold a one-on-one meeting with every sophomore to discuss recruiting.", evalText: "Holds a one-on-one meeting with every sophomore to discuss recruiting." },
+export const RUBRIC_CATEGORIES = [
+  {
+    id: "technical",
+    name: "Technical Execution & Session Delivery",
+    description: "A coach's ability to design, organize, and execute high-quality training sessions that maximize player development and engagement.",
+    items: [
+      { id: "c1", coachText: "I plan structured, age-appropriate sessions aligned with the club curriculum, with clear developmental objectives — and I stay open-minded and collegial with other coaches on curriculum decisions.", evalText: "Plans structured, age-appropriate sessions aligned with the club curriculum, with clear developmental objectives — open-minded and collegial with other coaches on curriculum decisions." },
+      { id: "c2", coachText: "I set up equipment efficiently and manage transitions between exercises smoothly, optimizing ball-rolling time and keeping training tempo high.", evalText: "Sets up equipment efficiently and manages transitions between exercises smoothly, optimizing ball-rolling time and keeping training tempo high." },
+      { id: "c3", coachText: "I skillfully alternate between coaching methods — direct instruction, guided discovery, continuous play — to match individual players' learning needs.", evalText: "Skillfully alternates between coaching methods — direct instruction, guided discovery, continuous play — to match individual players' learning needs." },
+      { id: "c4", coachText: "My feedback is concise and constructive — I teach the why and the how, not just what a player did wrong.", evalText: "Feedback is concise and constructive — teaches the why and the how, not just what a player did wrong." },
+      { id: "c5", coachText: "My exercises replicate the directional, spatial, and decision-making demands of a real match — opposition, targets, and consequences all exist.", evalText: "Exercises replicate the directional, spatial, and decision-making demands of a real match — opposition, targets, and consequences all exist." },
+    ],
+  },
+  {
+    id: "tactical",
+    name: "Tactical Application & Match Management",
+    description: "A coach's tactical acumen, game insight, and performance coaching ability under live match constraints.",
+    items: [
+      { id: "c6", coachText: "I continuously observe and analyze opponent strategies, structural shapes, and tactical weaknesses during live matches.", evalText: "Continuously observes and analyzes opponent strategies, structural shapes, and tactical weaknesses during live matches." },
+      { id: "c7", coachText: "I make timely, impactful adjustments — system changes, tactical messaging, tactical substitutions — to exploit opportunities or solve problems on the field.", evalText: "Makes timely, impactful adjustments — system changes, tactical messaging, tactical substitutions — to exploit opportunities or solve problems on the field." },
+      { id: "c8", coachText: "My team's tactical shape, build-up patterns, and pressing triggers consistently reflect Maryland United's overarching style of play.", evalText: "Team's tactical shape, build-up patterns, and pressing triggers consistently reflect Maryland United's overarching style of play." },
+      { id: "c9", coachText: "I develop, organize, and execute clear roles and responsibilities for attacking and defensive set pieces.", evalText: "Develops, organizes, and executes clear roles and responsibilities for attacking and defensive set pieces." },
+      { id: "c10", coachText: "I coach and prepare players effectively for late-game scenarios — managing a lead, chasing a goal, playing down a player.", evalText: "Coaches and prepares players effectively for late-game scenarios — managing a lead, chasing a goal, playing down a player." },
+    ],
+  },
+  {
+    id: "leadership",
+    name: "Leadership, Communication & Culture",
+    description: "A coach's ability to manage relationships, communicate effectively across multiple stakeholders, and establish an elite team culture.",
+    items: [
+      { id: "c11", coachText: "I build meaningful, trusting relationships with my players, motivate individuals effectively, and know how to manage varying personalities.", evalText: "Builds meaningful, trusting relationships with players, motivates individuals effectively, and manages varying personalities well." },
+      { id: "c12", coachText: "My pre-game talks, halftime adjustments, and parent meetings are clear, engaging, and professional — and I communicate clearly with the Director of Coaching on scheduling conflicts, coverage needs, and match updates.", evalText: "Pre-game talks, halftime adjustments, and parent meetings are clear, engaging, and professional — communicates clearly with the Director of Coaching on scheduling conflicts, coverage needs, and match updates." },
+      { id: "c13", coachText: "I stay emotionally stable, composed, and professional on the sideline — a positive role model under intense match pressure.", evalText: "Stays emotionally stable, composed, and professional on the sideline — a positive role model under intense match pressure." },
+      { id: "c14", coachText: "I proactively manage parent expectations through transparent communication, structured feedback loops, and objective alignment with player goals.", evalText: "Proactively manages parent expectations through transparent communication, structured feedback loops, and objective alignment with player goals." },
+      { id: "c15", coachText: "I establish and protect non-negotiable team standards — punctuality, work ethic, uniform compliance, mutual respect among players.", evalText: "Establishes and protects non-negotiable team standards — punctuality, work ethic, uniform compliance, mutual respect among players." },
+    ],
+  },
+  {
+    id: "personal",
+    name: "Personal Drive, Initiative & Professional Development",
+    description: "A coach's self-regulation, willingness to learn, commitment to growth, and administrative execution.",
+    items: [
+      { id: "c16", coachText: "I take active initiative in my own development — pursuing coaching licenses, attending clinics, studying modern coaching trends.", evalText: "Takes active initiative in their own development — pursuing coaching licenses, attending clinics, studying modern coaching trends." },
+      { id: "c17", coachText: "I critically analyze my own training sessions and game footage, and seek peer or director evaluation to uncover my blind spots.", evalText: "Critically analyzes their own training sessions and game footage, and seeks peer or director evaluation to uncover blind spots." },
+      { id: "c18", coachText: "I complete administrative club duties — timely player IDPs, schedule management — with a high level of detail.", evalText: "Completes administrative club duties — timely player IDPs, schedule management — with a high level of detail." },
+      { id: "c19", coachText: "I work seamlessly with the girls directors, stay flexible collaborating with other club coaches, and execute directives from technical directors.", evalText: "Works seamlessly with the girls directors, stays flexible collaborating with other club coaches, and executes directives from technical directors." },
+      { id: "c20", coachText: "I maintain a relentless drive, positive energy, and long-term perspective through competitive setbacks, roster challenges, and developmental slumps.", evalText: "Maintains a relentless drive, positive energy, and long-term perspective through competitive setbacks, roster challenges, and developmental slumps." },
+    ],
+  },
 ];
 
-export const itemsForModule = (moduleId) => RUBRIC_ITEMS.filter((i) => i.module === moduleId);
-export const META_ITEMS = RUBRIC_ITEMS.filter((i) => i.meta);
+export const RUBRIC_ITEMS = RUBRIC_CATEGORIES.flatMap((cat) =>
+  cat.items.map((item) => ({ ...item, category: cat.id }))
+);
 
 /* ---------------------------------------------------------------
    SELF-EVALUATION — closing reflection prompts (part of Module 1)
@@ -569,7 +555,6 @@ export const emptyModuleState = () => ({
   submitted2: false,
   sub2Link: "",
   sub2Notes: "",
-  itemGrades: {}, // evaluator's per-item 1-4 ratings, keyed by item id
 });
 
 export const emptyBonding = () => [0, 1, 2, 3].map(() => ({ what: "", effective: "", why: "" }));
@@ -585,4 +570,5 @@ export const defaultData = (coachName = "") => ({
   bucket: { answers: {}, submitted: false },
   bonding: emptyBonding(),
   modules: Object.fromEntries(RUBRIC_MODULES.map((m) => [m.id, emptyModuleState()])),
+  evalRatings: {}, // evaluator's per-item 1-4 ratings for the coaching rubric, keyed by item id
 });

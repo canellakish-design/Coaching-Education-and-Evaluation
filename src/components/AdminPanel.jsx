@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { RUBRIC_ITEMS, RUBRIC_MODULES, ARCHETYPES, BUCKET_SECTIONS } from "../data/modules";
+import { RUBRIC_ITEMS, RUBRIC_CATEGORIES, ARCHETYPES, BUCKET_SECTIONS } from "../data/modules";
+import RatingRow from "./RatingRow";
 
-/* Self-vs-evaluator gap analysis + archetype assignment.
-   Visible only to evaluator accounts. */
-export default function AdminPanel({ data, archetype, setArchetype, addNote }) {
+/* Self-vs-evaluator gap analysis, the central coaching rubric grading
+   surface, and archetype assignment. Visible only to evaluator accounts. */
+export default function AdminPanel({ data, archetype, setArchetype, addNote, updateEvalRatings }) {
   const [tab, setTab] = useState("gap");
   const [draftNote, setDraftNote] = useState("");
   const [sending, setSending] = useState(false);
@@ -21,14 +22,15 @@ export default function AdminPanel({ data, archetype, setArchetype, addNote }) {
   };
 
   const selfRatings = data.selfEval?.ratings || {};
-  const metaRatings = data.selfEval?.meta || {};
+  const evalRatings = data.evalRatings || {};
+  const setEvalRating = (id, v) => updateEvalRatings({ [id]: v });
 
   const rows = RUBRIC_ITEMS.map((item) => {
     const self = selfRatings[item.id] ?? null;
     const selfNum = typeof self === "number" ? self : null;
-    const evaluator = data.modules?.[item.module]?.itemGrades?.[item.id] ?? null;
-    const gap = selfNum != null && evaluator != null ? selfNum - evaluator : null;
-    return { item, self, evaluator, gap, meta: metaRatings[item.id] ?? null };
+    const evaluator = evalRatings[item.id] ?? null;
+    const gap = selfNum != null && typeof evaluator === "number" ? selfNum - evaluator : null;
+    return { item, self, evaluator, gap };
   });
 
   const scored = rows.filter((r) => r.gap != null);
@@ -37,7 +39,7 @@ export default function AdminPanel({ data, archetype, setArchetype, addNote }) {
     ? (scored.reduce((s, r) => s + r.gap, 0) / scored.length).toFixed(2)
     : null;
 
-  const moduleTitle = (id) => RUBRIC_MODULES.find((m) => m.id === id)?.title || id;
+  const categoryName = (id) => RUBRIC_CATEGORIES.find((c) => c.id === id)?.name || id;
   const selected = ARCHETYPES.find((a) => a.id === archetype?.id);
 
   return (
@@ -47,7 +49,7 @@ export default function AdminPanel({ data, archetype, setArchetype, addNote }) {
       <div className="mu-tabs">
         {[
           ["gap", "Self vs. Evaluator"],
-          ["meta", "Meta-Perception"],
+          ["rubric", "Coaching Rubric"],
           ["bucket", "What Drives You"],
           ["archetype", "Archetype"],
           ["notes", "Notes"],
@@ -91,9 +93,8 @@ export default function AdminPanel({ data, archetype, setArchetype, addNote }) {
                   {sorted.map((r) => (
                     <tr key={r.item.id}>
                       <td>
-                        <span className="mu-gap-module">{moduleTitle(r.item.module)}</span>
+                        <span className="mu-gap-module">{categoryName(r.item.category)}</span>
                         {r.item.evalText}
-                        {r.item.verifiable && <span className="mu-verifiable">verifiable</span>}
                       </td>
                       <td className="mu-num">{r.self}</td>
                       <td className="mu-num">{r.evaluator}</td>
@@ -111,38 +112,25 @@ export default function AdminPanel({ data, archetype, setArchetype, addNote }) {
         </div>
       )}
 
-      {tab === "meta" && (
+      {tab === "rubric" && (
         <div>
           <p className="mu-muted mu-empty">
-            What the coach predicted their players would say, next to their own self-rating. A coach
-            who rates high and predicts high may be unaware; one who rates high but predicts low is
-            aware and defending.
+            The same 20-item coaching rubric the coach rated themselves on in Module 1 — rate them
+            here, once, centrally. These ratings drive the Self vs. Evaluator gap above.
           </p>
-          <table className="mu-gap-table">
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>Self</th>
-                <th>Predicts players</th>
-                <th>You</th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows
-                .filter((r) => r.item.meta)
-                .map((r) => (
-                  <tr key={r.item.id}>
-                    <td>
-                      <span className="mu-gap-module">{moduleTitle(r.item.module)}</span>
-                      {r.item.evalText}
-                    </td>
-                    <td className="mu-num">{r.self ?? "—"}</td>
-                    <td className="mu-num">{r.meta ?? "—"}</td>
-                    <td className="mu-num">{r.evaluator ?? "—"}</td>
-                  </tr>
-                ))}
-            </tbody>
-          </table>
+          {RUBRIC_CATEGORIES.map((cat) => (
+            <div className="mu-subbox" key={cat.id}>
+              <p className="mu-section-label">{cat.name.toUpperCase()}</p>
+              {cat.items.map((item) => (
+                <RatingRow
+                  key={item.id}
+                  label={item.evalText}
+                  value={evalRatings[item.id] ?? null}
+                  onChange={(v) => setEvalRating(item.id, v)}
+                />
+              ))}
+            </div>
+          ))}
         </div>
       )}
 

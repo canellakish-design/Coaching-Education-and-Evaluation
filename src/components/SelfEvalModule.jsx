@@ -1,9 +1,4 @@
-import {
-  RUBRIC_MODULES,
-  itemsForModule,
-  REFLECTION_PROMPTS,
-  GRADE_SCALE,
-} from "../data/modules";
+import { RUBRIC_CATEGORIES, REFLECTION_PROMPTS, GRADE_SCALE } from "../data/modules";
 import RatingRow from "./RatingRow";
 
 export default function SelfEvalModule({ state, update }) {
@@ -12,7 +7,7 @@ export default function SelfEvalModule({ state, update }) {
   const setRating = (id, v) => update({ ratings: { ...ratings, [id]: v } });
   const setReflection = (id, v) => update({ reflections: { ...reflections, [id]: v } });
 
-  const totalItems = RUBRIC_MODULES.reduce((n, m) => n + itemsForModule(m.id).length, 0);
+  const totalItems = RUBRIC_CATEGORIES.reduce((n, c) => n + c.items.length, 0);
   const done = Object.values(ratings).filter(Boolean).length;
 
   return (
@@ -34,10 +29,10 @@ export default function SelfEvalModule({ state, update }) {
         {done} of {totalItems} rated
       </p>
 
-      {RUBRIC_MODULES.map((m) => (
-        <div className="mu-subbox" key={m.id}>
-          <p className="mu-section-label">{m.title.toUpperCase()}</p>
-          {itemsForModule(m.id).map((item) => (
+      {RUBRIC_CATEGORIES.map((cat) => (
+        <div className="mu-subbox" key={cat.id}>
+          <p className="mu-section-label">{cat.name.toUpperCase()}</p>
+          {cat.items.map((item) => (
             <RatingRow
               key={item.id}
               label={item.coachText}
