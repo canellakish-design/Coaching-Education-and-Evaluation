@@ -15,21 +15,10 @@
   align-items: center;
   justify-content: center;
   background: #000000;
-  color: #f5b917;
+  color: #F0F0F0;
   font-family: "Barlow Condensed", sans-serif;
   font-size: 22px;
   letter-spacing: 2px;
-}
-
-.mu-checker {
-  height: 14px;
-  background: repeating-linear-gradient(45deg, #f5b917 0 10px, #000000 10px 20px),
-    repeating-linear-gradient(-45deg, #f5b917 0 10px, #000000 10px 20px);
-  background-blend-mode: multiply;
-}
-.mu-redline {
-  height: 3px;
-  background: #d22730;
 }
 
 .mu-header {
@@ -51,7 +40,7 @@
   font-weight: 600;
   font-size: 14px;
   letter-spacing: 3px;
-  color: #d22730;
+  color: #A3A3A3;
 }
 .mu-h1 {
   margin: 6px 0 10px;
@@ -62,7 +51,7 @@
   letter-spacing: 1px;
 }
 .mu-accent {
-  color: #f5b917;
+  color: #F0F0F0;
 }
 .mu-sub {
   margin: 0;
@@ -77,7 +66,7 @@
   font-weight: 700;
   font-size: 13px;
   letter-spacing: 2px;
-  color: #f5b917;
+  color: #F0F0F0;
 }
 .mu-creator-note {
   margin: 6px 0 0;
@@ -85,14 +74,14 @@
   font-weight: 700;
   font-size: 12px;
   letter-spacing: 2px;
-  color: #d22730;
+  color: #A3A3A3;
 }
 .mu-name-input {
   margin-top: 16px;
   background: transparent;
   border: none;
   border-bottom: 2px solid #2E2E2E;
-  color: #f5b917;
+  color: #F0F0F0;
   font-family: "Barlow Condensed", sans-serif;
   font-size: 24px;
   font-weight: 700;
@@ -214,7 +203,7 @@
   transition: border-color 0.2s;
 }
 .mu-card-open {
-  border-color: #f5b917;
+  border-color: #F0F0F0;
 }
 .mu-card-disabled {
   opacity: 0.55;
@@ -238,7 +227,7 @@
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 800;
   font-size: 36px;
-  color: #f5b917;
+  color: #F0F0F0;
   line-height: 1;
   padding-top: 2px;
 }
@@ -284,8 +273,8 @@
 }
 .mu-pill-continue {
   background: transparent;
-  border: 1px solid #f5b917;
-  color: #f5b917;
+  border: 1px solid #F0F0F0;
+  color: #F0F0F0;
 }
 .mu-pill-soon {
   background: transparent;
@@ -294,8 +283,8 @@
 }
 .mu-pill-draft {
   background: transparent;
-  border: 1px solid #d22730;
-  color: #d22730;
+  border: 1px solid #A3A3A3;
+  color: #A3A3A3;
 }
 .mu-toggle-icon {
   color: #6B6B6B;
@@ -364,7 +353,7 @@
 .mu-example-link {
   display: inline-block;
   margin: 0 0 16px;
-  color: #f5b917;
+  color: #F0F0F0;
   font-size: 13px;
   font-weight: 600;
   text-decoration: underline;
@@ -372,7 +361,7 @@
 .mu-recording-tip {
   margin: 0 0 16px;
   padding: 10px 12px;
-  border-left: 2px solid #f5b917;
+  border-left: 2px solid #F0F0F0;
   background: #000000;
   font-size: 13px;
   color: #D6D6D6;
@@ -394,7 +383,7 @@
   border-top: none;
 }
 .mu-resource-title {
-  color: #f5b917;
+  color: #F0F0F0;
   font-size: 13.5px;
   font-weight: 600;
 }
@@ -442,15 +431,15 @@
   font-size: 15px;
   letter-spacing: 2px;
   cursor: pointer;
-  border: 1px solid #f5b917;
+  border: 1px solid #F0F0F0;
 }
 .mu-btn-solid {
-  background: #f5b917;
+  background: #F0F0F0;
   color: #000000;
 }
 .mu-btn-outline {
   background: transparent;
-  color: #f5b917;
+  color: #F0F0F0;
 }
 .mu-btn:disabled {
   background: transparent;
@@ -508,7 +497,7 @@
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 3px;
-  color: #f5b917;
+  color: #A3A3A3;
   margin: 22px 0 6px;
 }
 .mu-admin-bar {
@@ -523,7 +512,7 @@
   min-width: 200px;
 }
 .mu-readonly {
-  color: #f5b917;
+  color: #F0F0F0;
 }
 
 /* ---------- fields ---------- */
@@ -636,7 +625,7 @@
 
 /* ---------- admin ---------- */
 .mu-admin-box {
-  border-color: #d22730;
+  border-color: #F0F0F0;
 }
 .mu-admin-panel {
   max-width: 860px;
@@ -644,7 +633,7 @@
   width: 100%;
   box-sizing: border-box;
   padding: 18px 20px;
-  border: 1px solid #d22730;
+  border: 1px solid #F0F0F0;
   background: #0D0D0D;
 }
 .mu-tabs {
@@ -662,8 +651,8 @@
   cursor: pointer;
 }
 .mu-tab.is-active {
-  background: #f5b917;
-  border-color: #f5b917;
+  background: #F0F0F0;
+  border-color: #F0F0F0;
   color: #000000;
   font-weight: 600;
 }
@@ -744,7 +733,7 @@
   gap: 10px;
 }
 .mu-note {
-  border-left: 2px solid #f5b917;
+  border-left: 2px solid #F0F0F0;
   padding: 6px 0 6px 12px;
 }
 .mu-note-date {
@@ -780,9 +769,9 @@
   cursor: pointer;
 }
 .mu-archetype-card.is-active {
-  background: #d22730;
-  border-color: #d22730;
-  color: #fff;
+  background: #F0F0F0;
+  border-color: #F0F0F0;
+  color: #000000;
 }
 
 /* ---------- intro module ---------- */
@@ -798,7 +787,7 @@
   margin: 14px 0;
 }
 .mu-intro-list-item {
-  border-left: 3px solid #f5b917;
+  border-left: 3px solid #F0F0F0;
   padding: 4px 0 4px 10px;
   font-size: 14px;
   color: #D6D6D6;
@@ -806,7 +795,7 @@
 .mu-intro-cta {
   margin: 14px 0 0;
   font-size: 13px;
-  color: #f5b917;
+  color: #F0F0F0;
   font-weight: 600;
 }
 

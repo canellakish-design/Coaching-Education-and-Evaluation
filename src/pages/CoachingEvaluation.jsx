@@ -187,13 +187,6 @@ export default function CoachingEvaluation() {
 
   return (
     <div className="mu-page">
-      {openId !== "onboarding" && (
-        <div aria-hidden="true">
-          <div className="mu-checker" />
-          <div className="mu-redline" />
-        </div>
-      )}
-
       <header className="mu-header">
         <div className="mu-header-top">
           <div>
