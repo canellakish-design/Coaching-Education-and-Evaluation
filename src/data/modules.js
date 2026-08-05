@@ -204,10 +204,9 @@ export const INTRO_SECTIONS = [
   {
     heading: "WHY THIS EXISTS",
     body: [
-      "We ask our players to spend the whole season getting better. To work at the things they aren't good at yet. To take feedback without flinching. To keep a plan and actually come back to it.",
-      "This platform asks the same of us.",
-      "Most coaching feedback happens by accident — a comment after a match, a conversation in the parking lot, a season that ends without anyone saying much at all. This replaces that with something deliberate. Over the year you'll work through the eight qualities that define coaching at Maryland United, submit real footage of your own coaching, and get specific feedback on each one.",
-      "It's a development program, not a verdict. No single score here decides who coaches what team. The point is to give you exactly what we try to give every player: a clear picture of where you are, and a specific idea of what to work on next.",
+      "This platform is Maryland United's season-long coaching development program. Coaches complete a self-evaluation, submit real recordings of their coaching across the season, and receive specific feedback measured against a shared rubric.",
+      "Coaching feedback has typically been informal — a comment after a match, a conversation in passing, or no structured feedback at all. This program replaces that with a defined process: ten modules run across the season, eight of which ask for a recorded submission, all scored against the same 20-item coaching rubric.",
+      "This is a development program, not a pass/fail evaluation. No single score determines who coaches which team. The goal is a clear picture of where you are and a specific idea of what to work on next.",
     ],
   },
   {
