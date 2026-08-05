@@ -282,7 +282,7 @@ export const MODULES = [
     window: "AUGUST",
     kind: "onboarding",
     title: "Getting Started",
-    focus: "Your 1-on-1 meeting, the platform introduction, your self-evaluation, and what drives you — one flow, four steps.",
+    focus: "A four-step flow: your 1-on-1 meeting, the platform introduction, your self-evaluation, and what drives you.",
   },
   {
     id: "m3",
@@ -290,7 +290,7 @@ export const MODULES = [
     window: "SEPTEMBER",
     kind: "rubric",
     title: "Set the Standard",
-    focus: "Standards, communication, and organization that set the tone for the season.",
+    focus: "Standards, parent and player communication, and season organization at the start of the year.",
     standardNote: "Three is the standard. Four is a coach whose team pulls other teams up — the standard-bearers younger groups copy.",
     resources: [
       { title: "Set the Standard player meeting deck", description: "The 8-section meeting — per-team versions exist for every roster", url: "https://drive.google.com/file/d/1vXoUDYDSCAX-g0Vh-q2s_Sd_irHT_P-Q/view" },
@@ -330,7 +330,7 @@ export const MODULES = [
     draft: true,
     kind: "rubric",
     title: "Program Game Model",
-    focus: "A clear, coachable identity for how your team plays — understood well enough to teach it off the field.",
+    focus: "Your team's style of play: game model, principles, and formation, taught to your players.",
     standardNote: "Three is the standard. Four is a coach other coaches borrow the whiteboard from.",
     resources: [
       { title: "Coaching Manual — Maryland United FC Tactical Game Model", description: "The five principles with IF/THEN sub-principles across all four moments, plus systems of play", url: "https://docs.google.com/document/d/17Cy9KC2P2QFqqU5DKT1m6Il2fvQy9C0Mvoz_IsV9Ex4/edit" },
@@ -369,7 +369,7 @@ export const MODULES = [
     draft: true,
     kind: "rubric",
     title: "Individual Development Plans",
-    focus: "Every player has a plan, every plan stays current, and every plan gets real attention.",
+    focus: "An individual development plan for every player, kept current and reviewed regularly.",
     standardNote: "Three is the standard — what strong, consistent IDP work looks like at this club. Four is what shows up when you're ready to help other coaches do it.",
     resources: [
       { title: "Next Level IDP Platform", description: "The U13–U18 player portal — where plans live", url: "https://marylandunitednextlevelidp.netlify.app/" },
@@ -396,7 +396,7 @@ export const MODULES = [
     draft: true,
     kind: "rubric",
     title: "Video Analysis",
-    focus: "Scouting the opponent and turning that work into a prepared, clear-eyed team.",
+    focus: "Opponent scouting and film review, applied to prepare your team for matchday.",
     standardNote: "Three is the standard. Four is film work strong enough to teach other coaches.",
     resources: [
       { title: "TEMPLATE | Video Analysis", description: "The blank functional template — position groups, strong/weak pairs, 25 words + 3 bullets", url: "https://docs.google.com/presentation/d/14YU7E5zSsw86fihSPUybmihH1DYVB2mZka0t3TxqI90" },
@@ -422,7 +422,7 @@ export const MODULES = [
     draft: true,
     kind: "rubric",
     title: "Training Session Basics",
-    focus: "Sessions that are safe, demanding, and full of touches, decisions, and joy.",
+    focus: "Training session structure, intensity, and player touches and decisions.",
     standardNote: "Three is the standard. Four is a session other coaches should watch to learn from.",
     resources: [
       { title: "Weekly Session Plan | Maryland United FC", description: "The current weekly structure: theme, Tue/Wed/Thu, three stages", url: "https://docs.google.com/spreadsheets/d/10OdWvdEVpTjUHUq73Ak3vp58th96IzKlo4rq3w-10QY/edit" },
@@ -448,7 +448,7 @@ export const MODULES = [
     draft: true,
     kind: "rubric",
     title: "Match Preparation & Execution",
-    focus: "Game plans, team talks, and in-match decisions that give players clarity.",
+    focus: "Pregame planning, team talks, and in-match decisions on matchday.",
     standardNote: "Three is the standard. Four means you're ready to teach other coaches how to prepare a team.",
     resources: [
       { title: "Pre-Match Player Presentation (U12–U18)", description: "Prepare Well = Play Well, Playing to Play vs. Playing to Win, and the Pyramid of Success", url: "https://docs.google.com/presentation/d/1b9W6VeQt125-jI80H9pwFsaCTc8A5a5lR-QN_S_UAoQ" },
@@ -472,7 +472,7 @@ export const MODULES = [
     draft: true,
     kind: "rubric",
     title: "Transformational Experience",
-    focus: "Coaching that shapes people, not just players — culture, character, connection.",
+    focus: "Team culture, player character, and coach-player relationships beyond the game.",
     standardNote: "Three is the standard. Four is what shows up when you're ready to teach other coaches how you do it.",
     resources: [
       { title: "OUR VALUES — the six cultural principles", description: "The full text of the six principles, including the \"transformational\" line", url: "https://docs.google.com/presentation/d/1T63s_eHIu2oQFprndQnMEk0cklyoIHJf68URd7UITuA/edit" },
@@ -498,7 +498,7 @@ export const MODULES = [
     draft: true,
     kind: "rubric",
     title: "Club Pathway",
-    focus: "Guiding players and families through what comes next at Maryland United.",
+    focus: "Player and family guidance on club pathway, team placement, and recruiting.",
     standardNote: "Three is the standard. Four is the coach other coaches send confused families to.",
     resources: [
       { title: "2026–2027 Girls Teams & Coaches", description: "The canonical roster — every team and coach, U5–U18/19, including South", url: "https://docs.google.com/spreadsheets/d/17mDeybpAmoKkhXDQLoEmjt1RGSv5PZKvbo6Mf7HL-6g" },
