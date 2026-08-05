@@ -49,9 +49,13 @@
   font-size: clamp(44px, 9vw, 72px);
   line-height: 0.95;
   letter-spacing: 1px;
+  color: #d22730;
 }
 .mu-accent {
   color: #F0F0F0;
+}
+.mu-h1 .mu-accent {
+  color: #d22730;
 }
 .mu-sub {
   margin: 0;
@@ -242,6 +246,7 @@
   font-size: 22px;
   letter-spacing: 1px;
   line-height: 1.1;
+  color: #d22730;
 }
 .mu-card-focus {
   display: block;
