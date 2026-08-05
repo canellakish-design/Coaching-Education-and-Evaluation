@@ -37,7 +37,6 @@ export const RUBRIC_ITEMS = [
   // Module 2 — Set the Standard
   { id: "i1", module: "m3", coachText: "The Set the Standard meeting has happened with my team, and my players can repeat the non-negotiables.", evalText: "The Set the Standard meeting has happened, and players can repeat the non-negotiables." },
   { id: "i2", module: "m3", coachText: "The visible habits hold without me — gear, early arrival, phones away, walking out together.", evalText: "The visible habits hold without the coach present — gear, early arrival, phones away, walking out together." },
-  { id: "i3", module: "m3", coachText: "My language is consistent daily — effort, encouragement, we over me — and I correct silence like a technical mistake.", evalText: "Language is consistent daily — effort, encouragement, we over me — and silence gets corrected like a technical mistake." },
   { id: "i4", module: "m3", coachText: "My players police the standard themselves, and recognition runs on a rhythm.", evalText: "Players police the standard themselves; recognition runs on a rhythm." },
   { id: "i41", module: "m3", coachText: "I'm organized — brief, consistent in-person team meetings, and planning through the bi-weekly coaches' meetings.", evalText: "Organized: brief, consistent in-person team meetings; planning through the bi-weekly coaches' meetings." },
   { id: "i34", module: "m3", verifiable: true, coachText: "I manage PlayMetrics and double-check it for accuracy.", evalText: "Manages PlayMetrics and double-checks it for accuracy." },
