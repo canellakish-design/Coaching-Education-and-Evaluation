@@ -219,20 +219,16 @@ export const INTRO_SECTIONS = [
     ],
   },
   {
-    heading: "THE EIGHT QUALITIES",
-    lead: "These are the eight qualities that define coaching at Maryland United. You'll work through one at a time, across the year.",
+    heading: "THE COACHING RUBRIC",
+    lead: "This is what you're evaluated on all year — one rubric, four categories, twenty items total. You rate yourself first; your evaluator rates you against the exact same items.",
     list: [
-      "Set the Standard",
-      "Program Game Model",
-      "Video Analysis",
-      "Training Session Basics",
-      "Match Preparation & Execution",
-      "Transformational Experience",
-      "Individual Development Plans",
-      "Club Pathway",
+      "Technical Execution & Session Delivery",
+      "Tactical Application & Match Management",
+      "Leadership, Communication & Culture",
+      "Personal Drive, Initiative & Professional Development",
     ],
     body: [
-      "Nothing here is hidden. You'll rate yourself against one 20-item coaching rubric — the same one your evaluator uses — before you're ever evaluated on it. See Self-Evaluation below.",
+      "Nothing here is hidden. You'll rate yourself against this same rubric in the Self-Evaluation step below, before you're ever evaluated on it. Across the season you'll also submit real recordings for eight areas of your coaching — Set the Standard, Program Game Model, Video Analysis, Training Session Basics, Match Preparation & Execution, Transformational Experience, Individual Development Plans, and Club Pathway — but the twenty items above are what both of you are actually scoring against, every time.",
     ],
   },
   {
