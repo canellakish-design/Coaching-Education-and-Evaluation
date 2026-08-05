@@ -296,6 +296,8 @@ export const MODULES = [
       { title: "Set the Standard player meeting deck", description: "The 8-section meeting — per-team versions exist for every roster", url: "https://drive.google.com/file/d/1vXoUDYDSCAX-g0Vh-q2s_Sd_irHT_P-Q/view" },
       { title: "U13–U18 Girls Program Coaching Manual — Culture & Standards", description: "Dress code, 15-minutes-early, phone policy, self-led warmups, awards, accountability", url: "https://docs.google.com/document/d/17Cy9KC2P2QFqqU5DKT1m6Il2fvQy9C0Mvoz_IsV9Ex4/edit" },
       { title: "Building a High-Performance Culture from Day One", description: "Seven takeaways on designing culture: visible standards, guided arrival, peer awards, top-down modeling", url: "https://docs.google.com/document/d/1ZdRWy9tp8ouPx5Scp91Jufy0WxtaCgjr5PenGZPUGN4/edit" },
+      { title: "Set the Standard — Folder 1", description: "Shared Drive folder", url: "https://drive.google.com/drive/u/2/folders/14K-F9nM7xk3tpFYQYWSAsfyb8UUmb3VX" },
+      { title: "Set the Standard — Folder 2", description: "Shared Drive folder", url: "https://drive.google.com/drive/u/2/folders/1UQ1cXYK-uNTHtCuf8fGU8clDWnOI_4Yi" },
     ],
     reflectPrompts: [
       "What is one thing you have been tolerating that your standard says you shouldn't?",
