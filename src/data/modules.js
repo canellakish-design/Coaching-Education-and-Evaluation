@@ -236,6 +236,7 @@ export const INTRO_SECTIONS = [
     body: [
       "Ten modules run in sequence, August through June — this one first, then roughly one a month.",
       "Eight of them ask for a real piece of your coaching: a parent meeting, a training session, a match day, a film session. You record it, link it, and add a short note on what you'd like your reviewer to notice. Then you get feedback, scored against the coaching rubric.",
+      { strong: "This is not extra work.", text: " You're already running that parent meeting, that session, that matchday. All this asks is that you hit record on the coaching you were going to do anyway." },
       "Real footage, one module at a time, all year. That's the rhythm.",
     ],
   },
