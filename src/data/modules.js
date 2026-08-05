@@ -232,7 +232,7 @@ export const INTRO_SECTIONS = [
       "Club Pathway",
     ],
     body: [
-      "Every quality has specific sub-standards you'll be measured against. Nothing is hidden — you'll see the exact criteria before you're ever evaluated on them.",
+      "Nothing here is hidden. You'll rate yourself against one 20-item coaching rubric — the same one your evaluator uses — before you're ever evaluated on it. See Self-Evaluation below.",
     ],
   },
   {
