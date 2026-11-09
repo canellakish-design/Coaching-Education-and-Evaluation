@@ -175,6 +175,15 @@ No Marks 0; total /500; lines for comments). Nothing filled in.
 - Part 1 discussion (295779) due at those same times. Calendar: section-specific
   "WHI B2 · Lesson 2: Part 1 Discussion" events created; "Lesson 1" events note it.
 - Not yet scheduled: Part 2 (Docs E–H), B2 portfolio, B2 activities.
+- Update 11/9: BENCHMARK 2 PORTFOLIO = assignment 298836 (unpublished, 500 pts, Benchmark
+  Rubric 9264, online URL). Contents: Notes, Second Ship notes, handwritten essay (photos),
+  Revision. Due end of class as B3 begins: F2 Tue 11/10 3:15 PM; E1 Mon 11/16 9:45 AM;
+  G1 not set.
+
+## Benchmark 2 grading notes (from Mr. Canellakis)
+- F2 had a very good portfolio work day on Mon 11/9. F2 should get higher Executive
+  Skills scores on the B2 portfolio. The rubric is Full (100) or No (0) per category, so
+  this means leaning toward Full Marks for Executive Skills in F2.
 
 ## Benchmark 1 wrap-up facts
 - Portfolio due dates were: E1 Tue 10/13 12:05 PM; F2 Tue 10/13 11:59 PM; G1 Tue 10/13 11:59 PM.
