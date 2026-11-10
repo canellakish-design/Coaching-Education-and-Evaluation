@@ -189,3 +189,14 @@ No Marks 0; total /500; lines for comments). Nothing filled in.
 - Portfolio due dates were: E1 Tue 10/13 12:05 PM; F2 Tue 10/13 11:59 PM; G1 Tue 10/13 11:59 PM.
 - Portfolio checklist (five sections) is on the Canvas page "Portfolio Submission Document — Template (B1)".
 - Unpublished items are excluded from the portfolio; reading quizzes are not required.
+
+## Benchmark 3 — live as of Tue 11/10
+- Module "[World History I] Benchmark 3: Ideology" published with full reading excerpts
+  (Machiavelli; A Polybius; B Cicero De Officiis; C Livy; D Cicero vs Catiline; E Suetonius;
+  F Priene inscription; G Res Gestae; H Aeneid). Script: world-history-canvas scripts/b3_setup.py.
+- Ten classes per section: c1 begins; c2 Anchor due; c3 A,B due; c4 C,D + Part 1 discussion;
+  c5 E,F; c6 G,H + Part 2 discussion; c7 DBQ prep; c8 in-class DBQ; c9 portfolio work day;
+  c10 Benchmark 4 begins, BENCHMARK 3 PORTFOLIO (298899) due end of class.
+- Portfolio due: F2 Thu 12/10 2:05 PM; G1 Thu 12/10 3:15 PM; E1 Wed 12/16 3:15 PM.
+- Two old unpublished, ungraded duplicate assignments (295783, 295785) share the B3
+  discussion names; students cannot see them. Left in place.
