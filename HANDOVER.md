@@ -200,3 +200,14 @@ No Marks 0; total /500; lines for comments). Nothing filled in.
 - Portfolio due: F2 Thu 12/10 2:05 PM; G1 Thu 12/10 3:15 PM; E1 Wed 12/16 3:15 PM.
 - Two old unpublished, ungraded duplicate assignments (295783, 295785) share the B3
   discussion names; students cannot see them. Left in place.
+
+## Benchmark 3 rebuilt 11/11 from Ashleigh Tinkle's team draft
+- Part 1 Qin China: A Unification of China (PoI 4.4), B Sima Qian, C Li Si, D Jia Yi, plus
+  Textbook: Han Emperors in China (PoI 7.3). Part 1 discussion = debate, Shi Huangdi leader or tyrant.
+- Part 2 Roman Empire: Textbook: The Romans Create a Republic (PoI 6.1), E The Roman Empire
+  (PoI 6.2), F Augustus of Primaporta video, G Roman Empire Source Experts, H Hierarchy reading.
+- Same 10-class schedule and due dates; Anchor (Machiavelli) unchanged.
+- Old Roman readings (Polybius ... Aeneid) and their journals unpublished, not deleted.
+- Team links need McDonogh sign-in; Canvas copies of PoI 4.4/6.1/6.2/7.3 are in course files
+  folder "benchmark 3 textbook" (ids 1325931-1325934). Journal questions for A-H were written
+  without opening the team files (not accessible from this session); check Doc G especially.
